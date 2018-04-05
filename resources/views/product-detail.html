@@ -1,0 +1,228 @@
+
+
+
+<!DOCTYPE html><html lang='en' class=''>
+<head><!-- <script src='//production-assets.codepen.io/assets/editor/live/console_runner-079c09a0e3b9ff743e39ee2d5637b9216b3545af0de366d4b9aad9dc87e26bfd.js'></script><script src='//production-assets.codepen.io/assets/editor/live/events_runner-73716630c22bbc8cff4bd0f07b135f00a0bdc5d14629260c3ec49e5606f98fdd.js'></script><script src='//production-assets.codepen.io/assets/editor/live/css_live_reload_init-2c0dc5167d60a5af3ee189d570b1835129687ea2a61bee3513dee3a50c115a77.js'></script><meta charset='UTF-8'><meta name="robots" content="noindex"><link rel="shortcut icon" type="image/x-icon" href="//production-assets.codepen.io/assets/favicon/favicon-8ea04875e70c4b0bb41da869e81236e54394d63638a1ef12fa558a4a835f1164.ico" /><link rel="mask-icon" type="" href="//production-assets.codepen.io/assets/favicon/logo-pin-f2d2b6d2c61838f7e76325261b7195c27224080bc099486ddd6dccb469b8e8e6.svg" color="#111" /> -->
+<link rel="canonical" href="https://codepen.io/AttilaBre/pen/RKjaeB?depth=everything&order=popularity&page=15&q=product&show_forks=false" />
+<script src="https://use.fontawesome.com/f12e4a6b3c.js"></script>
+<link href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+<script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
+<style class="cp-pen-styles">html, body{
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+}
+
+ul{
+  padding:0;
+}
+
+#product-slider{
+  width: 600px;
+  margin: 0 auto;
+}
+
+#product-slider:after{
+  clear: both;
+  content: none;
+  display: block;
+}
+
+#product-slider .nav-item{
+  width: 100px;
+  height: 100px;
+  display: block;
+}
+
+#product-slider .nav-item img{
+  width: 100px;
+  height: 100px;
+}
+
+#navigation,
+#slider{
+  float: left;
+}
+
+#navigation{
+  position: relative;
+  width: 100px;
+  height: 516px;
+  overflow: hidden;
+}
+
+#nav-images{
+  position: absolute;
+  top:0;
+}
+
+.nav-item{
+  cursor: pointer;
+}
+
+#arrows{
+  position: relative;
+  height: 515px;
+}
+
+#more-down{
+  text-align: center;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 30px;
+  background-color: rgba(0,0,0,0.6);
+  color: white;
+  z-index: 1;
+  cursor: pointer;
+}
+
+#more-down:hover{
+  background-color: rgba(0,0,0,0.8);
+}
+
+#more-down i{
+  color: white;
+  font-family: "FontAwesome";
+  font-size: 30px;
+  margin: 0;
+}
+
+#more-up{
+  text-align: center;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 30px;
+  background-color: rgba(0,0,0,0.6);
+  color: white;
+  z-index: 1;
+  cursor: pointer;
+  display: none;
+}
+
+#more-up:hover{
+  background-color: rgba(0,0,0,0.8);
+}
+
+#more-up i{
+  color: white;
+  font-family: "FontAwesome";
+  font-size: 30px;
+  margin: 0;
+}
+
+#slider{
+  position: relative;
+  height: 500px;
+  width: 500px;
+  overflow: hidden;
+}
+
+#slides{
+  position: absolute;
+  left:0;
+  list-style-type: none;
+  width: 5100px;
+}
+
+#slides li {
+  width: 500px;
+  height: 500px;
+  float: left;
+}
+</style></head><body>
+<section id="product-slider">
+
+  <nav id="navigation">
+
+    <div id="arrows">
+      <div class="arrow" id="more-down">
+        <i class="fa fa-angle-down" aria-hidden="true"></i>
+      </div>
+
+      <div class="arrow" id="more-up">
+        <i class="fa fa-angle-up" aria-hidden="true"></i>
+      </div>
+    </div>
+
+
+    <ul id="nav-images">
+      <li class="nav-item"><img src="http://cuong.vn/uploads/.thumbs/images/san-pham/vertu/vertu-signature-s/106.jpg" alt="1"></li>
+      <li class="nav-item"><img src="http://cuong.vn/uploads/.thumbs/images/san-pham/vertu/vertu-signature-s/vertu-signature-s-rose-gold-2016.png" alt="2"></li>
+      <li class="nav-item"><img src="http://cuong.vn/uploads/.thumbs/images/san-pham/vertu/signature-touch/119.jpg" alt="3"></li>
+      <li class="nav-item"><img src="http://cuong.vn/uploads/.thumbs/images/san-pham/vertu/vertu-signature-s/104.jpg" alt="4"></li>
+      <li class="nav-item"><img src="http://cuong.vn/uploads/.thumbs/images/san-pham/vertu/signature-touch/vertu-signature-touch-pure-navy.png" alt="5"></li>
+
+      <!-- <li class="nav-item"><img src="https://s24.postimg.org/g7xw88det/6.jpg" alt="6"></li>
+      <li class="nav-item"><img src="https://s24.postimg.org/fjp1paep1/7.jpg" alt="7"></li>
+      <li class="nav-item"><img src="https://s24.postimg.org/l95a9lkv9/8.jpg" alt="8"></li>
+      <li class="nav-item"><img src="https://s24.postimg.org/u5knra0v9/9.jpg" alt="9"></li>
+      <li class="nav-item"><img src="https://s24.postimg.org/wo6crymlh/10.jpg" alt="10"></li> -->
+
+    </ul>
+  </nav>
+
+  <div id="slider">
+    <ul id="slides">
+
+      <li class="slide"><img src="https://s24.postimg.org/5eqdzpw4l/1.jpg" alt="1"></li>
+      <li class="slide"><img src="https://s24.postimg.org/xsvtjljol/2.jpg" alt="2"></li>
+      <li class="slide"><img src="https://s24.postimg.org/6jkg53ilh/3.jpg" alt="3"></li>
+      <li class="slide"><img src="https://s24.postimg.org/pd6923gth/4.jpg" alt="4"></li>
+      <li class="slide"><img src="https://s24.postimg.org/69cxlr3z9/5.jpg" alt="5"></li>
+
+      <!-- <li class="slide"><img src="https://s24.postimg.org/g7xw88det/6.jpg" alt="6"></li>
+      <li class="slide"><img src="https://s24.postimg.org/fjp1paep1/7.jpg" alt="7"></li>
+      <li class="slide"><img src="https://s24.postimg.org/l95a9lkv9/8.jpg" alt="8"></li>
+      <li class="slide"><img src="https://s24.postimg.org/u5knra0v9/9.jpg" alt="9"></li>
+      <li class="slide"><img src="https://s24.postimg.org/wo6crymlh/10.jpg" alt="10"></li> -->
+
+    </ul>
+  </div>
+
+</section>
+
+<script src='https://production-assets.codepen.io/assets/common/stopExecutionOnTimeout-b2a7b3fe212eaa732349046d8416e00a9dec26eb7fd347590fbced3ab38af52e.js'></script><script src='https://code.jquery.com/jquery-3.1.1.min.js'></script>
+<script >
+	var $numberOfBullets = $(".nav-item")
+	var $numberOfSlides = $(".slide");
+
+	var counter = 0;
+
+	function checkCounter() {
+	  if(counter == 0) {
+	    $("#more-up").css({"display":"none"});
+	  }else if(counter == 5) {
+	    $("#more-down").css({"display":"none"});
+	  }else {
+	    $("#more-up").css({"display":"block"});
+	    $("#more-down").css({"display":"block"});
+	  }
+	}
+
+	$(document).ready(function () {
+
+	  /// MOVING BIG SLIDES
+	  $(".nav-item").click(function () {
+	    var indexOfBullet = $(this).index();
+	    $("#slides").css({"left": "-500" * indexOfBullet, "transition": "1s" });
+	  });
+
+	  /// MOVING SMALL SLIDES
+	  $("#more-down").click(function () {
+	    $("#nav-images").css({"top": "-100" * ++counter, "transition": "1s"});
+	    checkCounter();
+	  });
+	  $("#more-up").click(function () {
+	    $("#nav-images").css({"top": "-100" * --counter, "transition": "1s"});
+	    checkCounter();
+	  });
+
+	});
+
+//# sourceURL=pen.js
+</script>
+</body></html>
