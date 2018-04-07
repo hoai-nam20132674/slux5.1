@@ -14,7 +14,7 @@
 					</div>
 				</form>
 			</div>
-			<div class="col-md-2">
+			<div class="col-md-3">
 				<h2><a>Company</a></h2>
 				<ul class="link">
 					<li><a href="#">About Us</a></li>
@@ -22,6 +22,9 @@
 					<li><a href="#">Customer Care</a></li>
 					<li><a href="#">Contact Us</a></li>
 				</ul>
+			</div>
+			<div class="col-md-5">
+				<div class="fb-page" data-href="https://www.facebook.com/cuongluxury.vn/" data-tabs="timeline" data-width="500" data-height="300" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true"><blockquote cite="https://www.facebook.com/cuongluxury.vn/" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/cuongluxury.vn/">Cuong.vn - Luxury Phone &amp; Watch</a></blockquote></div>
 			</div>
 			<div class="clear"></div>
 		</div>

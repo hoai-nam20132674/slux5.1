@@ -1,14 +1,14 @@
 <div id="fh5co-feedback-section">
 	<div class="row">
 		<div class="col-md-6 col-md-offset-3 text-center fh5co-heading">
-			<i class="sl-icon-note"></i>
+			<!-- <i class="sl-icon-note"></i> -->
 			<h2>KHÁCH HÀNG NÓI GÌ VỀ CHÚNG TÔI</h2>
 		</div>
 	</div>
 	<div class="container">
         <div class="row">
             <div class="span12">
-                <div class="well">
+                <!-- <div class="well"> -->
                     <div id="myCarousel" class="carousel fdi-Carousel slide">
                         <div class="carousel fdi-Carousel slide" id="feedbackCarousel" data-interval="0">
                             <div class="carousel-inner onebyone-carosel">
@@ -62,8 +62,10 @@
                         </div>
                         
                     </div>
-                </div>
+                <!-- </div> -->
             </div>
         </div>
     </div>
 </div>
+<br>
+<br>

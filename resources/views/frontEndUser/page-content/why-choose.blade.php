@@ -2,7 +2,7 @@
 	<div class="container">
 		<div class="row">
 			<div class="col-md-6 col-md-offset-3 text-center fh5co-heading">
-				<i class="sl-icon-paper-plane"></i>
+				<!-- <i class="sl-icon-paper-plane"></i> -->
 				<h2>LÝ DO LỰA CHỌN SLUX+</h2>
 				<br>
 			</div>

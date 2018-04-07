@@ -4,7 +4,7 @@
 	<div class="container"> 
 	    <div class="row">
 			<div class="col-md-6 col-md-offset-3 text-center fh5co-heading">
-				<i class="sl-icon-note"></i>
+				<!-- <i class="sl-icon-note"></i> -->
 				<h2>TIN TỨC</h2>
 			</div>
 		</div>
@@ -76,5 +76,10 @@
 		      	</li>
 		      	<div class="clear"></div>
 		    </ul>
+
 	</div>
 </div>
+<div class="container">
+	<hr style=" border: 0;height: 1px;background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0));">
+</div>
+<br>

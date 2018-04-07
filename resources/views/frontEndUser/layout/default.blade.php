@@ -117,44 +117,14 @@
 		<!-- jQuery -->
 
 		<!-- SwiperEffect Js-->
-		<script >var $numberOfBullets = $(".nav-item")
-			var $numberOfSlides = $(".slide");
+		<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = 'https://connect.facebook.net/vi_VN/sdk.js#xfbml=1&version=v2.12';
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
 
-			var counter = 0;
-
-			function checkCounter() {
-			  if(counter == 0) {
-			    $("#more-up").css({"display":"none"});
-			  }else if(counter == 5) {
-			    $("#more-down").css({"display":"none"});
-			  }else {
-			    $("#more-up").css({"display":"block"});
-			    $("#more-down").css({"display":"block"});
-			  }
-			}
-
-			$(document).ready(function () {
-
-			  /// MOVING BIG SLIDES
-			  $(".nav-item").click(function () {
-			    var indexOfBullet = $(this).index();
-			    $("#slides").css({"left": "-500" * indexOfBullet, "transition": "1s" });
-			  });
-
-			  /// MOVING SMALL SLIDES
-			  $("#more-down").click(function () {
-			    $("#nav-images").css({"top": "-100" * ++counter, "transition": "1s"});
-			    checkCounter();
-			  });
-			  $("#more-up").click(function () {
-			    $("#nav-images").css({"top": "-100" * --counter, "transition": "1s"});
-			    checkCounter();
-			  });
-
-			});
-
-			//# sourceURL=pen.js
-			</script>
 		<script src='https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.3.1/js/swiper.min.js'></script>
 		<script type="text/javascript" src="{{asset('js/carousel.js')}}"></script>
 		

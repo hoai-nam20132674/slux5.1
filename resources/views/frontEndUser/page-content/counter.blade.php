@@ -1,9 +1,10 @@
 <div id="fh5co-counter-section" class="fh5co-counters">
+	<br>
 	<div class="container">
 		<div class="row">
 			<div class="col-md-6 col-md-offset-3 text-center fh5co-heading">
-				<i class="sl-icon-badge"></i>
-				<h2>THÀNH TỰ CỦA SLUX</h2>
+				<!-- <i class="sl-icon-badge"></i> -->
+				<h2>THÀNH TỰU CỦA SLUX</h2>
 			</div>
 		</div>
 		<div class="row">

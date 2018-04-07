@@ -157,7 +157,7 @@ header h1 {
 }
 
 .cd-timeline__img.cd-timeline__img--picture {
-  background: #75ce66;
+  background: #fff;
 }
 
 .cd-timeline__img.cd-timeline__img--movie {
@@ -357,6 +357,7 @@ header h1 {
 #fh5co-procedure-section{
     background-color: #e9f0f5;
 }
+
 .procedureImage img {
     width: 100%;
     height: auto;
