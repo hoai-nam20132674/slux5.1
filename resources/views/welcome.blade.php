@@ -1,100 +1,250 @@
-<!-- <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css"> -->
-<!-- <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script> -->
-<!-- <script src="//code.jquery.com/jquery-1.11.1.min.js"></script> -->
-<!--  Include the above in your HEAD tag  -->
+
+<!DOCTYPE html>
+
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+    <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Slux +</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Free HTML5 Template by FREEHTML5.CO" />
+    <meta name="keywords" content="free html5, free template, free bootstrap, html5, css3, mobile first, responsive" />
+    <meta name="author" content="FREEHTML5.CO" />
+
+    <!-- Facebook and Twitter integration -->
+    <meta property="og:title" content=""/>
+    <meta property="og:image" content=""/>
+    <meta property="og:url" content=""/>
+    <meta property="og:site_name" content=""/>
+    <meta property="og:description" content=""/>
+    <meta name="twitter:title" content="" />
+    <meta name="twitter:image" content="" />
+    <meta name="twitter:url" content="" />
+    <meta name="twitter:card" content="" />
+
+    <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+    <link rel="shortcut icon" href="favicon.ico">
 
 
-<!DOCTYPE html><html class=''>
-<head>
-    <!-- <script src='//production-assets.codepen.io/assets/editor/live/console_runner-079c09a0e3b9ff743e39ee2d5637b9216b3545af0de366d4b9aad9dc87e26bfd.js'></script> -->
-    <!-- <script src='//production-assets.codepen.io/assets/editor/live/events_runner-73716630c22bbc8cff4bd0f07b135f00a0bdc5d14629260c3ec49e5606f98fdd.js'></script> -->
-    <!-- <script src='//production-assets.codepen.io/assets/editor/live/css_live_reload_init-2c0dc5167d60a5af3ee189d570b1835129687ea2a61bee3513dee3a50c115a77.js'></script> -->
-    <meta charset='UTF-8'>
-    <meta name="robots" content="noindex">
-    <!-- <link rel="shortcut icon" type="image/x-icon" href="//production-assets.codepen.io/assets/favicon/favicon-8ea04875e70c4b0bb41da869e81236e54394d63638a1ef12fa558a4a835f1164.ico" /> -->
-    <!-- <link rel="mask-icon" type="" href="//production-assets.codepen.io/assets/favicon/logo-pin-f2d2b6d2c61838f7e76325261b7195c27224080bc099486ddd6dccb469b8e8e6.svg" color="#111" /> -->
-    <!-- <link rel="canonical" href="https://codepen.io/abennington/pen/GZeyKr?depth=everything&order=popularity&page=45&q=pack&show_forks=false" /> -->
+    <!-- Slide image view product -->
+    <link href="{{asset('js/slide-image/thumbnail-slider.css')}}" rel="stylesheet" type="text/css" />
+    <link href="{{asset('js/slide-image/ninja-slider.css')}}" rel="stylesheet" type="text/css" />
+    <script src="{{asset('js/slide-image/thumbnail-slider.js')}}" type="text/javascript"></script>
+    <script src="{{asset('js/slide-image/ninja-slider.js')}}" type="text/javascript"></script>
+    <!-- End Slide image view product -->
 
-<link rel='stylesheet prefetch' href='https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.3.1/css/swiper.min.css'>
-<link rel='stylesheet prefetch' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css'>
-<style class="">
-    img {
-        max-height: 100%;
-    }
-    .swiper-container {
-            width: 100%;
-            height: 400px;
-    }
-    .swiper-slide {
-        text-align: center;
-        font-size: 18px;
-        background: #fff;
-        /* Center slide text vertically */
-        display: -webkit-box;
-        display: -ms-flexbox;
-        display: -webkit-flex;
-        display: flex;
-        -webkit-box-pack: center;
-        -ms-flex-pack: center;
-        -webkit-justify-content: center;
-        justify-content: center;
-        -webkit-box-align: center;
-        -ms-flex-align: center;
-        -webkit-align-items: center;
-        align-items: center;
-      /*width:90%;*/ 
-    }
-</style>
-</head>
-<body>
-<!-- Swiper -->
-    <br>
-    <br>
-    <br>
-<div class="container">
-    <div class="swiper-container">
-        <div class="swiper-wrapper">
-            
+    <link rel="stylesheet" href="{{asset('css/thumbnails.carousel.css')}}">
+
+    <!-- Animate.css -->
+    <link rel="stylesheet" href="{{asset('css/animate.css')}}">
+    <!-- Icomoon Icon Fonts-->
+    <link rel="stylesheet" href="{{asset('css/icomoon.css')}}">
+    <!-- Simple Line Icons -->
+    <link rel="stylesheet" href="{{asset('css/simple-line-icons.css')}}">
+    <!-- Bootstrap  -->
+    <link rel="stylesheet" href="{{asset('css/bootstrap.css')}}">
+    <!-- Superfish -->
+    <link rel="stylesheet" href="{{asset('css/superfish.css')}}">
+    <!-- Flexslider  -->
+    <link rel="stylesheet" href="{{asset('css/flexslider.css')}}">
+
+    <link rel="stylesheet" href="{{asset('css/style.css')}}">
+
+    <link rel="stylesheet" href="{{asset('css/styleProcedure.css')}}">
+    <link rel="stylesheet" href="{{asset('css/blog-list.css')}}">
+    <link rel="stylesheet" href="{{asset('css/recommend-product.css')}}">
+    <link rel="stylesheet" href="{{asset('css/view-product-item.css')}}">
+    <link href='https://fonts.googleapis.com/css?family=Droid+Serif|Open+Sans:400,700' rel='stylesheet' type='text/css'>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+
+    <!-- <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script> -->
+    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+    <!-- <script src="{{asset('js/carousel.js')}}"></script> -->
+    <script src="{{asset('js/modernizr-2.6.2.min.js')}}"></script>
+    <script src="{{asset('js/serviceSlux.js')}}"></script>
+    <script src="{{asset('js/sidebar.js')}}"></script>
+    <!-- <script src="{{asset('js/feedbackSlux.js')}}"></script> -->
+    <!-- FOR IE9 below -->
+    <!--[if lt IE 9]>
+    <script src="js/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- css view-product-item -->
+    <link rel="canonical" href="https://codepen.io/AttilaBre/pen/RKjaeB?depth=everything&order=popularity&page=15&q=product&show_forks=false" />
+    <script src="https://use.fontawesome.com/f12e4a6b3c.js"></script>
+    <!-- css view-product-item -->
+    
+    </head>
+    <body>
+        <div id="fh5co-wrapper">
+            <div id="fh5co-page">
+                <div id="fh5co-header">
+                    @include('frontEndUser.layout.header')
+                </div>
+
+                <!-- end:fh5co-header -->
+                <div id="fh5co-slide-header">
+                    @yield('slide-header')
+                </div>
                 
-            <div class="swiper-slide"><img src="http://dienthoaidangcap.vn/product_images/uploaded_images/hublot-black.diamond.-cuong.vn.png" /></div>
-            
-            <div class="swiper-slide"><img src="http://dienthoaidangcap.vn/product_images/uploaded_images/vertu-cu-signature-s-red-calf-01.jpg" /></div>
-            <div class="swiper-slide"><img src="http://dienthoaidangcap.vn/product_images/i/917/vertu-moi-signature-rose-gold-2016-01__36898_zoom.png" /></div>
-            <div class="swiper-slide"><img src="http://dienthoaidangcap.vn/product_images/b/315/vertu-moi-signature-stainless-steel-black-leather-2017-01__22644_zoom.png" /></div>
-            <div class="swiper-slide"><img src="http://dienthoaidangcap.vn/product_images/w/519/Vertu-Signature-S-White-Gold-Full-Pave-Baguette-Diamonds-Bag-Key-02__75726_zoom.png" /></div>
-            <div class="swiper-slide"><img src="http://dienthoaidangcap.vn/product_images/uploaded_images/vertu-moi-signatures-yellow-gold-diamond-02.png" /></div>
-            <div class="swiper-slide"><img src="http://dienthoaidangcap.vn/product_images/g/214/74__40232_zoom.png" /></div>
-            <div class="swiper-slide"><img src="http://dienthoaidangcap.vn/product_images/g/214/74__40232_zoom.png" /></div>
-            <div class="swiper-slide"><img src="http://dienthoaidangcap.vn/product_images/q/210/hublot-classic-fusion-511-ox-1181-rx-01__15257_zoom.png" /></div>
-            <div class="swiper-slide"><img src="http://dienthoaidangcap.vn/product_images/uploaded_images/hublot-black.diamond.-cuong.vn.png" /></div>
-        </div>
-        <!-- Add Pagination -->
-        <div class="swiper-pagination"></div>
-    </div>
-</div>
-<!-- <script src='//production-assets.codepen.io/assets/common/stopExecutionOnTimeout-b2a7b3fe212eaa732349046d8416e00a9dec26eb7fd347590fbced3ab38af52e.js'></script> -->
-<!-- <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.2/jquery.min.js'></script> -->
-<script src='https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.3.1/js/swiper.min.js'></script>
-<script >
-    var swiper = new Swiper('.swiper-container', {
-        pagination: '.swiper-pagination',
-        effect: 'coverflow',
-        grabCursor: true,
-        centeredSlides: true,
-        spaceBetween: 0,
-        //loop: true,
-        autoplay: 2500,
-        autoplayDisableOnInteraction: false,
-        slidesPerView: 4,
-        coverflow: {
-            rotate: 30,
-            stretch: 0,
-            depth: 100,
-            modifier: 1,
-            slideShadows : true
-        }
-    });
+                
+                <div class="page-content">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div id='ninja-slider'>
+                                    <div>
+                                        <div class="slider-inner">
+                                            <ul>
+                                                <li><a class="ns-img" href="http://dienthoaidangcap.vn/product_images/d/081/vertu-moi-signature-rose-gold-2016-01__14489_thumb.png"></a></li>
+                                                <li><a class="ns-img" href="http://dienthoaidangcap.vn/product_images/y/261/vertu-pure-chocolate-dai-dien-04__80953_thumb.jpg"></a></li>
+                                                <li><a class="ns-img" href="http://dienthoaidangcap.vn/product_images/n/971/vertu-moi-signature-pure-black-2016-01__67680_thumb.png"></a></li>
+                                                <li><a class="ns-img" href="http://dienthoaidangcap.vn/product_images/y/406/vertu-moi-signature-stainless-steel-black-leather-2017-01__29305_thumb.png"></a></li>
+                                                <li><a class="ns-img" href="http://dienthoaidangcap.vn/product_images/d/081/vertu-moi-signature-rose-gold-2016-01__14489_thumb.png"></a></li>
+                                                
+                                            </ul>
+                                            <div class="fs-icon" title="Expand/Close"></div>
+                                        </div>
+                                        <div id="thumbnail-slider">
+                                            <div class="inner">
+                                                <ul>
+                                                    <li>
+                                                        <a class="thumb" href="http://dienthoaidangcap.vn/product_images/d/081/vertu-moi-signature-rose-gold-2016-01__14489_thumb.png"></a>
+                                                    </li>
+                                                    <li>
+                                                        <a class="thumb" href="http://dienthoaidangcap.vn/product_images/y/261/vertu-pure-chocolate-dai-dien-04__80953_thumb.jpg"></a>
+                                                    </li>
+                                                    <li>
+                                                        <a class="thumb" href="http://dienthoaidangcap.vn/product_images/n/971/vertu-moi-signature-pure-black-2016-01__67680_thumb.png"></a>
+                                                    </li>
+                                                    <li>
+                                                        <a class="thumb" href="http://dienthoaidangcap.vn/product_images/y/406/vertu-moi-signature-stainless-steel-black-leather-2017-01__29305_thumb.png"></a>
+                                                    </li>
+                                                    <li>
+                                                        <a class="thumb" href="http://dienthoaidangcap.vn/product_images/d/081/vertu-moi-signature-rose-gold-2016-01__14489_thumb.png"></a>
+                                                    </li>
+                                                    
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
 
-//# sourceURL=pen.js
-</script>
-</body></html>
+                            </div>
+                            <div class="col-md-6">
+                                <!-- bootstrap carousel -->
+                                <div id="carousel-example-generic" class="carousel slide" data-ride="carousel" data-interval="false">
+                                  <!-- Indicators -->
+                                  <ol class="carousel-indicators">
+                                    <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+                                    <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+                                    <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+                                    <li data-target="#carousel-example-generic" data-slide-to="3"></li>
+                                  </ol>
+
+                                  <!-- Wrapper for slides -->
+                                  <div class="carousel-inner">
+
+                                    <div class="item active srle">
+                                      <img src="https://s28.postimg.org/4237b0cjh/image.jpg" alt="1.jpg" class="img-responsive">
+                                      <div class="carousel-caption">
+                                        <p> 1.jpg </p>
+                                      </div>
+                                    </div>
+
+                                    <div class="item">
+                                      <img src="https://s29.postimg.org/xaf064313/image.jpg" alt="2.jpg" class="img-responsive">
+                                      <div class="carousel-caption">
+                                        <p> 2.jpg </p>
+                                      </div>
+                                    </div>
+
+                                    <div class="item">
+                                      <img src="https://s17.postimg.org/sv1x15jlb/image.jpg" alt="3.jpg" class="img-responsive">
+                                      <div class="carousel-caption">
+                                        <p> 3.jpg </p>
+                                      </div>
+                                    </div>
+
+                                    <div class="item">
+                                      <img src="https://s7.postimg.org/4z602gd8b/image.jpg" alt="4.jpg" class="img-responsive">
+                                      <div class="carousel-caption">
+                                        <p> 4.jpg </p>
+                                      </div>
+                                    </div>
+
+                                  </div>
+
+                                  <!-- Controls -->
+                                  <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
+                                    <span class="glyphicon glyphicon-chevron-left"></span>
+                                  </a>
+                                  <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
+                                    <span class="glyphicon glyphicon-chevron-right"></span>
+                                  </a>
+
+                                  <!-- Thumbnails --> 
+                                  <ul class="thumbnails-carousel clearfix">
+                                        <li><img src="https://s2.postimg.org/h6uti3zud/1_tn.jpg" alt="1_tn.jpg"></li>
+                                        <li><img src="https://s27.postimg.org/n4fjr7q2n/2_tn.jpg" alt="1_tn.jpg"></li>
+                                        <li><img src="https://s29.postimg.org/afuhmf61f/3_tn.jpg" alt="1_tn.jpg"></li>
+                                        <li><img src="https://s29.postimg.org/p45dxi6hf/4_tn.jpg" alt="1_tn.jpg"></li>
+                                  </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+        
+                    @include('frontEndUser.page-content.information')
+                    
+                </div>
+
+                <div class="footer">
+                    @include('frontEndUser.layout.footer')
+                </div>
+            </div>
+            <!-- END fh5co-page -->
+
+        </div>
+        <!-- END fh5co-wrapper -->
+
+        <!-- jQuery -->
+
+        <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+        <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+        <script src="{{asset('js/thumbnails.carousel.js')}}"></script>
+        <script>
+            $('.thumbnails-carousel').thumbnailsCarousel();
+        </script>
+        <!-- SwiperEffect Js-->
+        
+        <script src='https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.3.1/js/swiper.min.js'></script>
+        <script type="text/javascript" src="{{asset('js/carousel.js')}}"></script>
+        
+        <!-- SwiperEffect Js-->
+
+        <script src="{{asset('js/jquery.min.js')}}"></script>
+        <!-- jQuery Easing -->
+        <script src="{{asset('js/jquery.easing.1.3.js')}}"></script>
+        <!-- Bootstrap -->
+        <script src="{{asset('js/bootstrap.min.js')}}"></script>
+        <!-- Waypoints -->
+        <script src="{{asset('js/jquery.waypoints.min.js')}}"></script>
+        <!-- Superfish -->
+        <script src="{{asset('js/hoverIntent.js')}}"></script>
+        <script src="{{asset('js/superfish.js')}}"></script>
+        <!-- Flexslider -->
+        <script src="{{asset('js/jquery.flexslider-min.js')}}"></script>
+        <!-- Stellar -->
+        <script src="{{asset('js/jquery.stellar.min.js')}}"></script>
+        <!-- Counters -->
+        <script src="{{asset('js/jquery.countTo.js')}}"></script>
+
+        <!-- Main JS (Do not remove) -->
+        <script src="{{asset('js/main.js')}}"></script>
+        <script src="{{asset('js/procedure.js')}}"></script>
+    </body>
+</html>
+

@@ -9,20 +9,20 @@
 		</div>
 		<div class="row">
 			<div class="col-md-3 text-center">
-				<span class="fh5co-counter js-counter" data-from="0" data-to="1356" data-speed="5000" data-refresh-interval="50"></span>
-				<span class="fh5co-counter-label">Cups of Coffee</span>
+				<span class="fh5co-counter js-counter" data-from="0" data-to="5" data-speed="1000" data-refresh-interval="50"></span>
+				<span class="fh5co-counter-label">Chuyên gia sửa chữa</span>
 			</div>
 			<div class="col-md-3 text-center">
-				<span class="fh5co-counter js-counter" data-from="0" data-to="7290" data-speed="5000" data-refresh-interval="50"></span>
-				<span class="fh5co-counter-label">Client</span>
+				<span class="fh5co-counter js-counter" data-from="0" data-to="10" data-speed="2000" data-refresh-interval="50"></span>
+				<span class="fh5co-counter-label">Năm kinh nghiệm</span>
 			</div>
 			<div class="col-md-3 text-center">
-				<span class="fh5co-counter js-counter" data-from="0" data-to="4370" data-speed="5000" data-refresh-interval="50"></span>
-				<span class="fh5co-counter-label">Projects</span>
+				<span class="fh5co-counter js-counter" data-from="0" data-to="300" data-speed="3000" data-refresh-interval="50"></span>
+				<span class="fh5co-counter-label">Bênh Nokia 8800, Vertu sửa chữa thành công</span>
 			</div>
 			<div class="col-md-3 text-center">
-				<span class="fh5co-counter js-counter" data-from="0" data-to="4000" data-speed="5000" data-refresh-interval="50"></span>
-				<span class="fh5co-counter-label">Finished Projects</span>
+				<span class="fh5co-counter js-counter" data-from="0" data-to="4230" data-speed="5000" data-refresh-interval="50"></span>
+				<span class="fh5co-counter-label">Khách hàng hài lòng</span>
 			</div>
 		</div>
 	</div>

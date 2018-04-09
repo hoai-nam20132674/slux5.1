@@ -20,8 +20,8 @@
 				          	</figcaption>
 			          	</figure>
 			          	<div class="blog-description">
-			            	<h4 class="heading">Vertu Signature</h4>
-			            	<p>Bạn đang băn khoăn tìm một nơi sửa chữa uy tín chất lượng , chế độ bảo hành tốt , để gửi gắm dế yêu của bạn. Hãy đến với chúng tôi &hellip;</p>
+			            	<h4 class="heading">Mua bao da Nokia 8800 cần chú ý điều gì?</h4>
+			            	<p class="over-flow-blog">Bao da đối với điện thoại Nokia 8800 được đánh giá là món phụ kiện khá hữu ích. Không chỉ có chức năng bảo vệ mà còn làm tăng thêm vẻ thời trang cho “dế yêu” Nokia 8800 ...</p>
 			            	<footer><a href="#">Xem chi tiết &raquo;</a></footer>
 			          	</div>
 			        </article>
@@ -36,8 +36,8 @@
 				          	</figcaption>
 			          	</figure>
 			          	<div class="blog-description">
-			            	<h4 class="heading">Vertu Signature</h4>
-			            	<p>Bạn đang băn khoăn tìm một nơi sửa chữa uy tín chất lượng , chế độ bảo hành tốt , để gửi gắm dế yêu của bạn. Hãy đến với chúng tôi &hellip;</p>
+			            	<h4 class="heading">Hướng dẫn cách vệ sinh điện thoại Nokia 8800 đơn giản</h4>
+			            	<p class="over-flow-blog">Dù được chế tác thủ công bởi những người thợ tài hoa nhất trên các loại nguyên vật liệu đắt giá bậc nhất nhưng để luôn giữ được vẻ đẹp và duy trì tốt các chức năng ...</p>
 			            	<footer><a href="#">Xem chi tiết &raquo;</a></footer>
 			          	</div>
 			        </article>
@@ -52,8 +52,8 @@
 				          	</figcaption>
 			          	</figure>
 			          	<div class="blog-description">
-			            	<h4 class="heading">Vertu Signature</h4>
-			            	<p>Bạn đang băn khoăn tìm một nơi sửa chữa uy tín chất lượng , chế độ bảo hành tốt , để gửi gắm dế yêu của bạn. Hãy đến với chúng tôi &hellip;</p>
+			            	<h4 class="heading">Nokia 8800 không sạc được? Nguyên nhân do đâu?</h4>
+			            	<p class="over-flow-blog">Mặc dù được mệnh danh là kiệt tác điện thoại đẳng cấp nhất mọi thời đại, được chế tác từ những nguyên liệu đắt giá bậc nhất hành tinh như: vàng, kim cương, đá Sapphire ...</p>
 			            	<footer><a href="#">Xem chi tiết &raquo;</a></footer>
 			          	</div>
 			        </article>
@@ -68,8 +68,8 @@
 				          	</figcaption>
 			          	</figure>
 			          	<div class="blog-description">
-			            	<h4 class="heading">Vertu Signature</h4>
-			            	<p>Bạn đang băn khoăn tìm một nơi sửa chữa uy tín chất lượng , chế độ bảo hành tốt , để gửi gắm dế yêu của bạn. Hãy đến với chúng tôi &hellip;</p>
+			            	<h4 class="heading">Ở đâu bán linh kiện điện thoại Nokia 8800 chính hãng?</h4>
+			            	<p class="over-flow-blog">Điện thoại Nokia 8800 đã trở thành một cái tên quen thuộc, được giới mộ điệu, tầng lớp thượng lưu hay doanh nhân thành đạt ưa chuộng. Bên cạnh đó ...</p>
 			            	<footer><a href="#">Xem chi tiết &raquo;</a></footer>
 			          	</div>
 			        </article>

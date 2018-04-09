@@ -17,7 +17,7 @@
 	   		<div class="container">
 	   			<div class="col-md-10 col-md-offset-1 text-center js-fullheight slider-text">
 	   				<div class="slider-text-inner">
-	   					<h2>Slux cảm xúc chỉ có thể phê hơn</h2>
+	   					<h2>Slux – Điểm chạm đẳng cấp</h2>
 	   					<p><a href="#" class="btn btn-lg">Xem thêm</a></p>
 	   				</div>
 	   			</div>
@@ -39,7 +39,7 @@
 	   		<div class="container">
 	   			<div class="col-md-10 col-md-offset-1 text-center js-fullheight slider-text">
 	   				<div class="slider-text-inner">
-	   					<h2>Slux </h2>
+	   					<h2>Slux – Điểm chạm đẳng cấp</h2>
 	   					<p><a href="#" class="btn btn-lg">Xem thêm</a></p>
 	   				</div>
 	   			</div>

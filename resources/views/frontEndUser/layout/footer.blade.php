@@ -4,8 +4,16 @@
 			<div class="col-md-4">
 
 				<div class="copyright">
-					<h1 id="fh5co-logo"><a href="index.html">Slux +</a></h1>
-					<p><small>&copy; 2016 Free HTML5 <a href="index.html">Energy</a>. All Rights Reserved. <br> Made with <i class="icon-heart3"></i> by <a href="http://freehtml5.co/" target="_blank">Freehtml5.co</a> / Demo Images: <a href="https://unsplash.com/" target="_blank">Unsplash </a></small></p>
+					<h1 id="fh5co-logo">
+						<!-- <a href="index.html">Slux +</a> -->
+						<a href="/"><img src="{{asset('images/logo-slux.png')}}"></a>
+					</h1>
+					<h3 class="text-center">Slux – Điểm chạm đẳng cấp</h3>
+					<ul class="contact">
+						<li class="address"><a>  Showroom: 27 Võ Văn Dũng</a></li>
+						<li class="phone"><a href="tel:0987565656">  Hotline: 0987.56.56.56</a></li>
+						<li><a href=""> </a></li>
+					</ul>
 				</div>
 				<form action="#" id="form-subscribe">
 					<div class="form-field">
@@ -14,16 +22,22 @@
 					</div>
 				</form>
 			</div>
-			<div class="col-md-3">
-				<h2><a>Company</a></h2>
+			<div class="col-md-4 ">
 				<ul class="link">
-					<li><a href="#">About Us</a></li>
-					<li><a href="#">Energy</a></li>
-					<li><a href="#">Customer Care</a></li>
-					<li><a href="#">Contact Us</a></li>
+					<li><a href="#">Slux – Dịch vụ đẳng cấp</a></li>
+					<li><a href="#">Sửa chữa Nokia 8800</a></li>
+					<li><a href="#">Sửa chữa Vertu</a></li>
+					<li><a href="#">Đánh bóng bọc da Vertu</a></li>
+					<li><a href="#">Hỗ trợ khách hàng</a></li>
+					<li><a href="#">Chính sách thanh toán</a></li>
+					<li><a href="#">Chính sách bảo hành</a></li>
+					<li><a href="#">Hướng dẫn mua hàng</a></li>
+					<img src="{{asset('images/bct.png')}}">
 				</ul>
+
 			</div>
-			<div class="col-md-5">
+			
+			<div class="col-md-4">
 				<div class="fb-page" data-href="https://www.facebook.com/cuongluxury.vn/" data-tabs="timeline" data-width="500" data-height="300" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true"><blockquote cite="https://www.facebook.com/cuongluxury.vn/" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/cuongluxury.vn/">Cuong.vn - Luxury Phone &amp; Watch</a></blockquote></div>
 			</div>
 			<div class="clear"></div>

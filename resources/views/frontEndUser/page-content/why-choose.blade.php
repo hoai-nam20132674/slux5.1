@@ -31,9 +31,9 @@
 					<div class="row">
 						<div class="col-md-6 text-center">
 							<div class="testimony">
-								<span class="quote"><i class="fa fa-thumbs-o-up" style="color: blue; font-size: 30px;"></i></span>
+								<span class="quote"><i class="fa fa-thumbs-o-up" style="color: blue; font-size: 35px;"></i></span>
 								<blockquote>
-									<p>Nếu bạn đang sửa dụng một chiếc Vertu đảng cấp , sang trọng, trong quá trình sửa dụng chẳng may máy gặp trục trặc về phần mềm và phần cứng. Bạn đang băn khoăn tìm một nơi sửa chữa uy tín chất lượng , chế độ bảo hành tốt , để gửi gắm dế yêu của bạn. Hãy đến với chúng tôi</p>
+									<p>Tầm nhìn:  Bằng chữ tín và khát vọng tiên phong nâng tầm dịch vụ cho người Việt, Slux+ phấn đấu trở thành Số 1 về dịch vụ sửa chữa Nokia 8800, Vertu tại Việt Nam cả về quy mô và chất lượng.</p>
 									<span>Quốc Huy Nokia <a href="#" class="icon-twitter3 twitter-color"></a></span>
 								</blockquote>
 							</div>
@@ -42,7 +42,7 @@
 							<div class="testimony">
 								<span class="quote"><i class="fa fa-heart-o" style="color: red; font-size: 30px;"></i></span>
 								<blockquote>
-									<p>Nếu bạn đang sửa dụng một chiếc Vertu đảng cấp , sang trọng, trong quá trình sửa dụng chẳng may máy gặp trục trặc về phần mềm và phần cứng. Bạn đang băn khoăn tìm một nơi sửa chữa uy tín chất lượng , chế độ bảo hành tốt , để gửi gắm dế yêu của bạn. Hãy đến với chúng tôi</p>
+									<p>Sứ mệnh:  Xây dựng thành công chuỗi sản phẩm chính hãng, chất lượng cao cùng dịch vụ tiêu chuẩn quốc tế đồng thời nâng tầm phong cách và trải nghiệm đẳng cấp cho khách hàng.</p>
 									<span>Mỵ Vertu <a href="#" class="icon-google-plus googleplus-color"></a></span>
 								</blockquote>
 							</div>

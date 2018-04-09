@@ -20,7 +20,7 @@
 											</div>
 											<div class="feedbackContent box-shadows">
 												<h3>Slux+1</h3>
-												<p>Nếu bạn đang sửa dụng một chiếc Vertu đảng cấp , sang trọng, trong quá trình sửa dụng chẳng may máy gặp trục trặc về phần mềm và phần cứng. Bạn đang băn khoăn tìm một nơi sửa chữa uy tín chất lượng , chế độ bảo hành tốt , để gửi gắm dế yêu của bạn. Hãy đến với chúng tôi</p>
+												<p class="over-flow-feeback">Tôi thực sự an tâm và tin tưởng vào chất lượng dịch vụ của Slux+. Lần đầu tiên thấy chiếc điện thoại Nokia 8800 của mình được chăm sóc chi tiết, tỉ mỉ đến như vậy. Tôi chắc chắn rằng, ai đến đây cũng sẽ cảm nhận được tình yêu và niềm đam mê với nghề của các bạn. Từ đội ngũ tư vấn bán hàng đến các kĩ thuật viên - tất cả đều cho tôi một trải nghiệm hoàn toàn mới.</p>
 											</div>
 
 										</div>
@@ -34,7 +34,7 @@
 											</div>
 											<div class="feedbackContent box-shadows">
 												<h3>Slux+1</h3>
-												<p>Nếu bạn đang sửa dụng một chiếc Vertu đảng cấp , sang trọng, trong quá trình sửa dụng chẳng may máy gặp trục trặc về phần mềm và phần cứng. Bạn đang băn khoăn tìm một nơi sửa chữa uy tín chất lượng , chế độ bảo hành tốt , để gửi gắm dế yêu của bạn. Hãy đến với chúng tôi</p>
+												<p class="over-flow-feeback">Tôi tự nhận thấy mình là người khá khắt khe trong việc lựa chọn 1 địa chỉ uy tín sửa chữa Vertu từ giá cả, chất lượng cho đến thái độ phục vụ. Tuy nhiên, đến với Slux, tôi hoàn toàn bị chinh phục bởi giá tốt, chất lượng tốt, dịch vụ tốt.</p>
 											</div>
 
 										</div>
@@ -48,7 +48,7 @@
 											</div>
 											<div class="feedbackContent box-shadows">
 												<h3>Slux+1</h3>
-												<p>Nếu bạn đang sửa dụng một chiếc Vertu đảng cấp , sang trọng, trong quá trình sửa dụng chẳng may máy gặp trục trặc về phần mềm và phần cứng. Bạn đang băn khoăn tìm một nơi sửa chữa uy tín chất lượng , chế độ bảo hành tốt , để gửi gắm dế yêu của bạn. Hãy đến với chúng tôi</p>
+												<p class="over-flow-feeback">Chiều hôm qua, trong một bữa nhậu với bạn bè, lỡ tay, tôi đánh rơi chiếc điện thoại Nokia 8800 của mình vào nước, kết quả bật lên, máy không lên gì. Nó khiến tôi lo lắng, không biết tìm nơi nào uy tín để sửa. Và thật may, được một người bạn giới thiệu, tôi đã đến Slux+ - Một địa chỉ tôi chỉ biết nói đến 2 chữ “Tuyệt vời”, nhân viên tư vấn nhiệt tình, kỹ thuật viên chuyên nghiệp, đam mê với nghề.</p>
 											</div>
 
 										</div>

@@ -29,3 +29,6 @@ Route::get('/linh-phu-kien.html', function(){
 Route::get('/view-product-item.html', function(){
 	return view('frontEndUser.view-product-item');
 });
+Route::get('test',function(){
+	return view ('welcome');
+});
