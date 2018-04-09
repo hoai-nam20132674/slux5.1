@@ -1,12 +1,12 @@
 <header id="fh5co-header-section">
 	<div class="background-white" style="background: #fff;">
-		<div class="container">
+		<!-- <div class="container">
 			<div class="row">
 				<div class="col-md-6">search</div>
 				<div class="col-md-3">address</div>
 				<div class="col-md-3">hotline</div>
 			</div>
-		</div>
+		</div> -->
 	</div>
 	<div class="container">
 

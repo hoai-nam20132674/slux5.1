@@ -82,7 +82,8 @@ figure {
   -webkit-transition: 0.5s;
   -o-transition: 0.5s;
   transition: 0.5s;
-  background-color: #ccb669;
+  /*background-color: #ccb669;*/
+  background-image: url(../images/background-button.jpg);
 }
 .btn.btn-md {
   padding: 10px 20px !important;
@@ -1153,13 +1154,14 @@ figure {
 }
 
 .testimony {
-  border: 2px solid rgba(255, 255, 255, 0.3);
+  border: 1flippx solid rgba(255, 255, 255, 0.3);
   padding: 50px 20px 20px 20px;
   position: relative;
   -webkit-border-radius: 5px;
   -moz-border-radius: 5px;
   -ms-border-radius: 5px;
   border-radius: 5px;
+  background: #f006;
 }
 @media screen and (max-width: 768px) {
   .testimony {
@@ -1200,7 +1202,7 @@ figure {
 .testimony blockquote p {
   font-size: 20px;
   line-height: 1.6em;
-  color: rgba(255, 255, 255, 0.6) !important;
+  color: rgba(255, 255, 255) !important;
 }
 .testimony blockquote span {
   color: rgba(255, 255, 255, 0.7);
@@ -1437,15 +1439,15 @@ figure {
   color: #fff;
 }
 
-.fh5co-table,
+
 .fh5co-table-cell,
 .fh5co-parallax {
-  height: 500px;
+  height: 600px;
 }
 
 .fh5co-parallax2 {
-  padding-top: 10em;
-  height: inherit !important;
+  /*padding-top: 10em;*/
+  /*height: inherit !important;*/
 }
 @media screen and (max-width: 992px) {
   .fh5co-parallax2 {
@@ -2533,3 +2535,79 @@ figure {
 .copyright {
   margin-top: -20px;
 }
+#particles-js{
+  width: 100%;
+  height: 100%;
+  background-color: #00131f;
+  background-image: url('');
+  background-size: cover;
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+  position: relative;
+}
+.position-absolute {
+  position: absolute;
+  top: 25%;
+  left: 9%;
+}
+canvas{
+  display:block;
+  vertical-align:bottom;
+}
+/* Flip 3D*/
+
+.flip3D{
+  width:100%;
+  height:250px; 
+  /*margin:0px 10px;*/
+}
+.flip3D > .front{
+    position:absolute;
+    -webkit-transform: perspective( 600px ) rotateY( 0deg );
+    transform: perspective( 600px ) rotateY( 0deg );
+    background:#FC0;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    transition: -webkit-transform .5s linear 0s; transition: transform .5s linear 0s;
+}
+ 
+.flip3D > .back{
+    position:absolute;
+    -webkit-transform: perspective( 600px ) rotateY( 180deg );
+    transform: perspective( 600px ) rotateY( 180deg );
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    transition: -webkit-transform .5s linear 0s;
+    transition: transform .5s linear 0s;
+}
+ 
+.flip3D:hover > .front{
+    -webkit-transform: perspective( 600px ) rotateY( -180deg );
+    transform: perspective( 600px ) rotateY( -180deg );
+}
+ 
+.flip3D:hover > .back{
+    -webkit-transform: perspective( 600px ) rotateY( 0deg );
+    transform: perspective( 600px ) rotateY( 0deg );
+}
+@media screen and (max-width: 768px) {
+  .flip3D > .back {
+    display: none;
+  }
+  .flip3D > .front {
+    position: relative;
+
+  }
+  .flip3D:hover > .front{
+    -webkit-transform: perspective( 600px ) rotateY( 0deg );
+    transform: perspective( 600px ) rotateY( 0deg );
+  }
+  .flip3D:hover > .back{
+    -webkit-transform: perspective( 600px ) rotateY( 180deg );
+    transform: perspective( 600px ) rotateY( 180deg );
+  }
+  .why-choose-item {
+    margin-bottom: 30px;
+  }
+}
+/* End Flip 3D*/

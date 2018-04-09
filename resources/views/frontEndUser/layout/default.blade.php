@@ -124,7 +124,8 @@
   js.src = 'https://connect.facebook.net/vi_VN/sdk.js#xfbml=1&version=v2.12';
   fjs.parentNode.insertBefore(js, fjs);
 }(document, 'script', 'facebook-jssdk'));</script>
-
+		<script src="{{asset('js/particles.js')}}"></script>
+		<script src="{{asset('js/particles-app.js')}}"></script>
 		<script src='https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.3.1/js/swiper.min.js'></script>
 		<script type="text/javascript" src="{{asset('js/carousel.js')}}"></script>
 		

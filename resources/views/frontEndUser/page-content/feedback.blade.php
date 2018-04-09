@@ -16,7 +16,7 @@
                                     <div class="col-md-4 text-center ">
 										<div class="feedback ">
 											<div class="feedbackImage">
-												<img src="https://i.ytimg.com/vi/n0Tj93jk5ug/maxresdefault.jpg">
+												<img src="{{asset('images/feedback1.png')}}">
 											</div>
 											<div class="feedbackContent box-shadows">
 												<h3>Slux+1</h3>
@@ -30,7 +30,7 @@
                                     <div class="col-md-4 text-center">
 										<div class="feedback ">
 											<div class="feedbackImage">
-												<img src="https://i.ytimg.com/vi/vF-eVnqq-bw/maxresdefault.jpg">
+												<img src="{{asset('images/feedback2.png')}}">
 											</div>
 											<div class="feedbackContent box-shadows">
 												<h3>Slux+1</h3>
@@ -44,7 +44,7 @@
                                     <div class="col-md-4 text-center">
 										<div class="feedback ">
 											<div class="feedbackImage">
-												<img src="https://i.ytimg.com/vi/eBaKkHttZ_Y/maxresdefault.jpg">
+												<img src="{{asset('images/feedback3.png')}}">
 											</div>
 											<div class="feedbackContent box-shadows">
 												<h3>Slux+1</h3>

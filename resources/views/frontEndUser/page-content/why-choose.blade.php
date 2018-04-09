@@ -8,15 +8,55 @@
 			</div>
 		</div>
 		<div class="row">
-			<div class="whyChooseImage front ">
-				<img src="{{asset('images/whyChoose2.png')}}" class="whyChooseImage-01 box-shadows">
+			<div class="col-md-3 why-choose-item">
+				<div class="flip3D">
+					<div class="back">
+						<img src="{{asset('images/why-choose1.png')}}" >
+					</div>
+					<div class="front">
+						<img src="{{asset('images/why-choose11.png')}}" >
+					</div>
+					<div class="clear"></div>
+				</div>
+				<div class="clear"></div>
 			</div>
-			<div class="whyChooseImage front ">
-				<img src="{{asset('images/whyChoose2.png')}}" class="whyChooseImage-02 box-shadows">
+			<div class="col-md-3 why-choose-item">
+				<div class="flip3D">
+					<div class="back">
+						<img src="{{asset('images/why-choose2.png')}}" >
+					</div>
+					<div class="front">
+						<img src="{{asset('images/why-choose22.png')}}" >
+					</div>
+					<div class="clear"></div>
+				</div>
+				<div class="clear"></div>
 			</div>
-			<div class="whyChooseImage front ">
-				<img src="{{asset('images/whyChoose2.png')}}" class="whyChooseImage-03 box-shadows">
+			<div class="col-md-3 why-choose-item">
+				<div class="flip3D">
+					<div class="back">
+						<img src="{{asset('images/why-choose3.png')}}" >
+					</div>
+					<div class="front">
+						<img src="{{asset('images/why-choose33.png')}}" >
+					</div>
+					<div class="clear"></div>
+				</div>
+				<div class="clear"></div>
 			</div>
+			<div class="col-md-3 why-choose-item">
+				<div class="flip3D">
+					<div class="back">
+						<img src="{{asset('images/why-choose4.png')}}" >
+					</div>
+					<div class="front">
+						<img src="{{asset('images/why-choose44.png')}}" >
+					</div>
+					<div class="clear"></div>
+				</div>
+				<div class="clear"></div>
+			</div>
+			<div class="clear"></div>
 		</div>
 	</div>
 </div>
@@ -24,7 +64,8 @@
 <br>
 <div class="fh5co-parallax fh5co-parallax2" data-stellar-background-ratio="0.5">
 	<!-- <div class="overlay"></div> -->
-	<div class="container">
+	<div id="particles-js"></div>
+	<div class="container position-absolute">
 		<div class="row">
 			<div class="col-md-12 col-md-offset-0 col-sm-12 col-sm-offset-0 col-xs-12 col-xs-offset-0 text-center fh5co-table">
 				<div class="fh5co-intro animate-box">

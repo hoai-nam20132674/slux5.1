@@ -12,7 +12,7 @@
 		    <ul class=" blog ">
 		      	<li class="blog-item">
 			        <article class="box-shadows"> 
-			          	<figure><a href="#"><img src="{{asset('images/whyChoose1.png')}}" alt=""></a>
+			          	<figure><a href="#"><img src="{{asset('images/blog1.png')}}" alt=""></a>
 				            <figcaption class="group">
 					            <time datetime="2045-04-06">6<sup>th</sup> April 2045</time>
 					            <span>by <a href="#">Admin</a></span>
@@ -28,7 +28,7 @@
 		      	</li>
 		      	<li class="blog-item">
 			        <article class="box-shadows">
-			          	<figure><a href="#"><img src="{{asset('images/whyChoose1.png')}}" alt=""></a>
+			          	<figure><a href="#"><img src="{{asset('images/blog2.png')}}" alt=""></a>
 				            <figcaption class="group">
 					            <time datetime="2045-04-06">6<sup>th</sup> April 2045</time>
 					            <span>by <a href="#">Admin</a></span>
@@ -44,7 +44,7 @@
 		      	</li>
 		      	<li class="blog-item">
 			        <article class="box-shadows">
-			          	<figure><a href="#"><img src="{{asset('images/whyChoose1.png')}}" alt=""></a>
+			          	<figure><a href="#"><img src="{{asset('images/blog3.png')}}" alt=""></a>
 				            <figcaption class="group">
 					            <time datetime="2045-04-06">6<sup>th</sup> April 2045</time>
 					            <span>by <a href="#">Admin</a></span>
@@ -60,7 +60,7 @@
 		      	</li>
 		      	<li class="blog-item">
 			        <article class="box-shadows">
-			          	<figure><a href="#"><img src="{{asset('images/whyChoose1.png')}}" alt=""></a>
+			          	<figure><a href="#"><img src="{{asset('images/blog4.png')}}" alt=""></a>
 				            <figcaption class="group">
 					            <time datetime="2045-04-06">6<sup>th</sup> April 2045</time>
 					            <span>by <a href="#">Admin</a></span>
