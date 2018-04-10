@@ -11,10 +11,10 @@
 			<div class="col-md-3 why-choose-item">
 				<div class="flip3D">
 					<div class="back">
-						<img src="{{asset('images/why-choose1.png')}}" >
+						<img src="{{asset('images/why-choose3.png')}}" >
 					</div>
 					<div class="front">
-						<img src="{{asset('images/why-choose11.png')}}" >
+						<img src="{{asset('images/why-choose33.png')}}" >
 					</div>
 					<div class="clear"></div>
 				</div>
@@ -35,10 +35,10 @@
 			<div class="col-md-3 why-choose-item">
 				<div class="flip3D">
 					<div class="back">
-						<img src="{{asset('images/why-choose3.png')}}" >
+						<img src="{{asset('images/why-choose1.png')}}" >
 					</div>
 					<div class="front">
-						<img src="{{asset('images/why-choose33.png')}}" >
+						<img src="{{asset('images/why-choose11.png')}}" >
 					</div>
 					<div class="clear"></div>
 				</div>
@@ -65,10 +65,10 @@
 <div class="fh5co-parallax fh5co-parallax2" data-stellar-background-ratio="0.5">
 	<!-- <div class="overlay"></div> -->
 	<div id="particles-js"></div>
-	<div class="container position-absolute">
+	<div class="container ">
 		<div class="row">
 			<div class="col-md-12 col-md-offset-0 col-sm-12 col-sm-offset-0 col-xs-12 col-xs-offset-0 text-center fh5co-table">
-				<div class="fh5co-intro animate-box">
+				<div class="fh5co-intro animate-box position-absolute">
 					<div class="row">
 						<div class="col-md-6 text-center">
 							<div class="testimony">
@@ -93,4 +93,5 @@
 			</div>
 		</div>
 	</div>
+	
 </div>

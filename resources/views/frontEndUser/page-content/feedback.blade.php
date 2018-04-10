@@ -8,7 +8,7 @@
 	<div class="container">
         <div class="row">
             <div class="span12">
-                <!-- <div class="well"> -->
+                <div class="well">
                     <div id="myCarousel" class="carousel fdi-Carousel slide">
                         <div class="carousel fdi-Carousel slide" id="feedbackCarousel" data-interval="0">
                             <div class="carousel-inner onebyone-carosel">
@@ -44,7 +44,7 @@
                                     <div class="col-md-4 text-center">
 										<div class="feedback ">
 											<div class="feedbackImage">
-												<img src="{{asset('images/feedback3.png')}}">
+												<img src="http://www.cuong.com.vn/product_images/uploaded_images/8800-rong.gif" loop=infinite >
 											</div>
 											<div class="feedbackContent box-shadows">
 												<h3>Slux+1</h3>
@@ -62,7 +62,7 @@
                         </div>
                         
                     </div>
-                <!-- </div> -->
+                </div>
             </div>
         </div>
     </div>

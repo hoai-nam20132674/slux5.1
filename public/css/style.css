@@ -1474,7 +1474,7 @@ figure {
 @media screen and (max-width: 768px) {
   .fh5co-parallax {
     height: inherit;
-    padding: 4em 0;
+    padding: 0em 0;
   }
 }
 .fh5co-parallax .fh5co-intro h1 {
@@ -2547,8 +2547,7 @@ figure {
 }
 .position-absolute {
   position: absolute;
-  top: 25%;
-  left: 9%;
+  margin-top: -38%;
 }
 canvas{
   display:block;
@@ -2606,8 +2605,16 @@ canvas{
     -webkit-transform: perspective( 600px ) rotateY( 180deg );
     transform: perspective( 600px ) rotateY( 180deg );
   }
-  .why-choose-item {
-    margin-bottom: 30px;
+  .why-choose-item .flip3D {
+    /*margin-bottom: 20px;*/
+    height: 290px;
+  }
+  #particles-js {
+    display: none;
+  }
+  .position-absolute {
+    position: relative;
+    margin-top: 100px;
   }
 }
 /* End Flip 3D*/

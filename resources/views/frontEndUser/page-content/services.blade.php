@@ -11,8 +11,8 @@
                                     <div class="col-md-4 text-center ">
 										<div class="services box-shadows">
 											
-											<h3>Slux+1</h3>
-											<p>Nếu bạn đang sửa dụng một chiếc Vertu đảng cấp , sang trọng, trong quá trình sửa dụng chẳng may máy gặp trục trặc về phần mềm và phần cứng. Bạn đang băn khoăn tìm một nơi sửa chữa uy tín chất lượng , chế độ bảo hành tốt , để gửi gắm dế yêu của bạn. Hãy đến với chúng tôi</p>
+											<h3>Sửa chữa Nokia 8800</h3>
+											<p>Với đội ngũ nhân viên nhiệt huyết, sáng tạo, có hơn 10 năm kinh nghiệm trong lĩnh vực sửa chữa điện thoại Nokia 8800 chính hãng cùng với giá cả tốt nhất trên thị trường , Slux+ chắc chắn sẽ khiến khách hàng hài lòng khi trải nghiệm sản phẩm & dịch vụ nơi đây.</p>
 										</div>
 									</div>
                                 </div>
@@ -20,8 +20,8 @@
                                     <div class="col-md-4 text-center">
 										<div class="services box-shadows">
 											
-											<h3>Slux+2</h3>
-											<p>Nếu bạn đang sửa dụng một chiếc Vertu đảng cấp , sang trọng, trong quá trình sửa dụng chẳng may máy gặp trục trặc về phần mềm và phần cứng. Bạn đang băn khoăn tìm một nơi sửa chữa uy tín chất lượng , chế độ bảo hành tốt , để gửi gắm dế yêu của bạn. Hãy đến với chúng tôi</p>
+											<h3>Sửa chữa Vertu</h3>
+											<p>Dù được chế tác hoàn toàn thủ công từ những chất liệu quý hiếm: vàng, kim cương, da cá sấu,... nhưng trong quá trình sử dụng, chiếc điện thoại Vertu của bạn cũng không tránh khỏi những sự cố đáng tiếc. Đến với Slux - Địa chỉ sửa chữa Vertu uy tín số 1 Việt Nam sẽ làm bạn hoàn toàn an tâm.</p>
 										</div>
 									</div>
                                 </div>
@@ -29,8 +29,8 @@
                                     <div class="col-md-4 text-center">
 										<div class="services box-shadows">
 											
-											<h3>Slux+3</h3>
-											<p>Nếu bạn đang sửa dụng một chiếc Vertu đảng cấp , sang trọng, trong quá trình sửa dụng chẳng may máy gặp trục trặc về phần mềm và phần cứng. Bạn đang băn khoăn tìm một nơi sửa chữa uy tín chất lượng , chế độ bảo hành tốt , để gửi gắm dế yêu của bạn. Hãy đến với chúng tôi</p>
+											<h3>Đánh bóng, bọc da</h3>
+											<p>Với mong muốn mang đến một diện mạo mới, một thiết kế độc - lạ cho “dế yêu” của bạn, Slux cung cấp dịch vụ đánh bóng, bọc da. Đặc biệt, chất liệu da thật 100%, mẫu mã đa dạng và quá trình thủ công cẩn thận, tỉ mỉ, đảm bảo chiếc điện thoại của bạn sẽ có một diện mạo hoàn toàn mới.</p>
 										</div>
 									</div>
                                 </div>

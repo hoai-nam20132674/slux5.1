@@ -51,7 +51,8 @@
 	<link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
 
 	<!-- <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script> -->
-	<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+	<!-- <script src="https://code.jquery.com/jquery-1.11.1.min.js"></script> -->
+	<script src="{{asset('js/jquery.min.js')}}"></script>
 	<!-- <script src="{{asset('js/carousel.js')}}"></script> -->
 	<script src="{{asset('js/modernizr-2.6.2.min.js')}}"></script>
 	<script src="{{asset('js/serviceSlux.js')}}"></script>
@@ -131,7 +132,7 @@
 		
 		<!-- SwiperEffect Js-->
 
-		<script src="{{asset('js/jquery.min.js')}}"></script>
+		
 		<!-- jQuery Easing -->
 		<script src="{{asset('js/jquery.easing.1.3.js')}}"></script>
 		<!-- Bootstrap -->
