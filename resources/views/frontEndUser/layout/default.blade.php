@@ -44,12 +44,16 @@
 	<link rel="stylesheet" href="{{asset('css/styleProcedure.css')}}">
 	<link rel="stylesheet" href="{{asset('css/blog-list.css')}}">
 	<link rel="stylesheet" href="{{asset('css/recommend-product.css')}}">
-	<link rel="stylesheet" href="{{asset('css/view-product-item.css')}}">
+	<!-- <link rel="stylesheet" href="{{asset('css/view-product-item.css')}}"> -->
+	<link rel="stylesheet" href="{{asset('css/thumbnails.carousel.css')}}">
 	<link href='https://fonts.googleapis.com/css?family=Droid+Serif|Open+Sans:400,700' rel='stylesheet' type='text/css'>
 
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 	<link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
 
+	<!-- <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css"> -->
+	<script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+	<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
 	<!-- <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script> -->
 	<!-- <script src="https://code.jquery.com/jquery-1.11.1.min.js"></script> -->
 	<script src="{{asset('js/jquery.min.js')}}"></script>
@@ -119,19 +123,22 @@
 
 		<!-- SwiperEffect Js-->
 		<script>(function(d, s, id) {
-  var js, fjs = d.getElementsByTagName(s)[0];
-  if (d.getElementById(id)) return;
-  js = d.createElement(s); js.id = id;
-  js.src = 'https://connect.facebook.net/vi_VN/sdk.js#xfbml=1&version=v2.12';
-  fjs.parentNode.insertBefore(js, fjs);
-}(document, 'script', 'facebook-jssdk'));</script>
+		  var js, fjs = d.getElementsByTagName(s)[0];
+		  if (d.getElementById(id)) return;
+		  js = d.createElement(s); js.id = id;
+		  js.src = 'https://connect.facebook.net/vi_VN/sdk.js#xfbml=1&version=v2.12';
+		  fjs.parentNode.insertBefore(js, fjs);
+		}(document, 'script', 'facebook-jssdk'));</script>
 		<script src="{{asset('js/particles.js')}}"></script>
 		<script src="{{asset('js/particles-app.js')}}"></script>
 		<script src='https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.3.1/js/swiper.min.js'></script>
 		<script type="text/javascript" src="{{asset('js/carousel.js')}}"></script>
 		
 		<!-- SwiperEffect Js-->
-
+		<script src="{{asset('js/thumbnails.carousel.js')}}"></script>
+		<script>
+			$('.thumbnails-carousel').thumbnailsCarousel();
+		</script>
 		
 		<!-- jQuery Easing -->
 		<script src="{{asset('js/jquery.easing.1.3.js')}}"></script>

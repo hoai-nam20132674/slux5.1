@@ -82,8 +82,8 @@ figure {
   -webkit-transition: 0.5s;
   -o-transition: 0.5s;
   transition: 0.5s;
-  /*background-color: #ccb669;*/
-  background-image: url(../images/background-button.jpg);
+  background-color: #ccb669;
+  /*background-image: url(../images/background-button.jpg);*/
 }
 .btn.btn-md {
   padding: 10px 20px !important;

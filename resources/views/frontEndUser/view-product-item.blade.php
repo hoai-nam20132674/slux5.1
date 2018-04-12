@@ -16,53 +16,67 @@
 					</div>
 					<br>
 					<div class="view-product-content">
-						<div class="col-md-8">
-							<nav id="navigation">
+						
+						<div class="col-md-3">
+							<div id="carousel-example-generic" class="carousel slide" data-ride="carousel" data-interval="false">
+								  <!-- Indicators -->
+								  <ol class="carousel-indicators">
+								    <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+								    <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+								    <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+								    <li data-target="#carousel-example-generic" data-slide-to="3"></li>
+								  </ol>
 
-							    <div id="arrows">
-							      	<div class="arrow" id="more-down">
-							        	<i class="fa fa-angle-down" aria-hidden="true"></i>
-							      	</div>
+								  <!-- Wrapper for slides -->
+								  <div class="carousel-inner">
 
-							      	<div class="arrow" id="more-up">
-							        	<i class="fa fa-angle-up" aria-hidden="true"></i>
-							      	</div>
-							    </div>
+								    <div class="item active srle">
+								      <img src="http://dienthoaidangcap.vn/product_images/w/024/vertu-cu-signature-s-navy-alligator-01__15055_thumb.png" alt="1.jpg" class="img-responsive">
+								      <!-- <div class="carousel-caption">
+								        <p> 1.jpg </p>
+								      </div> -->
+								    </div>
 
+								    <div class="item">
+								      <img src="http://dienthoaidangcap.vn/product_images/t/134/vertu-cu-signature-s-red-calf-01__40264_thumb.png" alt="2.jpg" class="img-responsive">
+								      <!-- <div class="carousel-caption">
+								        <p> 2.jpg </p>
+								      </div> -->
+								    </div>
 
-							    <ul id="nav-images">
-							      	<li class="nav-item"><img src="https://s24.postimg.org/5eqdzpw4l/1.jpg" alt="1"></li>
-							      	<li class="nav-item"><img src="https://s24.postimg.org/xsvtjljol/2.jpg" alt="2"></li>
-							      	<li class="nav-item"><img src="https://s24.postimg.org/6jkg53ilh/3.jpg" alt="3"></li>
-							      	<li class="nav-item"><img src="https://s24.postimg.org/pd6923gth/4.jpg" alt="4"></li>
-							      	<li class="nav-item"><img src="https://s24.postimg.org/69cxlr3z9/5.jpg" alt="5"></li>
+								    <div class="item">
+								      <img src="http://dienthoaidangcap.vn/product_images/c/627/hublot-classic-fusion-542-ox-1181-lr-1104-01__29139_thumb.png" alt="3.jpg" class="img-responsive">
+								      <!-- <div class="carousel-caption">
+								        <p> 3.jpg </p>
+								      </div> -->
+								    </div>
 
-							      	<li class="nav-item"><img src="https://s24.postimg.org/g7xw88det/6.jpg" alt="6"></li>
-							      	<li class="nav-item"><img src="https://s24.postimg.org/fjp1paep1/7.jpg" alt="7"></li>
-							      	<li class="nav-item"><img src="https://s24.postimg.org/l95a9lkv9/8.jpg" alt="8"></li>
-							      	<li class="nav-item"><img src="https://s24.postimg.org/u5knra0v9/9.jpg" alt="9"></li>
-							      	<li class="nav-item"><img src="https://s24.postimg.org/wo6crymlh/10.jpg" alt="10"></li>
+								    <div class="item">
+								      <img src="http://dienthoaidangcap.vn/product_images/l/835/hublot-classic-fusion-aerofusion-moonphase-king-gold-01__68180_thumb.png" alt="4.jpg" class="img-responsive">
+								      <!-- <div class="carousel-caption">
+								        <p> 4.jpg </p>
+								      </div> -->
+								    </div>
 
-							    </ul>
-							</nav>
+								  </div>
 
-							<div id="slider">
-							    <ul id="slides">
+								  <!-- Controls -->
+								  <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
+								    <span class="glyphicon glyphicon-chevron-left"></span>
+								  </a>
+								  <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
+								    <span class="glyphicon glyphicon-chevron-right"></span>
+								  </a>
 
-							      	<li class="slide"><img src="https://s24.postimg.org/5eqdzpw4l/1.jpg" alt="1"></li>
-							      	<li class="slide"><img src="https://s24.postimg.org/xsvtjljol/2.jpg" alt="2"></li>
-							      	<li class="slide"><img src="https://s24.postimg.org/6jkg53ilh/3.jpg" alt="3"></li>
-							      	<li class="slide"><img src="https://s24.postimg.org/pd6923gth/4.jpg" alt="4"></li>
-							      	<li class="slide"><img src="https://s24.postimg.org/69cxlr3z9/5.jpg" alt="5"></li>
-
-							      	<li class="slide"><img src="https://s24.postimg.org/g7xw88det/6.jpg" alt="6"></li>
-							      	<li class="slide"><img src="https://s24.postimg.org/fjp1paep1/7.jpg" alt="7"></li>
-							      	<li class="slide"><img src="https://s24.postimg.org/l95a9lkv9/8.jpg" alt="8"></li>
-							      	<li class="slide"><img src="https://s24.postimg.org/u5knra0v9/9.jpg" alt="9"></li>
-							      	<li class="slide"><img src="https://s24.postimg.org/wo6crymlh/10.jpg" alt="10"></li>
-
-							    </ul>
+								  <!-- Thumbnails --> 
+								  <ul class="thumbnails-carousel clearfix">
+								  	<li><img width="10%" height="auto" src="http://dienthoaidangcap.vn/product_images/w/024/vertu-cu-signature-s-navy-alligator-01__15055_thumb.png" alt="1_tn.jpg"></li>
+									<li><img width="10%" height="auto" src="http://dienthoaidangcap.vn/product_images/t/134/vertu-cu-signature-s-red-calf-01__40264_thumb.png" alt="1_tn.jpg"></li>
+									<li><img width="10%" height="auto" src="http://dienthoaidangcap.vn/product_images/c/627/hublot-classic-fusion-542-ox-1181-lr-1104-01__29139_thumb.png.png" alt="1_tn.jpg"></li>
+									<li><img width="10%" height="auto" src="http://dienthoaidangcap.vn/product_images/l/835/hublot-classic-fusion-aerofusion-moonphase-king-gold-01__68180_thumb.png" alt="1_tn.jpg"></li>
+								  </ul>
 							</div>
+							
 						</div>
 						<div class="col-md-4">thông số kỹ thuật</div>
 					</div>
