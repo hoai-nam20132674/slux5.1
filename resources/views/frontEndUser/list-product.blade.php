@@ -20,7 +20,7 @@
 	                        <div class="col-sm-4 product-item">
 	                            <div class="col-item">
 	                                <div class="photo">
-	                                    <img src="http://www.timeswissshop.com/hublot/hbulot-replica-watch-big-bang-gold-ceramic-bezel-2009-7750.jpg" alt="a" />
+	                                    <a href="/view-product-item.html"><img src="http://www.timeswissshop.com/hublot/hbulot-replica-watch-big-bang-gold-ceramic-bezel-2009-7750.jpg" alt="a" /></a>
 	                                </div>
 	                                <div class="info">
 	                                    <div class="row">

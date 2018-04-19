@@ -46,6 +46,7 @@
 	<link rel="stylesheet" href="{{asset('css/recommend-product.css')}}">
 	<!-- <link rel="stylesheet" href="{{asset('css/view-product-item.css')}}"> -->
 	<link rel="stylesheet" href="{{asset('css/thumbnails.carousel.css')}}">
+	<!-- <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css"> -->
 	<link href='https://fonts.googleapis.com/css?family=Droid+Serif|Open+Sans:400,700' rel='stylesheet' type='text/css'>
 
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">

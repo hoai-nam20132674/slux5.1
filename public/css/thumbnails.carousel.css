@@ -11,6 +11,7 @@ ul.thumbnails-carousel li {
 	margin-right: 5px;
 	float: left;
 	cursor: pointer;
+	width: 48px;
 }
 .controls-background-reset {
 	background: none !important;
@@ -20,4 +21,10 @@ ul.thumbnails-carousel li {
 }
 .indicators-fix {
 	bottom: 70px;
+}
+#carousel-example-generic {
+	display: inline-block;
+}
+.view-product-content .carousel-control {
+	margin-bottom: 62px;
 }

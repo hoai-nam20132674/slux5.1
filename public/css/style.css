@@ -82,7 +82,7 @@ figure {
   -webkit-transition: 0.5s;
   -o-transition: 0.5s;
   transition: 0.5s;
-  background-color: #ccb669;
+  /*background-color: #ccb669;*/
   /*background-image: url(../images/background-button.jpg);*/
 }
 .btn.btn-md {
@@ -98,9 +98,9 @@ figure {
 }
 
 .btn-primary {
-  background: #00ADB5;
+  /*background: #00ADB5;*/
   color: #fff;
-  border: 2px solid #00ADB5;
+  /*border: 2px solid #00ADB5;*/
 }
 .btn-primary:hover, .btn-primary:focus, .btn-primary:active {
   background: #00c5cf !important;
