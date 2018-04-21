@@ -68,13 +68,28 @@ figure {
   color: #fcfcfc;
   background: #2a71ff;
 }
+.width-100{
+  width: 100%;
+}
+.width-50{
+  width: 48%;
+}
 
+.float-left {
+  float: left;
+}
+.float-right {
+  float: right;
+}
+.fw-700 {
+  font-weight: 700;
+}
 .btn {
   margin-right: 4px;
   margin-bottom: 4px;
   font-family: "Open Sans", Arial, serif;
   font-size: 16px;
-  font-weight: 400;
+  font-weight: 700;
   /*-webkit-border-radius: 30px;*/
   /*-moz-border-radius: 30px;*/
   /*-ms-border-radius: 30px;*/
@@ -663,7 +678,7 @@ figure {
   background-position: center center;
   /*min-height: 700px;*/
   position: relative;
-  height: 500px;
+  height: 600px;
 }
 #fh5co-hero .flexslider .slides li:after {
   position: absolute;
@@ -2472,6 +2487,11 @@ figure {
 .page-content {
     margin: 40px 0px 0px 0px;
 }
+/* View product conten */
+.view-product-content .tab-content p{
+  font-size: 15px;
+}
+/* END View product conten*/
 
 @media screen and (max-width: 768px) {
     .information ul li {
