@@ -120,18 +120,18 @@
 						<div class="row">
 							<div class="col-md-9">
 								<ul class="nav nav-tabs">
-								    <li class="active"  "><a data-toggle="tab" href="#home" style="color: #000;" >GIỚI THIỆU</a></li>
-								    <li ><a data-toggle="tab" href="#menu1" style="color: #000;">THÔNG SỐ KỸ THUẬT</a></li>
+								    <li class="active"  "><a data-toggle="tab" href="#gt" style="color: #000;" >GIỚI THIỆU</a></li>
+								    <li ><a data-toggle="tab" href="#tskt" style="color: #000;">THÔNG SỐ KỸ THUẬT</a></li>
 								    
 								    
 								</ul>
 								<br>
 								<div class="tab-content">
-								    <div id="home" class="tab-pane fade in active">
+								    <div id="gt" class="tab-pane fade in active">
 								    	<h3>Giới thiệu sản phẩm</h3>
 								    	<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
 								    </div>
-								    <div id="menu1" class="tab-pane fade">
+								    <div id="tskt" class="tab-pane fade">
 								    	<h3>Menu 1</h3>
 								    	<p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
 								    </div>
