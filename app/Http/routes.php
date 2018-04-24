@@ -32,3 +32,11 @@ Route::get('/view-product-item.html', function(){
 Route::get('test',function(){
 	return view ('welcome');
 });
+
+
+Route::get('logout','Auth\loginController@logout');
+Route::get('login','Auth\loginController@getLogin');
+Route::post('postLogin','Auth\loginController@postLogin');
+// Route::group(['prefix'=>'admin', 'middleware'=>'auth'],function(){
+	Route::get('admin/index','adminController@index');
+// });
