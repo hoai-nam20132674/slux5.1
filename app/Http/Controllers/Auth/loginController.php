@@ -28,7 +28,7 @@ class loginController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = 'admin/index';
+    protected $redirectTo = '/';
 
     /**
      * Create a new controller instance.
@@ -49,10 +49,6 @@ class loginController extends Controller
         );
         if(Auth::attempt($login)){
             return redirect('admin/index');
-            // return redirect('/');
-            // echo "{{Auth::user()->email}}";
-            // dd(Auth::check());
-
         }
         else{
             return redirect()->back()->with(['flash_level'=>'danger','flash_message'=>'Tài khoản hoặc mật khẩu không chính xác']);
@@ -66,6 +62,6 @@ class loginController extends Controller
 
         $request->session()->regenerate();
 
-        
+        return redirect('/login');
     }
 }

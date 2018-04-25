@@ -35,8 +35,8 @@ Route::get('test',function(){
 
 
 Route::get('logout','Auth\loginController@logout');
-Route::get('auth/login','Auth\loginController@getLogin');
+Route::get('login','Auth\loginController@getLogin');
 Route::post('postLogin','Auth\loginController@postLogin');
-Route::group(['prefix'=>'admin','middleware'=>'auth'],function(){
-	Route::get('index',['as'=>'index','uses'=>'adminController@index']);
-});
+// Route::group(['prefix'=>'admin', 'middleware'=>'auth'],function(){
+	Route::get('admin/index','adminController@index');
+// });
