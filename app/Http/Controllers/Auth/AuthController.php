@@ -7,6 +7,8 @@ use Validator;
 use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\ThrottlesLogins;
 use Illuminate\Foundation\Auth\AuthenticatesAndRegistersUsers;
+use App\Http\Requests\loginRequest;
+use Illuminate\Support\Facades\Auth;
 
 class AuthController extends Controller
 {
@@ -61,5 +63,23 @@ class AuthController extends Controller
             'email' => $data['email'],
             'password' => bcrypt($data['password']),
         ]);
+    }
+    public function getLogin(){
+        return View('frontEndAdmin.login');
+    }
+    public function postLogin(loginRequest $request){
+        $login =array(
+            'email'=>$request->email,
+            'password'=>$request->password
+        );
+        if(Auth::attempt($login)){
+            
+            return redirect('admin/index');
+            
+
+        }
+        else{
+            return redirect()->back()->with(['flash_level'=>'danger','flash_message'=>'Tài khoản hoặc mật khẩu không chính xác']);
+        }
     }
 }
