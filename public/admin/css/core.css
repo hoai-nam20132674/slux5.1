@@ -446,7 +446,7 @@ a:active {
 .site-header .navbar-brand .logo {
   width: 100px;
   height: 25px;
-  background: url(../img/logo.png) no-repeat;
+  /*background: url(../img/logo.png) no-repeat;*/
 }
 
 @media (min-width: 768px) {

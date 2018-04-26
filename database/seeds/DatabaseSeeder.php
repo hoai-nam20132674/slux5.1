@@ -14,17 +14,10 @@ class DatabaseSeeder extends Seeder
     {
         // Model::unguard();
 
-        // $this->call(UserTableSeeder::class);
+        $this->call(UsersTableSeeder::class);
         // $this->call(UserSeeder::class);
 
         // Model::reguard();
-        DB::table('users')->insert([
-            [
-                'username' =>'admin',
-                'email' =>'admin@gmail.com',
-                'password'=>Hash::make('111111'),
-                'role'=>1
-            ]
-        ]);
+        
     }
 }

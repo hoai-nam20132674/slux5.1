@@ -13,6 +13,7 @@ class Authenticate
      * @var Guard
      */
     protected $auth;
+    protected $loginPath = '/login';
 
     /**
      * Create a new middleware instance.
@@ -23,7 +24,12 @@ class Authenticate
     public function __construct(Guard $auth)
     {
         $this->auth = $auth;
+        // $this->middleware('auth');
     }
+    // public function __construct()
+    // {
+    //     $this->middleware('auth');
+    // }
 
     /**
      * Handle an incoming request.
@@ -38,7 +44,7 @@ class Authenticate
             if ($request->ajax()) {
                 return response('Unauthorized.', 401);
             } else {
-                return redirect()->guest('auth/login');
+                return redirect()->guest('/login');
             }
         }
 

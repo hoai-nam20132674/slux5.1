@@ -179,65 +179,7 @@
 								<li><a href="apps-inbox.html">Inbox</a></li>
 							</ul>
 						</li>
-						<li class="with-sub">
-							<a href="index.html#" class="waves-effect  waves-light">
-								<span class="s-caret"><i class="fa fa-angle-down"></i></span>
-								<span class="s-icon"><i class="ti-star"></i></span>
-								<span class="s-text">Icons</span>
-							</a>
-							<ul>
-								<li><a href="icons-fontawesome.html">Font Awesome</a></li>
-								<li><a href="icons-ionicons.html">Ionicons</a></li>
-								<li><a href="icons-material.html">Material Design</a></li>
-								<li><a href="icons-pe7.html">Pe7 Icons</a></li>
-								<li><a href="icons-themify.html">Themify Icons</a></li>
-								<li><a href="icons-typicons.html">Typicons</a></li>
-								<li><a href="icons-weather.html">Weather Icons</a></li>
-							</ul>
-						</li>
-						<li class="with-sub">
-							<a href="index.html#" class="waves-effect  waves-light">
-								<span class="s-caret"><i class="fa fa-angle-down"></i></span>
-								<span class="s-icon"><i class="ti-settings"></i></span>
-								<span class="s-text">Utilities</span>
-							</a>
-							<ul>
-								<li><a href="utilities-border.html">Border utilities</a></li>
-								<li><a href="utilities-color.html">Color utilities</a></li>
-								<li><a href="utilities-other.html">Other utilities</a></li>
-							</ul>
-						</li>
 						<li class="menu-title">More</li>
-						<li class="with-sub">
-							<a href="index.html#" class="waves-effect  waves-light">
-								<span class="s-caret"><i class="fa fa-angle-down"></i></span>
-								<span class="s-icon"><i class="ti-location-arrow"></i></span>
-								<span class="s-text">Extra</span>
-							</a>
-							<ul>
-								<li><a href="extra-animations.html">Animations</a></li>
-								<li><a href="extra-comments.html">Comments</a></li>
-								<li><a href="extra-crop.html">Image Crop</a></li>
-								<li><a href="extra-lightbox.html">Lightbox</a></li>
-								<li><a href="extra-loading-progress.html">Loading Progress</a></li>
-								<li><a href="extra-nestable.html">Nestable</a></li>
-								<li><a href="extra-prices.html">Prices</a></li>
-								<li><a href="extra-scrollbar.html">Scroll Bar</a></li>
-								<li><a href="extra-search.html">Search</a></li>
-								<li><a href="extra-timeline.html">Timeline</a></li>
-							</ul>
-						</li>
-						<li class="with-sub">
-							<a href="index.html#" class="waves-effect  waves-light">
-								<span class="s-caret"><i class="fa fa-angle-down"></i></span>
-								<span class="s-icon"><i class="ti-new-window"></i></span>
-								<span class="s-text">Frontend</span>
-							</a>
-							<ul>
-								<li><a href="frontend.html">Frontend 1</a></li>
-								<li><a href="frontend2.html">Frontend 2</a></li>
-							</ul>
-						</li>
 						<li class="with-sub">
 							<a href="index.html#" class="waves-effect  waves-light">
 								<span class="s-caret"><i class="fa fa-angle-down"></i></span>
@@ -253,18 +195,6 @@
 								<li><a href="charts-morris.html">Morris Chart</a></li>
 								<li><a href="charts-peity.html">Peity Chart</a></li>
 								<li><a href="charts-sparkline.html">Sparkline Chart</a></li>
-							</ul>
-						</li>
-						<li class="with-sub">
-							<a href="index.html#" class="waves-effect  waves-light">
-								<span class="s-caret"><i class="fa fa-angle-down"></i></span>
-								<span class="s-icon"><i class="ti-email"></i></span>
-								<span class="s-text">Email Templates</span>
-							</a>
-							<ul>
-								<li><a href="email-alert.html">Alert</a></li>
-								<li><a href="email-basic.html">Basic</a></li>
-								<li><a href="email-ecommerce.html">Ecommerce</a></li>
 							</ul>
 						</li>
 						<li class="with-sub">
@@ -800,7 +730,7 @@
 				<nav class="navbar navbar-light">
 					<div class="navbar-left">
 						<a class="navbar-brand" href="index.html">
-							<div class="logo"></div>
+							<div class="logo"><img src="{{asset('images/logo-slux.png')}}" width="100%"></div>
 						</a>
 						<div class="toggle-button dark sidebar-toggle-first float-xs-left hidden-md-up">
 							<span class="hamburger"></span>
@@ -926,7 +856,7 @@
 									</a>
 									<div class="dropdown-divider"></div>
 									<a class="dropdown-item" href="index.html#"><i class="ti-help mr-0-5"></i> Help</a>
-									<a class="dropdown-item" href="index.html#"><i class="ti-power-off mr-0-5"></i> Sign out</a>
+									<a class="dropdown-item" href="{{url('/logout')}}"><i class="ti-power-off mr-0-5"></i> Sign out</a>
 								</div>
 							</li>
 						</ul>
@@ -1020,7 +950,7 @@
 								<div class="box box-block bg-white tile tile-1 mb-2">
 									<div class="t-icon right"><span class="bg-danger"></span><i class="ti-shopping-cart-full"></i></div>
 									<div class="t-content">
-										<h6 class="text-uppercase mb-1">Orders</h6>
+										<h6 class="text-uppercase mb-1"></h6>
 										<h1 class="mb-1">1,325</h1>
 										<span class="tag tag-danger mr-0-5">+17%</span>
 										<span class="text-muted font-90">from previous period</span>

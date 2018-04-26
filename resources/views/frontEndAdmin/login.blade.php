@@ -37,10 +37,10 @@
 				<div class="row">
 					<div class="col-md-4 offset-md-4">
 						<form action="/postLogin" method="POST">
-						<input type="hidden" name="_token" value="{{ csrf_token()}}">
+						{!! csrf_field() !!}
 							<div class="form-group">
 								<div class="input-group">
-									<input type="email" name="email" class="form-control" id="exampleInputEmail" placeholder="Email">
+									<input type="email" name="email" class="form-control" id="exampleInputEmail" placeholder="Email" value="{!! old('email') !!}">
 									<div class="input-group-addon"><i class="ti-email"></i></div>
 								</div>
 							</div>
@@ -104,5 +104,8 @@
 		<script type="text/javascript" src="{{asset('admin/vendor/jquery/jquery-1.12.3.min.js')}}"></script>
 		<script type="text/javascript" src="{{asset('admin/vendor/tether/js/tether.min.js')}}"></script>
 		<script type="text/javascript" src="{{asset('admin/vendor/bootstrap4/js/bootstrap.min.js')}}"></script>
+		<script type="text/javascript">
+	        $("div.alert").delay(3000).slideUp();
+	    </script>
 	</body>
 </html>
