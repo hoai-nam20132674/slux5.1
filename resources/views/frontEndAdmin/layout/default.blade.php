@@ -10,6 +10,8 @@
 
 		<!-- Title -->
 		<title>Admin master</title>
+		<script type="text/javascript" src="{{asset('admin/ckeditor/ckeditor.js')}}"></script>
+		<script type="text/javascript" src="{{asset('admin/ckfinder/ckfinder.js')}}"></script>
 
 		<!-- Vendor CSS -->
 		

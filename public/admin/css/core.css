@@ -4015,6 +4015,7 @@ table.dataTable thead th.sorting_desc:after {
   font-family: 'FontAwesome';
 }
 
+
 table.dataTable thead th.sorting:after {
   content: '\f0dc';
   color: #333;
