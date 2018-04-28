@@ -73,7 +73,9 @@ a:hover,
 a:active {
   text-decoration: none;
 }
-
+.text-center {
+  text-align: center;
+}
 .content-appear > .wrapper {
   -webkit-transform: rotateY(10deg) translateX(-150px);
   transform: rotateY(10deg) translateX(-150px);

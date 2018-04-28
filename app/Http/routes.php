@@ -39,4 +39,10 @@ Route::post('/postLogin', 'Auth\AuthController@postLogin');
 Route::get('/logout', 'Auth\AuthController@logout');
 Route::group(['prefix'=>'admin', 'middleware'=>'auth'],function(){
 	Route::get('index','adminController@index');
+	Route::get('getListCategories',['as'=>'getListCategories','uses'=>'adminController@getListCategories']);
+	Route::get('getListBlog',['as'=>'getListBlog','uses'=>'adminController@getListBlog']);
+	Route::get('delete/{categorie_id}',['as'=>'deleteCategorie','uses'=>'adminController@deleteCategorie']);
+	Route::get('addCategorie',['as'=>'addCategorie','uses'=>'adminController@addCategorie']);
+	Route::post('postAddCategorie',['as'=>'postAddCategorie','uses'=>'adminController@postAddCategorie']);
+
 });
