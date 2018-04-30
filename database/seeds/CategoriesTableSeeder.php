@@ -17,7 +17,7 @@ class CategoriesTableSeeder extends Seeder
         		'name' => 'categorie 1'
         	],
         	[
-        		'paren_id' =>'0',
+        		'paren_id' =>'1',
         		'name' => 'categorie 2'
         	],
         	[
@@ -25,7 +25,7 @@ class CategoriesTableSeeder extends Seeder
         		'name' => 'categorie 3'
         	],
         	[
-        		'paren_id' =>'0',
+        		'paren_id' =>'1',
         		'name' => 'categorie 4'
         	]
         	]
