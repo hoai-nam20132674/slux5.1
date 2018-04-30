@@ -44,5 +44,7 @@ Route::group(['prefix'=>'admin', 'middleware'=>'auth'],function(){
 	Route::get('delete/{categorie_id}',['as'=>'deleteCategorie','uses'=>'adminController@deleteCategorie']);
 	Route::get('addCategorie',['as'=>'addCategorie','uses'=>'adminController@addCategorie']);
 	Route::post('postAddCategorie',['as'=>'postAddCategorie','uses'=>'adminController@postAddCategorie']);
+	Route::get('editCategorie/{categorie_id}',['as'=>'editCategorie','uses'=>'adminController@editCategorie']);
+	Route::post('postEditCategorie/{categorie_id}',['as'=>'postEditCategorie','uses'=>'adminController@postEditCategorie']);
 
 });

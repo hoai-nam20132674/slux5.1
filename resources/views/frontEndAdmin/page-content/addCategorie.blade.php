@@ -18,16 +18,25 @@
 				<li class="breadcrumb-item active">Basic Form Elements</li>
 			</ol>
 			<div class="box box-block bg-white">
+				@if( count($errors) > 0)
+		    	<div class="alert alert-danger">
+		    		<ul>
+		    			@foreach($errors->all() as $error)
+		    				<li>{{$error}}</li>
+		    			@endforeach
+		    		</ul>
+		    	</div>
+		    	@endif
 				<h5>Form controls</h5>
 				<p class="font-90 text-muted mb-1">Bootstrap provides several form control styles, layout options, and custom components for creating a wide variety of forms.</p>
-				<form>
+				<form action="/admin/postAddCategorie" method="POST">
 					<input type="hidden" name="_token" value="{{ csrf_token()}}">
 					<div class="row">
 						<div class="col-md-9">
 							<div class="row">
 
 								<div class="col-md-3">
-									<a href="http://slux/vn"><button class="btn btn-primary" style="width: 100%;">http://slux.vn/</button></a>
+									<a href="http://slux.vn/" target="_blank"><button class="btn btn-primary" style="width: 100%;">http://slux.vn/</button></a>
 								</div>
 								<div class="col-md-9">
 									<div class="form-group">	
@@ -65,38 +74,37 @@
 							       });
 							     </script>﻿
 							</div>
-							<fieldset class="form-group">
-								<div class="radio">
-									<label>
-										<input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked>
-										Option one is this and that&mdash;be sure to include why it's great
-									</label>
-								</div>
-								<div class="radio">
-									<label>
-										<input type="radio" name="optionsRadios" id="optionsRadios2" value="option2">
-										Option two can be something else and selecting it will deselect option one
-									</label>
-								</div>
-								<div class="radio disabled">
-									<label>
-										<input type="radio" name="optionsRadios" id="optionsRadios3" value="option3" disabled>
-										Option three is disabled
-									</label>
-								</div>
-							</fieldset>
-							<div class="checkbox">
-								<label>
-									<input type="checkbox"> Check me out
-								</label>
-							</div>
+							
 						</div>
 						<div class="col-md-3">
 							<div class="form-group">
-								<select class="form-control" id="exampleSelect1">
+								<select class="form-control" name="paren_id">
 									<option value="0">Thư Mục Gốc</option>
 									<option>2</option>
 								</select>
+							</div>
+							<fieldset class="form-group">
+								
+									<label>
+										<input type="radio" name="type" id="optionsRadios1" value="0" checked>
+										Tin Tức
+									</label>
+								
+								
+									<label>
+										<input type="radio" name="type" id="optionsRadios2" value="1">
+										List Sản phẩm
+									</label>
+								
+							</fieldset>
+							<div class="checkbox">
+								<label>
+									<input type="radio" id="optionsRadios1" name="display" value="1" checked>Hiển thị
+								</label>
+								<label>
+									<input type="radio" id="optionsRadios2" name="display" value="0">Tắt hiển thị
+								</label>
+								
 							</div>
 						</div>
 					</div>

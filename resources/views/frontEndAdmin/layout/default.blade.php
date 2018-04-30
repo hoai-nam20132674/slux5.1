@@ -957,7 +957,19 @@
 		
 		@yield('js')
 		<script type="text/javascript">
-	        $("div.alert").delay(3000).slideUp();
+			function confirmDelete(msg){
+	            if(window.confirm(msg)){
+	                return true;
+	            }
+	            else{
+	                return false;
+	            }
+
+	        }
+	        
+	    </script>
+	    <script type="text/javascript">
+	    	$("div.alert").delay(5000).slideUp();
 	    </script>
 	</body>
 </html>
