@@ -7,6 +7,7 @@
 	<link rel="stylesheet" href="{{asset('admin/vendor/jscrollpane/jquery.jscrollpane.css')}}">
 	<link rel="stylesheet" href="{{asset('admin/vendor/waves/waves.min.css')}}">
 	<link rel="stylesheet" href="{{asset('admin/vendor/switchery/dist/switchery.min.css')}}">
+	<link rel="stylesheet" href="{{asset('admin/css/upload-image.css')}}">
 @endsection()
 @section('content')
 	<div class="content-area py-1">
@@ -29,7 +30,7 @@
 		    	@endif
 				<h5>Form controls</h5>
 				<p class="font-90 text-muted mb-1">Bootstrap provides several form control styles, layout options, and custom components for creating a wide variety of forms.</p>
-				<form action="{{URL::route('postAddCategorie')}}" method="POST">
+				<form action="{{URL::route('postAddBlog')}}" method="POST">
 					<input type="hidden" name="_token" value="{{ csrf_token()}}">
 					<div class="row">
 						<div class="col-md-9">
@@ -43,10 +44,6 @@
 										<input type="text" class="form-control" name="url" placeholder="Nhập Url">
 									</div>
 								</div>
-							</div>
-							<div class="form-group">
-								<label for="exampleInputEmail1">Tên danh mục</label>
-								<input type="text" class="form-control" name="name" placeholder="Nhập tên danh mục">
 							</div>
 							<div class="form-group">
 								<label for="exampleInputEmail1">Tiêu đề</label>
@@ -85,20 +82,6 @@
 									@endforeach
 								</select>
 							</div>
-							<fieldset class="form-group">
-									
-									<label>
-										<input type="radio" name="type" id="optionsRadios1" value="0" checked>
-										Tin Tức
-									</label>
-								
-								
-									<label>
-										<input type="radio" name="type" id="optionsRadios2" value="1">
-										List Sản phẩm
-									</label>
-								
-							</fieldset>
 							<div class="checkbox">
 								<label>
 									<input type="radio" id="optionsRadios1" name="display" value="1" checked>Hiển thị
@@ -106,7 +89,22 @@
 								<label>
 									<input type="radio" id="optionsRadios2" name="display" value="0">Tắt hiển thị
 								</label>
+							</div>
+							<div class="file-upload">
+							  	<!-- <button class="file-upload-btn" type="button" onclick="$('.file-upload-input').trigger( 'click' )">Add Image</button> -->
 								
+							  	<div class="image-upload-wrap">
+								    <input class="file-upload-input" type='file' onchange="readURL(this);" accept="image/*" />
+								    <div class="drag-text">
+								      <h3>Ảnh đại diện </h3>
+								    </div>
+							  	</div>
+							  	<div class="file-upload-content">
+							    	<img class="file-upload-image" src="#" alt="your image" />
+							    	<div class="image-title-wrap">
+							      		<button type="button" onclick="removeUpload()" class="remove-image">Remove <span class="image-title text-center">Uploaded Image</span></button>
+							    	</div>
+							  	</div>
 							</div>
 						</div>
 					</div>
@@ -134,4 +132,5 @@
 		<!-- Neptune JS -->
 		<script type="text/javascript" src="{{asset('admin/js/app.js')}}"></script>
 		<script type="text/javascript" src="{{asset('admin/js/demo.js')}}"></script>
+		<script type="text/javascript" src="{{asset('admin/js/upload-image.js')}}"></script>
 @endsection

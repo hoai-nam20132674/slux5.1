@@ -40,11 +40,16 @@ Route::get('/logout', 'Auth\AuthController@logout');
 Route::group(['prefix'=>'admin', 'middleware'=>'auth'],function(){
 	Route::get('index','adminController@index');
 	Route::get('getListCategories',['as'=>'getListCategories','uses'=>'adminController@getListCategories']);
-	Route::get('getListBlog',['as'=>'getListBlog','uses'=>'adminController@getListBlog']);
-	Route::get('delete/{id}',['as'=>'deleteCategorie','uses'=>'adminController@deleteCategorie']);
 	Route::get('addCategorie',['as'=>'addCategorie','uses'=>'adminController@addCategorie']);
 	Route::post('postAddCategorie',['as'=>'postAddCategorie','uses'=>'adminController@postAddCategorie']);
 	Route::get('editCategorie/{id}/{paren_id}',['as'=>'editCategorie','uses'=>'adminController@editCategorie']);
 	Route::post('postEditCategorie/{id}',['as'=>'postEditCategorie','uses'=>'adminController@postEditCategorie']);
+	Route::get('deleteCategorie/{id}',['as'=>'deleteCategorie','uses'=>'adminController@deleteCategorie']);
 
+	Route::get('getListBlogs',['as'=>'getListBlogs','uses'=>'adminController@getListBlogs']);
+	Route::get('addBlog',['as'=>'addBlog','uses'=>'adminController@addBlog']);
+	Route::post('postAddBlog',['as'=>'postAddBlog','uses'=>'adminController@postAddBlog']);
+	Route::get('editBlog/{id}/{categorie_id}',['as'=>'editBlog','uses'=>'adminController@editBlog']);
+	Route::post('postEditBlog/{id}',['as'=>'postEditBlog','uses'=>'adminController@postEditBlog']);
+	Route::get('deleteBlog/{id}',['as'=>'deleteBlog','uses'=>'adminController@deleteBlog']);
 });

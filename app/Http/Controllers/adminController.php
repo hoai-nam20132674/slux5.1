@@ -8,6 +8,7 @@ use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use Illuminate\Contracts\View\View;
 use App\Categories;
+use App\Blogs;
 use App\Http\Requests\addCategorieRequest;
 use App\Http\Requests\editCategorieRequest;
 use Illuminate\Support\Facades\DB;
@@ -53,7 +54,12 @@ class adminController extends Controller
         
     }
 
-    public function listTinTuc(){
-        return View('frontEndAdmin.page-content.listTinTuc');
+    public function getListBlogs(){
+        $blogs = Blogs::select()->get();
+        return View('frontEndAdmin.page-content.listBlogs',['blogs'=>$blogs]);
+    }
+    public function addBlog(){
+        $categories = Categories::select()->get();
+        return View('frontEndAdmin.page-content.addBlog',['categories'=>$categories]);
     }
 }

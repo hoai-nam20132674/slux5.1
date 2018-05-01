@@ -72,10 +72,10 @@
 									<script type="text/javascript">
 								      var editor = CKEDITOR.replace('content',{
 								       language:'vi',
-								       filebrowserImageBrowseUrl : '../admin/ckfinder/ckfinder.html?type=Images',
-								       filebrowserFlashBrowseUrl : '../admin/ckfinder/ckfinder.html?type=Flash',
-								       filebrowserImageUploadUrl : '../admin/ckfinder/core/connector/php/connector.php?command=QuickUpload&type=Images',
-								       filebrowserFlashUploadUrl : '../admin/ckfinder/core/connector/php/connector.php?command=QuickUpload&type=Flash',
+								       filebrowserImageBrowseUrl : '../../../admin/ckfinder/ckfinder.html?type=Images',
+								       filebrowserFlashBrowseUrl : '../../../admin/ckfinder/ckfinder.html?type=Flash',
+								       filebrowserImageUploadUrl : '../../../admin/ckfinder/core/connector/php/connector.php?command=QuickUpload&type=Images',
+								       filebrowserFlashUploadUrl : '../../../admin/ckfinder/core/connector/php/connector.php?command=QuickUpload&type=Flash',
 								       });
 								     </script>﻿
 								</div>
@@ -86,14 +86,19 @@
 									<select class="form-control" name="paren_id">
 										@if($cate->paren_id ==0){
 					                    <option value="0">Thư mục gốc</option>
+					                    @foreach($categories as $cates)
+										<option value="{{$cates->id}}">{{$cates->name}}</option>
+										@endforeach
 					                    }
-					                    @endif
+					                    @else
 					                    @foreach($parent as $pr)
 					                    <option value="{{$pr->id}}">{{$pr->name}}</option>
 					                    @endforeach
 										@foreach($categories as $cates)
 										<option value="{{$cates->id}}">{{$cates->name}}</option>
 										@endforeach
+										<option value="0">Thư mục gốc</option>
+										@endif
 									</select>
 								</div>
 								<fieldset class="form-group">

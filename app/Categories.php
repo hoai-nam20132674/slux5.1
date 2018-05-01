@@ -21,10 +21,11 @@ class Categories extends Model
 		$categorie = Categories::where('id',$id);
 		$categorie->delete();
 		$childrenCategorie = $this->getChildren($id);
-		$childrenCategorie->delete();
+		$childrenCategorie->paren_id =0;
+		$childrenCategorie->save();
 	}
 	public function getChildren($id){
-		$childrenCategorie = Categories::where('paren_id',$id);
+		$childrenCategorie = Categories::where('paren_id',$id)->get()->first();
 		return $childrenCategorie;
 	}
 	public function addCategorie($request){
