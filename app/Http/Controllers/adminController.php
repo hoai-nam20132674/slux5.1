@@ -10,6 +10,7 @@ use Illuminate\Contracts\View\View;
 use App\Categories;
 use App\Http\Requests\addCategorieRequest;
 use App\Http\Requests\editCategorieRequest;
+use Illuminate\Support\Facades\DB;
 
 class adminController extends Controller
 {
@@ -38,9 +39,11 @@ class adminController extends Controller
         return redirect('admin/getListCategories')->with(['flash_level'=>'success','flash_message'=>'Thêm danh mục thành công']);
     }
     
-    public function editCategorie($id){
+    public function editCategorie($id, $paren_id){
         $categorie = Categories::where('id',$id)->get();
-        return View('frontEndAdmin.page-content.editCategorie',['categorie'=>$categorie]);
+        $categories = Categories::select()->get();
+        $parent = Categories::where('id',$paren_id)->get();
+        return View('frontEndAdmin.page-content.editCategorie',['categorie'=>$categorie,'categories'=>$categories,'parent'=>$parent]);
     }
     public function postEditCategorie(editCategorieRequest $request, $id){
         

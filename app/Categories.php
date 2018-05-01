@@ -9,7 +9,7 @@ class Categories extends Model
 	//
     protected $table = 'categories'; //Ten bang
 	protected $guarded = []; //Cac tham so
-	protected $primaryKey = 'categorie_id';
+	public $primaryKey = 'id';
 	public $timestamps = true;
 
 	

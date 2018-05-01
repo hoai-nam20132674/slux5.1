@@ -45,6 +45,44 @@ class DatabaseSeeder extends Seeder
             ]
             ]
         );
+        DB::table('categories')->insert([
+            [
+                'url'=>'cau-chuyen-slux',
+                'name'=>'Câu chuyện',
+                'title'=>'Câu chuyện Slux',
+                'seo_keyword'=>'Câu chuyện Slux',
+                'seo_description'=>'Câu chuyện Slux'
+            ],
+            [
+                'url'=>'dich-vu-slux',
+                'name'=>'Dịch vụ',
+                'title'=>'Dịch vụ slux',
+                'seo_keyword'=>'dịch vụ slux',
+                'seo_description'=>'dịch vụ slux'
+            ],
+            [
+                'url'=>'link-phu-kien',
+                'name'=>'Linh phụ kiện',
+                'title'=>'Linh phụ kiện',
+                'seo_keyword'=>'Linh phụ kiện',
+                'seo_description'=>'Linh phụ kiện'
+            ],
+            [
+                'url'=>'tin-tuc',
+                'name'=>'Tin tức',
+                'title'=>'Tin tức',
+                'seo_keyword'=>'Tin tức',
+                'seo_description'=>'tin tức'
+            ],
+            [
+                'url'=>'lien-he',
+                'name'=>'Liên hệ',
+                'title'=>'liên hệ',
+                'seo_keyword'=>'liên hệ',
+                'seo_description'=>'liên hệ'
+            ]
+            
+        ]);
         
     }
 }

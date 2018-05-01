@@ -84,32 +84,57 @@
 							<div class="col-md-3">
 								<div class="form-group">
 									<select class="form-control" name="paren_id">
-										<option value="0">Thư Mục Gốc</option>
-										<option>2</option>
+										@if($cate->paren_id ==0){
+					                    <option value="0">Thư mục gốc</option>
+					                    }
+					                    @endif
+					                    @foreach($parent as $pr)
+					                    <option value="{{$pr->id}}">{{$pr->name}}</option>
+					                    @endforeach
+										@foreach($categories as $cates)
+										<option value="{{$cates->id}}">{{$cates->name}}</option>
+										@endforeach
 									</select>
 								</div>
 								<fieldset class="form-group">
-									
+									@if($cate->type ==0)
 										<label>
 											<input type="radio" name="type" id="optionsRadios1" value="0" checked>
 											Tin Tức
 										</label>
-									
-									
 										<label>
 											<input type="radio" name="type" id="optionsRadios2" value="1">
 											List Sản phẩm
 										</label>
 									
+									@else
+										<label>
+											<input type="radio" name="type" id="optionsRadios1" value="0">
+											Tin Tức
+										</label>
+										<label>
+											<input type="radio" name="type" id="optionsRadios2" value="1" checked>
+											List Sản phẩm
+										</label>
+									
+									@endif
 								</fieldset>
 								<div class="checkbox">
-									<label>
-										<input type="radio" id="optionsRadios1" name="display" value="1" checked>Hiển thị
-									</label>
-									<label>
-										<input type="radio" id="optionsRadios2" name="display" value="0">Tắt hiển thị
-									</label>
-									
+									@if($cate->display ==0)
+										<label>
+											<input type="radio"  name="display" value="1" >Hiển thị
+										</label>
+										<label>
+											<input type="radio"  name="display" value="0" checked>Tắt hiển thị
+										</label>
+									@else 
+										<label>
+											<input type="radio"  name="display" value="1" checked >Hiển thị
+										</label>
+										<label>
+											<input type="radio"  name="display" value="0" >Tắt hiển thị
+										</label>
+									@endif
 								</div>
 							</div>
 						</div>

@@ -86,7 +86,7 @@
 								</select>
 							</div>
 							<fieldset class="form-group">
-								
+									
 									<label>
 										<input type="radio" name="type" id="optionsRadios1" value="0" checked>
 										Tin Tức
