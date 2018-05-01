@@ -22,13 +22,15 @@ class adminController extends Controller
         $getListCategories = $Categories->getListCategories();
     	return View('frontEndAdmin.page-content.listCategories',['getListCategories'=>$getListCategories]);
     }
-    public function deleteCategorie($categorie_id){
+    public function deleteCategorie($id){
         $Categories =new Categories;
-        $Categories->deleteCategorie($categorie_id);
+        $Categories->deleteCategorie($id);
         return redirect()->back()->with(['flash_level'=>'success','flash_message'=>'Xóa danh mục thành công']);
     }
     public function addCategorie(){
-        return View('frontEndAdmin.page-content.addCategorie');
+        $cate = new Categories;
+        $categories =$cate->getListCategories();
+        return View('frontEndAdmin.page-content.addCategorie',['categories'=>$categories]);
     }
     public function postAddCategorie(addCategorieRequest $request){
         $cate =new Categories;
@@ -36,14 +38,14 @@ class adminController extends Controller
         return redirect('admin/getListCategories')->with(['flash_level'=>'success','flash_message'=>'Thêm danh mục thành công']);
     }
     
-    public function editCategorie($categorie_id){
-        $categorie = Categories::where('categorie_id',$categorie_id)->get();
+    public function editCategorie($id){
+        $categorie = Categories::where('id',$id)->get();
         return View('frontEndAdmin.page-content.editCategorie',['categorie'=>$categorie]);
     }
-    public function postEditCategorie(editCategorieRequest $request, $categorie_id){
+    public function postEditCategorie(editCategorieRequest $request, $id){
         
         $cate =new Categories;
-        $cate->editCategorie($requests,$categorie_id);
+        $cate->editCategorie($request,$id);
         return redirect('admin/getListCategories')->with(['flash_level'=>'success','flash_message'=>'Sửa danh mục thành công']);
         
     }

@@ -13,11 +13,11 @@ class Blogs extends Migration
     public function up()
     {
         Schema::create('blogs', function (Blueprint $table) {
-            $table->increments('blog_id');
+            $table->increments('id');
             $table->string('title');
             $table->longText('content');
             $table->integer('categorie_id')->unsigned();
-            $table->foreign('categorie_id')->references('categorie_id')->on('categories')->onDelete('cascade');
+            $table->foreign('categorie_id')->references('id')->on('categories')->onDelete('cascade');
             $table->integer('user_id')->unsigned();
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
             $table->string('seo_description');

@@ -80,7 +80,9 @@
 							<div class="form-group">
 								<select class="form-control" name="paren_id">
 									<option value="0">Thư Mục Gốc</option>
-									<option>2</option>
+									@foreach($categories as $cate)
+									<option value="{{$cate->id}}">{{$cate->name}}</option>
+									@endforeach
 								</select>
 							</div>
 							<fieldset class="form-group">

@@ -13,11 +13,11 @@ class ProductsImages extends Migration
     public function up()
     {
         Schema::create('products_images', function (Blueprint $table) {
-            $table->increments('product_image_id');
+            $table->increments('id');
             $table->integer('image_id')->unsigned();
-            $table->foreign('image_id')->references('image_id')->on('images')->onDelete('cascade');
+            $table->foreign('image_id')->references('id')->on('images')->onDelete('cascade');
             $table->integer('product_id')->unsigned();
-            $table->foreign('product_id')->references('product_id')->on('products')->onDelete('cascade');
+            $table->foreign('product_id')->references('id')->on('products')->onDelete('cascade');
             $table->boolean('represent');
             $table->timestamps();
         });

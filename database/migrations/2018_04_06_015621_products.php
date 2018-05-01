@@ -13,9 +13,9 @@ class Products extends Migration
     public function up()
     {
         Schema::create('products', function (Blueprint $table) {
-            $table->increments('product_id');
+            $table->increments('id');
             $table->integer('categorie_id')->unsigned();
-            $table->foreign('categorie_id')->references('categorie_id')->on('categories')->onDelete('cascade');
+            $table->foreign('categorie_id')->references('id')->on('categories')->onDelete('cascade');
             $table->string('name');
             $table->string('price');
             $table->integer('view');

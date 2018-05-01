@@ -9,7 +9,7 @@ class Categories extends Model
 	//
     protected $table = 'categories'; //Ten bang
 	protected $guarded = []; //Cac tham so
-	public $primaryKey = 'categorie_id';
+	protected $primaryKey = 'categorie_id';
 	public $timestamps = true;
 
 	
@@ -17,14 +17,14 @@ class Categories extends Model
 		$getListCategories = Categories::select()->get();
 		return $getListCategories;
 	}
-	public function deleteCategorie($categorie_id){
-		$categorie = Categories::where('categorie_id',$categorie_id);
+	public function deleteCategorie($id){
+		$categorie = Categories::where('id',$id);
 		$categorie->delete();
-		$childrenCategorie = $this->getChildren($categorie_id);
+		$childrenCategorie = $this->getChildren($id);
 		$childrenCategorie->delete();
 	}
-	public function getChildren($categorie_id){
-		$childrenCategorie = Categories::where('paren_id',$categorie_id);
+	public function getChildren($id){
+		$childrenCategorie = Categories::where('paren_id',$id);
 		return $childrenCategorie;
 	}
 	public function addCategorie($request){
@@ -40,8 +40,8 @@ class Categories extends Model
 		$cate ->type = $request->type;
 		$cate ->save();
 	}
-	public function editCategorie($request, $categorie_id){
-		$cate = Categories::where('categorie_id',$categorie_id)->get()->first();
+	public function editCategorie($request, $id){
+		$cate = Categories::where('id',$id)->get()->first();
 		$cate ->paren_id =$request->paren_id;
 		$cate ->name= $request->name;
 		$cate ->title = $request->title;
@@ -53,10 +53,5 @@ class Categories extends Model
 		$cate ->type = $request->type;
 		$cate ->save();
 	}
-	public function convertCategorie($categorie_id){
-		$cate = Categories::where('categorie_id',$categorie_id)->get()->first();
-		$cate ->name='null';
-		$cate ->url ='null';
-		$cate ->save();
-	}
+	
 }

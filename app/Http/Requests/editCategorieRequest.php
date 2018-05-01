@@ -21,13 +21,14 @@ class editCategorieRequest extends Request
      *
      * @return array
      */
+
     public function rules()
     {
         
         return [
             
-            'url' => 'required|unique:categories,url',
-            'name' => 'required',
+            'url' => 'required|unique:categories,url,'.$this->id,
+            'name' => 'required|unique:categories,name,'.$this->id,
             'title' =>'required',
             'seo_keyword'=>'required',
             'seo_description'=>'required',
@@ -40,6 +41,7 @@ class editCategorieRequest extends Request
             'url.required' => 'Vui lòng nhập Url',
             'url.unique' => 'Url này đã được sử dụng',
             'name.required' => 'Vui lòng nhập tên danh mục',
+            'name.unique' => 'Tên danh mục này đã được sử dụng',
             'title.required' =>' Vui lòng nhập tiêu đề danh mục',
             'seo_keyword.required'=>'Vui lòng nhập seo keywords',
             'seo_description.required'=>'Vui lòng nhập seo description',

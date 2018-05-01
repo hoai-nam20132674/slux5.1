@@ -13,7 +13,7 @@ class ProductsRepair extends Migration
     public function up()
     {
         Schema::create('products_repair', function (Blueprint $table) {
-            $table->increments('product_repair_id');
+            $table->increments('id');
             $table->string('name',50);
             $table->string('phone_number',20);
             $table->string('address');

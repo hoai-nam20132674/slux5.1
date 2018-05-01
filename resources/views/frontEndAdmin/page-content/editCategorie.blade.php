@@ -32,7 +32,7 @@
 				<p class="font-90 text-muted mb-1">Bootstrap provides several form control styles, layout options, and custom components for creating a wide variety of forms.</p>
 
 				@foreach($categorie as $cate)
-					<form action="{{ URL::route('postEditCategorie',$cate->categorie_id)}}" method="POST">
+					<form action="{{ URL::route('postEditCategorie',$cate->id)}}" method="POST">
 						<form action="" method="POST">
 						<input type="hidden" name="_token" value="{{ csrf_token()}}">
 						<div class="row">

@@ -33,7 +33,7 @@ class DatabaseSeeder extends Seeder
             ],
             [
                 'name' =>'quang',
-                'email' =>'admin1@gmail.com',
+                'email' =>'admin2@gmail.com',
                 'password'=>Hash::make('111111'),
                 'role'=>0
             ],

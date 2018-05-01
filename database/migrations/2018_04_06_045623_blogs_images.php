@@ -13,11 +13,11 @@ class BlogsImages extends Migration
     public function up()
     {
         Schema::create('blogs_images', function (Blueprint $table) {
-            $table->increments('blog_image_id');
+            $table->increments('id');
             $table->integer('image_id')->unsigned();
-            $table->foreign('image_id')->references('image_id')->on('images')->onDelete('cascade');
+            $table->foreign('image_id')->references('id')->on('images')->onDelete('cascade');
             $table->integer('blog_id')->unsigned();
-            $table->foreign('blog_id')->references('blog_id')->on('blogs')->onDelete('cascade');
+            $table->foreign('blog_id')->references('id')->on('blogs')->onDelete('cascade');
             $table->boolean('represent');
             $table->timestamps();
         });
