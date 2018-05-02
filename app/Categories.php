@@ -3,7 +3,7 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
-
+use App\Blogs;
 class Categories extends Model
 {
 	//
@@ -17,20 +17,39 @@ class Categories extends Model
 		$getListCategories = Categories::select()->get();
 		return $getListCategories;
 	}
-	public function deleteCategorie($id){
+	public function deleteCategorie($id,$parent_id){
+		
+		$count = Categories::where('parent_id',$id)->count();
+		if($count != 0){
+			for($i=0;$i<$count;$i++){
+				$childrenCate = Categories::where('parent_id',$id)->get()->first();
+				$childrenCate->parent_id =0;
+				$childrenCate->save();
+			}
+		}
+		$count2 = Blogs::where('categorie_id',$id)->count();
+		if($count2 != 0){
+			for($i=0;$i<$count2;$i++){
+				$childrenBlog = Blogs::where('categorie_id',$id)->get()->first();
+				$childrenBlog->categorie_id =100000;
+				$childrenBlog->save();
+			}
+		}
 		$categorie = Categories::where('id',$id);
 		$categorie->delete();
-		$childrenCategorie = $this->getChildren($id);
-		$childrenCategorie->paren_id =0;
-		$childrenCategorie->save();
+
 	}
 	public function getChildren($id){
-		$childrenCategorie = Categories::where('paren_id',$id)->get()->first();
+		$childrenCategorie = Categories::where('parent_id',$id)->get()->toArray();
+		return $childrenCategorie;
+	}
+	public function getBlogChildren($id){
+		$childrenBlog = Blogs::where('categorie_id',$id)->get()->toArray();
 		return $childrenCategorie;
 	}
 	public function addCategorie($request){
 		$cate = new Categories;
-		$cate ->paren_id =$request->paren_id;
+		$cate ->parent_id =$request->parent_id;
 		$cate ->name= $request->name;
 		$cate ->title = $request->title;
 		$cate ->content = $request->content;
@@ -43,7 +62,7 @@ class Categories extends Model
 	}
 	public function editCategorie($request, $id){
 		$cate = Categories::where('id',$id)->get()->first();
-		$cate ->paren_id =$request->paren_id;
+		$cate ->parent_id =$request->parent_id;
 		$cate ->name= $request->name;
 		$cate ->title = $request->title;
 		$cate ->content = $request->content;

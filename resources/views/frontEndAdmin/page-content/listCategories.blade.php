@@ -52,10 +52,17 @@
 							<td>{{$categories -> url}}</td>
 							<td></td>
 							<td></td>
+							@if($categories->url == 'danh-muc-an')
 							<td class="text-center">
-								<a onclick="return confirmDelete('Bạn có chắc muốn xóa danh mục này không')" href="{{ URL::route('deleteCategorie',$categories->id)}}" title="Xóa danh mục"><i class="ion-trash-a" style="width: 100%; font-size: 18px; color: red; margin-right: 5px;"></i></a>
-								<a href="{{ URL::route('editCategorie',[$categories->id,$categories->paren_id])}}" title="Sửa danh mục"><i class="ion-compose" style="width: 100%; font-size: 18px;"></i></a>
+								<a style="pointer-events: none;cursor: default;" onclick="return confirmDelete('Bạn có chắc muốn xóa danh mục này không')" href="{{ URL::route('deleteCategorie',[$categories->id,$categories->parent_id])}}" title="Xóa danh mục"><i class="ion-trash-a" style="width: 100%; font-size: 18px; color: red; margin-right: 5px;"></i></a>
+								<a style="pointer-events: none;cursor: default;" href="{{ URL::route('editCategorie',[$categories->id,$categories->parent_id])}}" title="Sửa danh mục"><i class="ion-compose" style="width: 100%; font-size: 18px;"></i></a>
 							</td>
+							@else
+							<td class="text-center">
+								<a onclick="return confirmDelete('Bạn có chắc muốn xóa danh mục này không')" href="{{ URL::route('deleteCategorie',[$categories->id,$categories->parent_id])}}" title="Xóa danh mục"><i class="ion-trash-a" style="width: 100%; font-size: 18px; color: red; margin-right: 5px;"></i></a>
+								<a href="{{ URL::route('editCategorie',[$categories->id,$categories->parent_id])}}" title="Sửa danh mục"><i class="ion-compose" style="width: 100%; font-size: 18px;"></i></a>
+							</td>
+							@endif
 						</tr>
 						@endforeach
 					</tbody>

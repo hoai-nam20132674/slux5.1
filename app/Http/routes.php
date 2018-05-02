@@ -42,9 +42,9 @@ Route::group(['prefix'=>'admin', 'middleware'=>'auth'],function(){
 	Route::get('getListCategories',['as'=>'getListCategories','uses'=>'adminController@getListCategories']);
 	Route::get('addCategorie',['as'=>'addCategorie','uses'=>'adminController@addCategorie']);
 	Route::post('postAddCategorie',['as'=>'postAddCategorie','uses'=>'adminController@postAddCategorie']);
-	Route::get('editCategorie/{id}/{paren_id}',['as'=>'editCategorie','uses'=>'adminController@editCategorie']);
+	Route::get('editCategorie/{id}/{parent_id}',['as'=>'editCategorie','uses'=>'adminController@editCategorie']);
 	Route::post('postEditCategorie/{id}',['as'=>'postEditCategorie','uses'=>'adminController@postEditCategorie']);
-	Route::get('deleteCategorie/{id}',['as'=>'deleteCategorie','uses'=>'adminController@deleteCategorie']);
+	Route::get('deleteCategorie/{id}/{parent_id}',['as'=>'deleteCategorie','uses'=>'adminController@deleteCategorie']);
 
 	Route::get('getListBlogs',['as'=>'getListBlogs','uses'=>'adminController@getListBlogs']);
 	Route::get('addBlog',['as'=>'addBlog','uses'=>'adminController@addBlog']);

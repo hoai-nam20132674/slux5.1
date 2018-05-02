@@ -14,7 +14,7 @@ class Categories extends Migration
     {
         Schema::create('categories', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('paren_id');
+            $table->integer('parent_id');
             $table->string('name');
             $table->string('title');
             $table->longText('content');

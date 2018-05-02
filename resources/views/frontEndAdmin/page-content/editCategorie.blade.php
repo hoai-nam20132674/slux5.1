@@ -83,8 +83,8 @@
 							</div>
 							<div class="col-md-3">
 								<div class="form-group">
-									<select class="form-control" name="paren_id">
-										@if($cate->paren_id ==0){
+									<select class="form-control" name="parent_id">
+										@if($cate->parent_id ==0){
 					                    <option value="0">Thư mục gốc</option>
 					                    @foreach($categories as $cates)
 										<option value="{{$cates->id}}">{{$cates->name}}</option>

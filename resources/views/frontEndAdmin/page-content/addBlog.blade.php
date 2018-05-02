@@ -30,7 +30,7 @@
 		    	@endif
 				<h5>Form controls</h5>
 				<p class="font-90 text-muted mb-1">Bootstrap provides several form control styles, layout options, and custom components for creating a wide variety of forms.</p>
-				<form action="{{URL::route('postAddBlog')}}" method="POST">
+				<form action="{{URL::route('postAddBlog')}}" method="POST" enctype="multipart/form-data">
 					<input type="hidden" name="_token" value="{{ csrf_token()}}">
 					<div class="row">
 						<div class="col-md-9">
@@ -41,26 +41,26 @@
 								</div>
 								<div class="col-md-9">
 									<div class="form-group">	
-										<input type="text" class="form-control" name="url" placeholder="Nhập Url">
+										<input type="text" class="form-control" name="url" placeholder="Nhập Url" value="{{old('url')}}">
 									</div>
 								</div>
 							</div>
 							<div class="form-group">
 								<label for="exampleInputEmail1">Tiêu đề</label>
-								<input type="text" class="form-control" name="title" placeholder="Nhập tiêu đề danh mục">
+								<input type="text" class="form-control" name="title" placeholder="Nhập tiêu đề danh mục" value="{{old('title')}}">
 							</div>
 							
 							<div class="form-group">
 								<label for="exampleInputEmail1">Keywords</label>
-								<input type="text" class="form-control" name="seo_keyword" placeholder="Keywords Seo">
+								<input type="text" class="form-control" name="seo_keyword" placeholder="Keywords Seo" value="{{old('seo_keyword')}}">
 							</div>
 							<div class="form-group">
 								<label for="exampleInputEmail1">Description</label>
-								<input type="text" class="form-control" name="seo_description" placeholder="Description Seo">
+								<input type="text" class="form-control" name="seo_description" placeholder="Description Seo" value="{{old('seo_description')}}">
 							</div>
 							<div class="form-group">
 								<label for="exampleTextarea">Nội dung</label>
-								<textarea class="form-control" name="content" rows="3"></textarea>
+								<textarea class="form-control" name="content" rows="3">{{old('content')}}</textarea>
 								<script type="text/javascript">
 							      var editor = CKEDITOR.replace('content',{
 							       language:'vi',
@@ -75,7 +75,7 @@
 						</div>
 						<div class="col-md-3">
 							<div class="form-group">
-								<select class="form-control" name="paren_id">
+								<select class="form-control" name="categorie_id">
 									<option value="0">Thư Mục Gốc</option>
 									@foreach($categories as $cate)
 									<option value="{{$cate->id}}">{{$cate->name}}</option>
@@ -84,17 +84,17 @@
 							</div>
 							<div class="checkbox">
 								<label>
-									<input type="radio" id="optionsRadios1" name="display" value="1" checked>Hiển thị
+									<input type="radio" name="display" value="1" checked>Hiển thị
 								</label>
 								<label>
-									<input type="radio" id="optionsRadios2" name="display" value="0">Tắt hiển thị
+									<input type="radio" name="display" value="0">Tắt hiển thị
 								</label>
 							</div>
 							<div class="file-upload">
 							  	<!-- <button class="file-upload-btn" type="button" onclick="$('.file-upload-input').trigger( 'click' )">Add Image</button> -->
 								
 							  	<div class="image-upload-wrap">
-								    <input class="file-upload-input" type='file' onchange="readURL(this);" accept="image/*" />
+								    <input class="file-upload-input" type='file' name="image" onchange="readURL(this);" accept="image/*" />
 								    <div class="drag-text">
 								      <h3>Ảnh đại diện </h3>
 								    </div>

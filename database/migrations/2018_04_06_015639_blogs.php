@@ -24,7 +24,7 @@ class Blogs extends Migration
             $table->string('seo_keyword');
             $table->string('url');
             $table->boolean('display');
-
+            $table->string('image');
             $table->timestamps();
         });
     }

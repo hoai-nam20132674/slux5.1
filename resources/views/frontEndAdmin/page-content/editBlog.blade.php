@@ -7,6 +7,7 @@
 	<link rel="stylesheet" href="{{asset('admin/vendor/jscrollpane/jquery.jscrollpane.css')}}">
 	<link rel="stylesheet" href="{{asset('admin/vendor/waves/waves.min.css')}}">
 	<link rel="stylesheet" href="{{asset('admin/vendor/switchery/dist/switchery.min.css')}}">
+	<link rel="stylesheet" href="{{asset('admin/css/upload-image.css')}}">
 @endsection()
 @section('content')
 	<div class="content-area py-1">
@@ -29,7 +30,8 @@
 		    	@endif
 				<h5>Form controls</h5>
 				<p class="font-90 text-muted mb-1">Bootstrap provides several form control styles, layout options, and custom components for creating a wide variety of forms.</p>
-				<form action="{{URL::route('postAddCategorie')}}" method="POST">
+				@foreach($blog as $bl)
+				<form action="{{URL::route('postEditBlog',$bl->id)}}" method="POST" enctype="multipart/form-data">
 					<input type="hidden" name="_token" value="{{ csrf_token()}}">
 					<div class="row">
 						<div class="col-md-9">
@@ -40,30 +42,26 @@
 								</div>
 								<div class="col-md-9">
 									<div class="form-group">	
-										<input type="text" class="form-control" name="url" placeholder="Nhập Url" value="{{old('url')}}">
+										<input type="text" class="form-control" name="url" placeholder="Nhập Url" value="{{$bl->url}}">
 									</div>
 								</div>
 							</div>
 							<div class="form-group">
-								<label for="exampleInputEmail1">Tên danh mục</label>
-								<input type="text" class="form-control" name="name" placeholder="Nhập tên danh mục" value="{{oll('name')}}">
-							</div>
-							<div class="form-group">
 								<label for="exampleInputEmail1">Tiêu đề</label>
-								<input type="text" class="form-control" name="title" placeholder="Nhập tiêu đề danh mục" value="{{old('title')}}">
+								<input type="text" class="form-control" name="title" placeholder="Nhập tiêu đề danh mục" value="{{$bl->title}}">
 							</div>
 							
 							<div class="form-group">
 								<label for="exampleInputEmail1">Keywords</label>
-								<input type="text" class="form-control" name="seo_keyword" placeholder="Keywords Seo" value="{{old('seo_keyword')}}">
+								<input type="text" class="form-control" name="seo_keyword" placeholder="Keywords Seo" value="{{$bl->seo_keyword}}">
 							</div>
 							<div class="form-group">
 								<label for="exampleInputEmail1">Description</label>
-								<input type="text" class="form-control" name="seo_description" placeholder="Description Seo" value="{{old('seo_description')}}">
+								<input type="text" class="form-control" name="seo_description" placeholder="Description Seo" value="{{$bl->seo_description}}">
 							</div>
 							<div class="form-group">
 								<label for="exampleTextarea">Nội dung</label>
-								<textarea class="form-control" name="content" rows="3">{{old('content')}}</textarea>
+								<textarea class="form-control" name="content" rows="3">{{$bl->content}}</textarea>
 								<script type="text/javascript">
 							      var editor = CKEDITOR.replace('content',{
 							       language:'vi',
@@ -78,41 +76,58 @@
 						</div>
 						<div class="col-md-3">
 							<div class="form-group">
-								<select class="form-control" name="parent_id">
-									<option value="0">Thư Mục Gốc</option>
-									@foreach($categories as $cate)
+								<select class="form-control" name="categorie_id">
+									@foreach($categorie as $cate)
 									<option value="{{$cate->id}}">{{$cate->name}}</option>
+									@endforeach
+									@foreach($categories as $cates)
+									<option value="{{$cates->id}}">{{$cates->name}}</option>
 									@endforeach
 								</select>
 							</div>
-							<fieldset class="form-group">
-									
-									<label>
-										<input type="radio" name="type" id="optionsRadios1" value="0" checked>
-										Tin Tức
-									</label>
-								
-								
-									<label>
-										<input type="radio" name="type" id="optionsRadios2" value="1">
-										List Sản phẩm
-									</label>
-								
-							</fieldset>
 							<div class="checkbox">
-								<label>
-									<input type="radio" id="optionsRadios1" name="display" value="1" checked>Hiển thị
-								</label>
-								<label>
-									<input type="radio" id="optionsRadios2" name="display" value="0">Tắt hiển thị
-								</label>
+								@if($bl->display ==0)
+									<label>
+										<input type="radio"  name="display" value="1" >Hiển thị
+									</label>
+									<label>
+										<input type="radio"  name="display" value="0" checked>Tắt hiển thị
+									</label>
+								@else 
+									<label>
+										<input type="radio"  name="display" value="1" checked >Hiển thị
+									</label>
+									<label>
+										<input type="radio"  name="display" value="0" >Tắt hiển thị
+									</label>
+								@endif
 								
+							</div>
+							<div class="image-blog" style="width: 100%" >
+								<img class="img-thumbnail" width="100%" src="{{url('/uploads/images/blogs/'.$bl["image"])}}">
+							</div>
+							<div class="file-upload">
+							  	<!-- <button class="file-upload-btn" type="button" onclick="$('.file-upload-input').trigger( 'click' )">Add Image</button> -->
+								
+							  	<div class="image-upload-wrap">
+								    <input class="file-upload-input" type='file' name="image" onchange="readURL(this);" accept="image/*" />
+								    <div class="drag-text">
+								      <h3>Đổi ảnh đại diện </h3>
+								    </div>
+							  	</div>
+							  	<div class="file-upload-content">
+							    	<img class="file-upload-image" src="#" alt="your image" />
+							    	<div class="image-title-wrap">
+							      		<button type="button" onclick="removeUpload()" class="remove-image">Remove <span class="image-title text-center">Uploaded Image</span></button>
+							    	</div>
+							  	</div>
 							</div>
 						</div>
 					</div>
 
 					<button type="submit" class="btn btn-primary">Submit</button>
 				</form>
+				@endforeach
 			</div>
 			
 		</div>
@@ -134,4 +149,5 @@
 		<!-- Neptune JS -->
 		<script type="text/javascript" src="{{asset('admin/js/app.js')}}"></script>
 		<script type="text/javascript" src="{{asset('admin/js/demo.js')}}"></script>
+		<script type="text/javascript" src="{{asset('admin/js/upload-image.js')}}"></script>
 @endsection

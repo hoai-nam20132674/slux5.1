@@ -14,7 +14,7 @@ class Images extends Migration
     {
         Schema::create('images', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('name')->unique();
+            $table->string('name');
             $table->string('url');
             $table->string('alt');
             $table->timestamps();
