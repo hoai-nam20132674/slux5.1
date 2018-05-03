@@ -46,7 +46,7 @@
 							</div>
 							<div class="form-group">
 								<label for="exampleInputEmail1">Tên danh mục</label>
-								<input type="text" class="form-control" name="name" placeholder="Nhập tên danh mục" value="{{oll('name')}}">
+								<input type="text" class="form-control" name="name" placeholder="Nhập tên danh mục" value="{{old('name')}}">
 							</div>
 							<div class="form-group">
 								<label for="exampleInputEmail1">Tiêu đề</label>

@@ -9,10 +9,12 @@ use App\Http\Controllers\Controller;
 use Illuminate\Contracts\View\View;
 use App\Categories;
 use App\Blogs;
+use App\Products;
 use App\Http\Requests\addCategorieRequest;
 use App\Http\Requests\editCategorieRequest;
 use App\Http\Requests\editBlogRequest;
 use App\Http\Requests\addBlogRequest;
+use App\Http\Requests\addProductRequest;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Auth;
 
@@ -20,12 +22,16 @@ class adminController extends Controller
 {
     
     public function index(){
-        return View('frontEndAdmin.page-content.index');
+        $countBlogs = Blogs::select()->count();
+        return View('frontEndAdmin.page-content.index',['countBlogs'=>$countBlogs]);
     }
+
+    //Categories Controller
     public function getListCategories(){
+        $countBlogs = Blogs::select()->count();
         $Categories =new Categories;
         $getListCategories = $Categories->getListCategories();
-    	return View('frontEndAdmin.page-content.listCategories',['getListCategories'=>$getListCategories]);
+    	return View('frontEndAdmin.page-content.listCategories',['getListCategories'=>$getListCategories,'countBlogs'=>$countBlogs]);
     }
     public function deleteCategorie($id,$parent_id){
         $Categories =new Categories;
@@ -33,9 +39,10 @@ class adminController extends Controller
         return redirect()->back()->with(['flash_level'=>'success','flash_message'=>'Xóa danh mục thành công']);
     }
     public function addCategorie(){
+        $countBlogs = Blogs::select()->count();
         $cate = new Categories;
         $categories =$cate->getListCategories();
-        return View('frontEndAdmin.page-content.addCategorie',['categories'=>$categories]);
+        return View('frontEndAdmin.page-content.addCategorie',['categories'=>$categories,'countBlogs'=>$countBlogs]);
     }
     public function postAddCategorie(addCategorieRequest $request){
         $cate =new Categories;
@@ -44,26 +51,29 @@ class adminController extends Controller
     }
     
     public function editCategorie($id, $parent_id){
+        $countBlogs = Blogs::select()->count();
         $categorie = Categories::where('id',$id)->get();
         $categories = Categories::select()->get();
         $parent = Categories::where('id',$parent_id)->get();
-        return View('frontEndAdmin.page-content.editCategorie',['categorie'=>$categorie,'categories'=>$categories,'parent'=>$parent]);
+        return View('frontEndAdmin.page-content.editCategorie',['categorie'=>$categorie,'categories'=>$categories,'parent'=>$parent,'countBlogs'=>$countBlogs]);
     }
     public function postEditCategorie(editCategorieRequest $request, $id){
-        
         $cate =new Categories;
         $cate->editCategorie($request,$id);
         return redirect('admin/getListCategories')->with(['flash_level'=>'success','flash_message'=>'Sửa danh mục thành công']);
-        
     }
 
+    //Blog Controller
+
     public function getListBlogs(){
+        $countBlogs = Blogs::select()->count();
         $blogs = Blogs::select()->get();
-        return View('frontEndAdmin.page-content.listBlogs',['blogs'=>$blogs]);
+        return View('frontEndAdmin.page-content.listBlogs',['blogs'=>$blogs,'countBlogs'=>$countBlogs]);
     }
     public function addBlog(){
+        $countBlogs = Blogs::select()->count();
         $categories = Categories::select()->get();
-        return View('frontEndAdmin.page-content.addBlog',['categories'=>$categories]);
+        return View('frontEndAdmin.page-content.addBlog',['categories'=>$categories,'countBlogs'=>$countBlogs]);
     }
     public function postAddBlog(addBlogRequest $request){
         if($request->categorie_id ==0){
@@ -79,15 +89,36 @@ class adminController extends Controller
         return redirect('admin/getListBlogs')->with(['flash_level'=>'success','flash_message'=>'Xóa tin tức thành công']);
     }
     public function editBlog($id, $categorie_id){
+        $countBlogs = Blogs::select()->count();
         $blog = Blogs::where('id',$id)->get();
         $categorie = Categories::where('id',$categorie_id)->get();
         $categories = Categories::select()->get();
-        return View('frontEndAdmin.page-content.editBlog',['categorie'=>$categorie,'categories'=>$categories,'blog'=>$blog]);
+        return View('frontEndAdmin.page-content.editBlog',['categorie'=>$categorie,'categories'=>$categories,'blog'=>$blog,'countBlogs'=>$countBlogs]);
     }
 
     public function postEditBlog(editBlogRequest $request, $id){
         $blog =new Blogs;
         $blog->editBlog($request,$id);
-        return redirect('admin/getListBlogs')->with(['flash_level'=>'success','flash_message'=>'Sửa tin tức không thành công']);
+        return redirect('admin/getListBlogs')->with(['flash_level'=>'success','flash_message'=>'Sửa tin tức thành công']);
     }
+
+
+    //Product Controller
+
+    public function getListProducts(){
+        $countBlogs = Blogs::select()->count();
+        $products = Products::select()->get();
+        return View('frontEndAdmin.page-content.listProducts',['products'=>$products,'countBlogs'=>$countBlogs]);
+    }
+    public function addProduct(){
+        $countBlogs = Blogs::select()->count();
+        $categories = Categories::select()->get();
+        return View('frontEndAdmin.page-content.addProduct',['categories'=>$categories,'countBlogs'=>$countBlogs]);
+    }
+    public function postAddProduct(addProductRequest $request){
+        $product = new Products;
+        $product ->addProduct($request);
+        return redirect('admin/getListProducts')->with(['flash_level'=>'success','flash_message'=>'Thêm sản phẩm thành công']);
+    }
+
 }

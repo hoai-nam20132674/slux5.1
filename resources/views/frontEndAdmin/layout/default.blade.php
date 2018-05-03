@@ -73,31 +73,16 @@
 							</a>
 							<ul>
 								<li><a href="{{URL::route('getListCategories')}}">Danh mục</a></li>
-								<li><a href="{{URL::route('getListBlogs')}}" >Tin tức  <span class="tag tag-danger"> 100</span></a></li>
+								<li><a href="{{URL::route('getListBlogs')}}" >Tin tức  <span class="tag tag-danger">{{$countBlogs}}</span></a></li>
 							</ul>
 						</li>
 						<li class="with-sub">
-							<a href="#" class="waves-effect  waves-light">
+							<a href="{{URL::route('getListProducts')}}" class="waves-effect  waves-light">
 								<span class="s-caret"><i class="fa fa-angle-down"></i></span>
 								<span class="s-icon"><i class="ti-paint-bucket"></i></span>
-								<span class="s-text">UI Kit</span>
+								<span class="tag tag-success">3</span>
+								<span class="s-text">Sản phẩm</span>
 							</a>
-							<ul>
-								<li><a href="ui-arrows.html">Arrows</a></li>
-								<li><a href="ui-buttons.html">Buttons</a></li>
-								<li><a href="ui-cards.html">Cards</a></li>
-								<li><a href="ui-carousel.html">Carousel</a></li>
-								<li><a href="ui-dropdowns.html">Dropdowns</a></li>
-								<li><a href="ui-flags.html">Flags</a></li>
-								<li><a href="ui-grid.html">Grid</a></li>
-								<li><a href="ui-modal.html">Modal</a></li>
-								<li><a href="ui-navs.html">Navs</a></li>
-								<li><a href="ui-notifications.html">Notifications</a></li>
-								<li><a href="ui-progress.html">Progress</a></li>
-								<li><a href="ui-spinners.html">Spinners</a></li>
-								<li><a href="ui-typography.html">Typography</a></li>
-								<li><a href="ui-other.html">Other</a></li>
-							</ul>
 						</li>
 						<li class="with-sub">
 							<a href="#" class="waves-effect  waves-light">
@@ -288,7 +273,7 @@
 			<div class="site-header">
 				<nav class="navbar navbar-light">
 					<div class="navbar-left">
-						<a class="navbar-brand" href="index.html">
+						<a class="navbar-brand" href="/admin/index">
 							<div class="logo"><img src="{{asset('images/logo-slux.png')}}" width="100%"></div>
 						</a>
 						<div class="toggle-button dark sidebar-toggle-first float-xs-left hidden-md-up">

@@ -31,7 +31,7 @@ class Categories extends Model
 		if($count2 != 0){
 			for($i=0;$i<$count2;$i++){
 				$childrenBlog = Blogs::where('categorie_id',$id)->get()->first();
-				$childrenBlog->categorie_id =100000;
+				$childrenBlog->categorie_id =1;
 				$childrenBlog->save();
 			}
 		}

@@ -30,7 +30,7 @@
 		    	@endif
 				<h5>Form controls</h5>
 				<p class="font-90 text-muted mb-1">Bootstrap provides several form control styles, layout options, and custom components for creating a wide variety of forms.</p>
-				<form action="{{URL::route('postAddBlog')}}" method="POST" enctype="multipart/form-data">
+				<form action="{{URL::route('postAddProduct')}}" method="POST" enctype="multipart/form-data">
 					<input type="hidden" name="_token" value="{{ csrf_token()}}">
 					<div class="row">
 						<div class="col-md-9">
@@ -46,23 +46,58 @@
 								</div>
 							</div>
 							<div class="form-group">
+								<label for="exampleTextarea">Thông số kỹ thuật</label>
+								<textarea class="form-control" name="tskt" rows="3">{{old('tskt')}}</textarea>
+								<script type="text/javascript">
+							      var editor = CKEDITOR.replace('tskt',{
+							       language:'vi',
+							       filebrowserImageBrowseUrl : '../admin/ckfinder/ckfinder.html?type=Images',
+							       filebrowserFlashBrowseUrl : '../admin/ckfinder/ckfinder.html?type=Flash',
+							       filebrowserImageUploadUrl : '../admin/ckfinder/core/connector/php/connector.php?command=QuickUpload&type=Images',
+							       filebrowserFlashUploadUrl : '../admin/ckfinder/core/connector/php/connector.php?command=QuickUpload&type=Flash',
+							       });
+							     </script>﻿
+							</div>
+							<div class="form-group">
+								<label for="exampleInputEmail1">Tên sản phẩm</label>
+								<input type="text" class="form-control" name="name" placeholder="Nhập tiêu đề danh mục" value="{{old('name')}}">
+							</div>
+							<div class="form-group">
+								<label for="exampleInputEmail1">Giá</label>
+								<input type="text" class="form-control" name="price" placeholder="Nhập tiêu đề danh mục" value="{{old('price')}}">
+							</div>
+							<div class="form-group">
 								<label for="exampleInputEmail1">Tiêu đề</label>
 								<input type="text" class="form-control" name="title" placeholder="Nhập tiêu đề danh mục" value="{{old('title')}}">
 							</div>
 							
 							<div class="form-group">
-								<label for="exampleInputEmail1">Keywords</label>
+								<label for="exampleInputEmail1">Seo keywords</label>
 								<input type="text" class="form-control" name="seo_keyword" placeholder="Keywords Seo" value="{{old('seo_keyword')}}">
 							</div>
 							<div class="form-group">
-								<label for="exampleInputEmail1">Description</label>
+								<label for="exampleInputEmail1">Seo description</label>
 								<input type="text" class="form-control" name="seo_description" placeholder="Description Seo" value="{{old('seo_description')}}">
 							</div>
 							<div class="form-group">
-								<label for="exampleTextarea">Nội dung</label>
-								<textarea class="form-control" name="content" rows="3">{{old('content')}}</textarea>
+								<label for="exampleTextarea">Thông tin khuyến mãi</label>
+								<textarea class="form-control" name="sale" rows="3">{{old('sale')}}</textarea>
 								<script type="text/javascript">
-							      var editor = CKEDITOR.replace('content',{
+							      var editor = CKEDITOR.replace('sale',{
+							       language:'vi',
+							       filebrowserImageBrowseUrl : '../admin/ckfinder/ckfinder.html?type=Images',
+							       filebrowserFlashBrowseUrl : '../admin/ckfinder/ckfinder.html?type=Flash',
+							       filebrowserImageUploadUrl : '../admin/ckfinder/core/connector/php/connector.php?command=QuickUpload&type=Images',
+							       filebrowserFlashUploadUrl : '../admin/ckfinder/core/connector/php/connector.php?command=QuickUpload&type=Flash',
+							       });
+							     </script>﻿
+							</div>
+							
+							<div class="form-group">
+								<label for="exampleTextarea">Mô tả sản phẩm</label>
+								<textarea class="form-control" name="description" rows="3">{{old('description')}}</textarea>
+								<script type="text/javascript">
+							      var editor = CKEDITOR.replace('description',{
 							       language:'vi',
 							       filebrowserImageBrowseUrl : '../admin/ckfinder/ckfinder.html?type=Images',
 							       filebrowserFlashBrowseUrl : '../admin/ckfinder/ckfinder.html?type=Flash',
@@ -89,9 +124,7 @@
 									<input type="radio" name="display" value="0">Tắt hiển thị
 								</label>
 							</div>
-							<div class="file-upload">
-							  	<!-- <button class="file-upload-btn" type="button" onclick="$('.file-upload-input').trigger( 'click' )">Add Image</button> -->
-								
+							<div class="file-upload">	
 							  	<div class="image-upload-wrap image-upload-wrap0">
 								    <input class="file-upload-input file-upload-input0" type='file' name="image" onchange="readURL(this);" accept="image/*" />
 								    <div class="drag-text">
@@ -102,6 +135,48 @@
 							    	<img class="file-upload-image file-upload-image0" src="#" alt="your image" />
 							    	<div class="image-title-wrap image-title-wrap0">
 							      		<button type="button" onclick="removeUpload()" class="remove-image">Remove <span class="image-title image-title0 text-center">Uploaded Image</span></button>
+							    	</div>
+							  	</div>
+							</div>
+							<div class="file-upload">	
+							  	<div class="image-upload-wrap image-upload-wrap1">
+								    <input class="file-upload-input file-upload-input1" type='file' name="image1" onchange="readURL1(this);" accept="image/*" />
+								    <div class="drag-text">
+								      <h3>Ảnh detail</h3>
+								    </div>
+							  	</div>
+							  	<div class="file-upload-content file-upload-content1">
+							    	<img class="file-upload-image file-upload-image1" src="#" alt="your image" />
+							    	<div class="image-title-wrap image-title-wrap1">
+							      		<button type="button" onclick="removeUpload1()" class="remove-image">Remove <span class="image-title image-title1 text-center">Uploaded Image</span></button>
+							    	</div>
+							  	</div>
+							</div>
+							<div class="file-upload">	
+							  	<div class="image-upload-wrap image-upload-wrap2">
+								    <input class="file-upload-input file-upload-input2" type='file' name="image2" onchange="readURL2(this);" accept="image/*" />
+								    <div class="drag-text">
+								      <h3>Ảnh detail</h3>
+								    </div>
+							  	</div>
+							  	<div class="file-upload-content file-upload-content2">
+							    	<img class="file-upload-image file-upload-image2" src="#" alt="your image" />
+							    	<div class="image-title-wrap image-title-wrap2">
+							      		<button type="button" onclick="removeUpload2()" class="remove-image">Remove <span class="image-title image-title2 text-center">Uploaded Image</span></button>
+							    	</div>
+							  	</div>
+							</div>
+							<div class="file-upload">	
+							  	<div class="image-upload-wrap image-upload-wrap3">
+								    <input class="file-upload-input file-upload-input3" type='file' name="image3" onchange="readURL3(this);" accept="image/*" />
+								    <div class="drag-text">
+								      <h3>Ảnh detail</h3>
+								    </div>
+							  	</div>
+							  	<div class="file-upload-content file-upload-content3">
+							    	<img class="file-upload-image file-upload-image3" src="#" alt="your image" />
+							    	<div class="image-title-wrap image-title-wrap3">
+							      		<button type="button" onclick="removeUpload3()" class="remove-image">Remove <span class="image-title image-title3 text-center">Uploaded Image</span></button>
 							    	</div>
 							  	</div>
 							</div>

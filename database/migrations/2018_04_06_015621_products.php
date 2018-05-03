@@ -21,9 +21,12 @@ class Products extends Migration
             $table->integer('view');
             $table->integer('featured');
             $table->string('title');
-            $table->string('description');
+            $table->longText('description');
             $table->string('seo_description');
             $table->string('seo_keyword');
+            $table->longText('tskt');
+            $table->longText('sale');
+            $table->string('image');
             $table->string('url');
             $table->boolean('display');
             $table->timestamps();

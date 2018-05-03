@@ -29,9 +29,7 @@ class addBlogRequest extends Request
             'title' =>'required',
             'seo_keyword'=>'required',
             'seo_description'=>'required',
-            'image'=>'required|unique:images,name'
- 
-
+            'image'=>'required|image|mimes:jpg,png,gif,jpeg'
         ];
     }
     public function messages(){
@@ -43,8 +41,9 @@ class addBlogRequest extends Request
             'title.required' =>' Vui lòng nhập tiêu đề danh mục',
             'seo_keyword.required'=>'Vui lòng nhập seo keywords',
             'seo_description.required'=>'Vui lòng nhập seo description',
-            'image.unique' => 'Ảnh bị trùng',
-            'image.required' => 'Vui lòng chọn ảnh'
+            'image.required' => 'Vui lòng chọn ảnh',
+            'image.image' =>'Định dạng ảnh không đúng',
+            'image.mimes' => 'Định dạng ảnh không đúng'
             
         ];
     }

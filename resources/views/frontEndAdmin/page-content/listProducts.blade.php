@@ -35,33 +35,35 @@
 		            @endif
 					<thead>
 						<tr>
-							<th>Tiêu đề</th>
-							<th>Link bài tin tức</th>
+							<th>Tên sản phẩm</th>
+							<th>Giá</th>
+							<th>Link sản phẩm</th>
 							<th class="text-center">Enable</th>
 							<th class="text-center">Disible</th>
 							<th class="text-center" style="padding: 0px;">
-								<a href="{{URL::route('addBlog')}}" title="Thêm tin tức" style="color: green;"><i class="ion-android-add" style=" font-size:30px;"></i></a>
+								<a href="{{URL::route('addProduct')}}" title="Thêm sản phẩm" style="color: green;"><i class="ion-android-add" style=" font-size:30px;"></i></a>
 							</th>
 
 						</tr>
 					</thead>
 					<tbody>
-						@foreach ($blogs as $blog)
+						@foreach ($products as $product)
 						<tr>
-							<td>{{$blog -> title}}</td>
-							<td><a href="{{url('/'.$blog["url"])}}" target="_blank">{{$blog -> url}}</a></td>
-							@if($blog->display ==0)
+							<td>{{$product -> name}}</td>
+							<td>{{$product -> price}}</td>
+							<td><a href="{{url('/'.$product["url"])}}" target="_blank">{{$product -> url}}</a></td>
+							@if($product->display ==0)
 								<td class="text-center">
 									<div class="checkbox">
 										<label>
-											<input onclick="enable{{$blog->id}}()" id="enable{{$blog->id}}" type="checkbox">
+											<input onclick="enable{{$product->id}}()" id="enable{{$product->id}}" type="checkbox">
 										</label>
 									</div>
 								</td>
 								<td class="text-center">
 									<div class="checkbox">
 										<label>
-											<input onclick="disable{{$blog->id}}()" id="disable{{$blog->id}}" type="checkbox" checked>
+											<input onclick="disable{{$product->id}}()" id="disable{{$product->id}}" type="checkbox" checked>
 										</label>
 									</div>
 								</td>
@@ -69,32 +71,32 @@
 								<td class="text-center">
 									<div class="checkbox">
 										<label>
-											<input onclick="enable{{$blog->id}}()" id="enable{{$blog->id}}" type="checkbox" checked>
+											<input onclick="enable{{$product->id}}()" id="enable{{$product->id}}" type="checkbox" checked>
 										</label>
 									</div>
 								</td>
 								<td class="text-center">
 									<div class="checkbox">
 										<label>
-											<input onclick="disable{{$blog->id}}()" id="disable{{$blog->id}}" type="checkbox">
+											<input onclick="disable{{$product->id}}()" id="disable{{$product->id}}" type="checkbox">
 										</label>
 									</div>
 								</td>
 							@endif
 							<script type="text/javascript">
-								function enable{{$blog->id}}() {
-								    document.getElementById("enable{{$blog->id}}").checked = true;
-								    document.getElementById("disable{{$blog->id}}").checked = false;
+								function enable{{$product->id}}() {
+								    document.getElementById("enable{{$product->id}}").checked = true;
+								    document.getElementById("disable{{$product->id}}").checked = false;
 								}
 
-								function disable{{$blog->id}}() {
-								    document.getElementById("disable{{$blog->id}}").checked = true;
-								    document.getElementById("enable{{$blog->id}}").checked = false;
+								function disable{{$product->id}}() {
+								    document.getElementById("disable{{$product->id}}").checked = true;
+								    document.getElementById("enable{{$product->id}}").checked = false;
 								}
 							</script>
 							<td class="text-center">
-								<a onclick="return confirmDelete('Bạn có chắc muốn xóa tin tức này không')" href="{{ URL::route('deleteBlog',$blog->id)}}" title="Xóa danh mục"><i class="ion-trash-a" style="width: 100%; font-size: 18px; color: red; margin-right: 5px;"></i></a>
-								<a href="{{ URL::route('editBlog',[$blog->id,$blog->categorie_id])}}" title="Sửa danh mục"><i class="ion-compose" style="width: 100%; font-size: 18px;"></i></a>
+								<a onclick="return confirmDelete('Bạn có chắc muốn xóa tin tức này không')" href="{{ URL::route('deleteProduct',$product->id)}}" title="Xóa danh mục"><i class="ion-trash-a" style="width: 100%; font-size: 18px; color: red; margin-right: 5px;"></i></a>
+								<a href="{{ URL::route('editProduct',[$product->id,$product->categorie_id])}}" title="Sửa danh mục"><i class="ion-compose" style="width: 100%; font-size: 18px;"></i></a>
 							</td>
 						</tr>
 						@endforeach

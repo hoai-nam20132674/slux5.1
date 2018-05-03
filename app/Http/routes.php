@@ -52,4 +52,11 @@ Route::group(['prefix'=>'admin', 'middleware'=>'auth'],function(){
 	Route::get('editBlog/{id}/{categorie_id}',['as'=>'editBlog','uses'=>'adminController@editBlog']);
 	Route::post('postEditBlog/{id}',['as'=>'postEditBlog','uses'=>'adminController@postEditBlog']);
 	Route::get('deleteBlog/{id}',['as'=>'deleteBlog','uses'=>'adminController@deleteBlog']);
+
+	Route::get('getListProducts',['as'=>'getListProducts','uses'=>'adminController@getListProducts']);
+	Route::get('addProduct',['as'=>'addProduct','uses'=>'adminController@addProduct']);
+	Route::post('postAddProduct',['as'=>'postAddProduct','uses'=>'adminController@postAddProduct']);
+	Route::get('editProduct/{id}/{categorie_id}',['as'=>'editProduct','uses'=>'adminController@editProduct']);
+	Route::post('postEditProduct/{id}',['as'=>'postEditProduct','uses'=>'adminController@postEditProduct']);
+	Route::get('deleteProduct/{id}',['as'=>'deleteProduct','uses'=>'adminController@deleteProduct']);
 });

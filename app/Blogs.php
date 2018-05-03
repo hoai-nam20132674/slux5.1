@@ -41,7 +41,7 @@ class Blogs extends Model
 		$blog = Blogs::where('id',$id);
 		$blog ->delete();
 	}
-	public function editBlog($request,$id){
+	public function editBlog($request, $id){
 		if($request->hasFile('image')){
 			$file_name = $request->file('image')->getClientOriginalName();
 			$request->file('image')->move('uploads/images/blogs/',$file_name);
@@ -53,6 +53,7 @@ class Blogs extends Model
 			$blog_image = Blogs_Images::where('blog_id',$id)->get()->first();
 			$blog_image->image_id = $image->id;
 			$blog_image->save();
+
 			$blog = Blogs::where('id',$id)->get()->first();
 			$blog->title= $request->title;
 			$blog->content =$request->content;
@@ -63,21 +64,21 @@ class Blogs extends Model
 			$blog->url=$request->url;
 			$blog->display=$request->display;
 			$blog->image =$file_name;
-			$request->file('image')->move('uploads/images/blogs/',$file_name);
 			$blog->save();
 
 		}
-		
-		$blog = Blogs::where('id',$id)->get()->first();
-		$blog->title= $request->title;
-		$blog->content =$request->content;
-		$blog->categorie_id=$request->categorie_id;
-		$blog->user_id = Auth::user()->id;
-		$blog->seo_keyword =$request->seo_keyword;
-		$blog->seo_description=$request->seo_description;
-		$blog->url=$request->url;
-		$blog->display=$request->display;
-		$blog->save();
-		
+		else{
+
+			$blog = Blogs::where('id',$id)->get()->first();
+			$blog->title= $request->title;
+			$blog->content =$request->content;
+			$blog->categorie_id=$request->categorie_id;
+			$blog->user_id = Auth::user()->id;
+			$blog->seo_keyword =$request->seo_keyword;
+			$blog->seo_description=$request->seo_description;
+			$blog->url=$request->url;
+			$blog->display=$request->display;
+			$blog->save();
+		}
 	}
 }
