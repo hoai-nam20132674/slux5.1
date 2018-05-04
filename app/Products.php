@@ -4,6 +4,8 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 use App\Products_Images;
+use App\Images;
+use Input;
 class Products extends Model
 {
     protected $table = 'products'; //Ten bang
@@ -22,27 +24,50 @@ class Products extends Model
 		$product->seo_description=$request->seo_description;
 		$product->sale=$request->sale;
 		$product->tskt=$request->tskt;
-		$product->description=$request->description;
+		$product->description=$request->content;
 		$product->categorie_id =$request->categorie_id;
 		$product->display=$request->display;
 		$product->image=$file_name;
 		$product->view=0;
 		$product->save();
-		for($i=1;$i<4;$i++){
-			if($request->hasFile('image.$i')){
-				$file_name.$i = $request->file('image.$i')->getClientOriginalName();
-				$request->file('image.$i')->move('uploads/images/products/',$file_name.$i);
-				$image= new Images;
-				$image->name =$file_name.$i;
-				$image->url =$file_name.$i;
-				$image->alt =$file_name.$i;
-				$image->save();
-				$product_image =new Products_Images;
-				$product_image->image_id = $image->id;
-				$product_image->product_id =$product->id;
+		$image= new Images;
+		$image->name =$file_name;
+		$image->url =$file_name;
+		$image->alt =$file_name;
+		$image->save();
+		$product_image =new Products_Images;
+		$product_image->image_id = $image->id;
+		$product_image->product_id =$product->id;
+		$product_image->save();
+		
+		if(Input::hasFile('fimage')){
+			foreach(Input::file('fimage') as $file){
+				if(isset($file)){
+					$file_name = $file->getClientOriginalName();
+					$file->move('uploads/images/products/',$file_name);
+					$image= new Images;
+					$image->name =$file_name;
+					$image->url =$file_name;
+					$image->alt =$file_name;
+					$image->save();
+					$product_image =new Products_Images;
+					$product_image->image_id = $image->id;
+					$product_image->product_id =$product->id;
+					$product_image->save();
+				}
+			}
+		}
+	}
+	public function deleteProduct($id){
+		$count = Products_Images::where('product_id',$id)->count();
+		if($count != 0){
+			for($i=0;$i<$count;$i++){
+				$product_image= Products_Images::where('product_id',$id)->get()->first();
+				$product_image->product_id =1;
 				$product_image->save();
 			}
 		}
-
+		$product = Products::where('id',$id);
+		$product->delete();
 	}
 }

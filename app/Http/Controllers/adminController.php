@@ -10,6 +10,7 @@ use Illuminate\Contracts\View\View;
 use App\Categories;
 use App\Blogs;
 use App\Products;
+use App\Products_Images;
 use App\Http\Requests\addCategorieRequest;
 use App\Http\Requests\editCategorieRequest;
 use App\Http\Requests\editBlogRequest;
@@ -119,6 +120,19 @@ class adminController extends Controller
         $product = new Products;
         $product ->addProduct($request);
         return redirect('admin/getListProducts')->with(['flash_level'=>'success','flash_message'=>'Thêm sản phẩm thành công']);
+    }
+    public function deleteProduct($id){
+        $product = new Products;
+        $product->deleteProduct($id);
+        return redirect('admin/getListProducts')->with(['flash_level'=>'success','flash_message'=>'Xóa sản phẩm thành công']);
+    }
+    public function editProduct($id, $categorie_id){
+        $countBlogs = Blogs::select()->count();
+        $product = Products::where('id',$id)->get();
+        $categorie = Categories::where('id',$categorie_id)->get();
+        $categories =Categories::select()->get();
+        $product_images = Products_Images::where('product_id',$id)->get();
+        return View('frontEndAdmin.page-content.editProduct',['categorie'=>$categorie,'categories'=>$categories,'product'=>$product,'countBlogs'=>$countBlogs,'product_images'=>$product_images]);
     }
 
 }

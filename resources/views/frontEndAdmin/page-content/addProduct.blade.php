@@ -45,19 +45,7 @@
 									</div>
 								</div>
 							</div>
-							<div class="form-group">
-								<label for="exampleTextarea">Thông số kỹ thuật</label>
-								<textarea class="form-control" name="tskt" rows="3">{{old('tskt')}}</textarea>
-								<script type="text/javascript">
-							      var editor = CKEDITOR.replace('tskt',{
-							       language:'vi',
-							       filebrowserImageBrowseUrl : '../admin/ckfinder/ckfinder.html?type=Images',
-							       filebrowserFlashBrowseUrl : '../admin/ckfinder/ckfinder.html?type=Flash',
-							       filebrowserImageUploadUrl : '../admin/ckfinder/core/connector/php/connector.php?command=QuickUpload&type=Images',
-							       filebrowserFlashUploadUrl : '../admin/ckfinder/core/connector/php/connector.php?command=QuickUpload&type=Flash',
-							       });
-							     </script>﻿
-							</div>
+							
 							<div class="form-group">
 								<label for="exampleInputEmail1">Tên sản phẩm</label>
 								<input type="text" class="form-control" name="name" placeholder="Nhập tiêu đề danh mục" value="{{old('name')}}">
@@ -92,12 +80,11 @@
 							       });
 							     </script>﻿
 							</div>
-							
 							<div class="form-group">
-								<label for="exampleTextarea">Mô tả sản phẩm</label>
-								<textarea class="form-control" name="description" rows="3">{{old('description')}}</textarea>
+								<label for="exampleTextarea">Thông số kỹ thuật</label>
+								<textarea class="form-control" name="tskt" rows="3">{{old('tskt')}}</textarea>
 								<script type="text/javascript">
-							      var editor = CKEDITOR.replace('description',{
+							      var editor = CKEDITOR.replace('tskt',{
 							       language:'vi',
 							       filebrowserImageBrowseUrl : '../admin/ckfinder/ckfinder.html?type=Images',
 							       filebrowserFlashBrowseUrl : '../admin/ckfinder/ckfinder.html?type=Flash',
@@ -106,7 +93,19 @@
 							       });
 							     </script>﻿
 							</div>
-							
+							<div class="form-group">
+								<label for="exampleTextarea">Mô tả</label>
+								<textarea class="form-control" name="content" rows="3">{{old('content')}}</textarea>
+								<script type="text/javascript">
+							      var editor = CKEDITOR.replace('content',{
+							       language:'vi',
+							       filebrowserImageBrowseUrl : '../admin/ckfinder/ckfinder.html?type=Images',
+							       filebrowserFlashBrowseUrl : '../admin/ckfinder/ckfinder.html?type=Flash',
+							       filebrowserImageUploadUrl : '../admin/ckfinder/core/connector/php/connector.php?command=QuickUpload&type=Images',
+							       filebrowserFlashUploadUrl : '../admin/ckfinder/core/connector/php/connector.php?command=QuickUpload&type=Flash',
+							       });
+							     </script>﻿
+							</div>
 						</div>
 						<div class="col-md-3">
 							<div class="form-group">
@@ -124,6 +123,7 @@
 									<input type="radio" name="display" value="0">Tắt hiển thị
 								</label>
 							</div>
+							
 							<div class="file-upload">	
 							  	<div class="image-upload-wrap image-upload-wrap0">
 								    <input class="file-upload-input file-upload-input0" type='file' name="image" onchange="readURL(this);" accept="image/*" />
@@ -138,48 +138,23 @@
 							    	</div>
 							  	</div>
 							</div>
+							
+							@for($i=1;$i<4;$i++)
 							<div class="file-upload">	
-							  	<div class="image-upload-wrap image-upload-wrap1">
-								    <input class="file-upload-input file-upload-input1" type='file' name="image1" onchange="readURL1(this);" accept="image/*" />
+							  	<div class="image-upload-wrap image-upload-wrap{{$i}}">
+								    <input class="file-upload-input file-upload-input{{$i}}" type='file' name="fimage[]" onchange="readURL{{$i}}(this);" accept="image/*" />
 								    <div class="drag-text">
 								      <h3>Ảnh detail</h3>
 								    </div>
 							  	</div>
-							  	<div class="file-upload-content file-upload-content1">
-							    	<img class="file-upload-image file-upload-image1" src="#" alt="your image" />
-							    	<div class="image-title-wrap image-title-wrap1">
-							      		<button type="button" onclick="removeUpload1()" class="remove-image">Remove <span class="image-title image-title1 text-center">Uploaded Image</span></button>
+							  	<div class="file-upload-content file-upload-content{{$i}}">
+							    	<img class="file-upload-image file-upload-image{{$i}}" src="#" alt="your image" />
+							    	<div class="image-title-wrap image-title-wrap{{$i}}">
+							      		<button type="button" onclick="removeUpload{{$i}}()" class="remove-image">Remove <span class="image-title image-title{{$i}} text-center">Uploaded Image</span></button>
 							    	</div>
 							  	</div>
 							</div>
-							<div class="file-upload">	
-							  	<div class="image-upload-wrap image-upload-wrap2">
-								    <input class="file-upload-input file-upload-input2" type='file' name="image2" onchange="readURL2(this);" accept="image/*" />
-								    <div class="drag-text">
-								      <h3>Ảnh detail</h3>
-								    </div>
-							  	</div>
-							  	<div class="file-upload-content file-upload-content2">
-							    	<img class="file-upload-image file-upload-image2" src="#" alt="your image" />
-							    	<div class="image-title-wrap image-title-wrap2">
-							      		<button type="button" onclick="removeUpload2()" class="remove-image">Remove <span class="image-title image-title2 text-center">Uploaded Image</span></button>
-							    	</div>
-							  	</div>
-							</div>
-							<div class="file-upload">	
-							  	<div class="image-upload-wrap image-upload-wrap3">
-								    <input class="file-upload-input file-upload-input3" type='file' name="image3" onchange="readURL3(this);" accept="image/*" />
-								    <div class="drag-text">
-								      <h3>Ảnh detail</h3>
-								    </div>
-							  	</div>
-							  	<div class="file-upload-content file-upload-content3">
-							    	<img class="file-upload-image file-upload-image3" src="#" alt="your image" />
-							    	<div class="image-title-wrap image-title-wrap3">
-							      		<button type="button" onclick="removeUpload3()" class="remove-image">Remove <span class="image-title image-title3 text-center">Uploaded Image</span></button>
-							    	</div>
-							  	</div>
-							</div>
+							@endfor
 						</div>
 					</div>
 

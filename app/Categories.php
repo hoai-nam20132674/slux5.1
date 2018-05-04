@@ -4,6 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 use App\Blogs;
+use App\Products;
 class Categories extends Model
 {
 	//
@@ -33,6 +34,14 @@ class Categories extends Model
 				$childrenBlog = Blogs::where('categorie_id',$id)->get()->first();
 				$childrenBlog->categorie_id =1;
 				$childrenBlog->save();
+			}
+		}
+		$count3 = Products::where('categorie_id',$id)->count();
+		if($count3 != 0){
+			for($i=0;$i<$count3;$i++){
+				$childrenProduct = Products::where('categorie_id',$id)->get()->first();
+				$childrenProduct->categorie_id =1;
+				$childrenProduct->save();
 			}
 		}
 		$categorie = Categories::where('id',$id);

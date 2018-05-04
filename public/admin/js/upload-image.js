@@ -131,3 +131,23 @@ $('.image-upload-wrap3').bind('dragover', function () {
   $('.image-upload-wrap3').bind('dragleave', function () {
     $('.image-upload-wrap3').removeClass('image-dropping');
 });
+
+
+$(document).ready(function(){
+  $('.edit-image').addClass('display-none');
+  $('.edit-image1').addClass('display-none');
+  $('.edit-image2').addClass('display-none');
+  $('.edit-image3').addClass('display-none');
+  $('.image-product').click(function(){
+      $('.edit-image').removeClass('display-none');
+  });
+  $('.image-product1').click(function(){
+      $('.edit-image1').removeClass('display-none');
+  });
+  $('.image-product2').click(function(){
+      $('.edit-image2').removeClass('display-none');
+  });
+  $('.image-product3').click(function(){
+      $('.edit-image3').removeClass('display-none');
+  });
+});
