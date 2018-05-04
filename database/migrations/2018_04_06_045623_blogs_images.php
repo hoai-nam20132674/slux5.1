@@ -18,7 +18,7 @@ class BlogsImages extends Migration
             $table->foreign('image_id')->references('id')->on('images')->onDelete('cascade');
             $table->integer('blog_id')->unsigned();
             $table->foreign('blog_id')->references('id')->on('blogs')->onDelete('cascade');
-            $table->boolean('represent');
+            $table->string('url_image');
             $table->timestamps();
         });
     }
