@@ -19,6 +19,7 @@ class ProductsImages extends Migration
             $table->integer('product_id')->unsigned();
             $table->foreign('product_id')->references('id')->on('products')->onDelete('cascade');
             $table->boolean('represent');
+            $table->string('url_image');
             $table->timestamps();
         });
     }

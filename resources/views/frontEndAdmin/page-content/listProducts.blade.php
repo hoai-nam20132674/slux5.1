@@ -94,10 +94,17 @@
 								    document.getElementById("enable{{$product->id}}").checked = false;
 								}
 							</script>
+							@if($product->id==1)
+							<td class="text-center">
+								<a style="pointer-events: none;cursor: default;" onclick="return confirmDelete('Bạn có chắc muốn xóa sản phẩm này không')" href="{{ URL::route('deleteProduct',$product->id)}}" title="Xóa sản phẩm"><i class="ion-trash-a" style="width: 100%; font-size: 18px; color: red; margin-right: 5px;"></i></a>
+								<a style="pointer-events: none;cursor: default;" href="{{ URL::route('editProduct',[$product->id,$product->categorie_id])}}" title="Sửa danh mục"><i class="ion-compose" style="width: 100%; font-size: 18px;"></i></a>
+							</td>
+							@else
 							<td class="text-center">
 								<a onclick="return confirmDelete('Bạn có chắc muốn xóa sản phẩm này không')" href="{{ URL::route('deleteProduct',$product->id)}}" title="Xóa sản phẩm"><i class="ion-trash-a" style="width: 100%; font-size: 18px; color: red; margin-right: 5px;"></i></a>
 								<a href="{{ URL::route('editProduct',[$product->id,$product->categorie_id])}}" title="Sửa danh mục"><i class="ion-compose" style="width: 100%; font-size: 18px;"></i></a>
 							</td>
+							@endif
 						</tr>
 						@endforeach
 					</tbody>

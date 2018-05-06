@@ -138,7 +138,7 @@ $(document).ready(function(){
   $('.edit-image1').addClass('display-none');
   $('.edit-image2').addClass('display-none');
   $('.edit-image3').addClass('display-none');
-  $('.image-product').click(function(){
+  $('.image-product0').click(function(){
       $('.edit-image').removeClass('display-none');
   });
   $('.image-product1').click(function(){

@@ -14,6 +14,7 @@ use App\Products_Images;
 use App\Http\Requests\addCategorieRequest;
 use App\Http\Requests\editCategorieRequest;
 use App\Http\Requests\editBlogRequest;
+use App\Http\Requests\editProductRequest;
 use App\Http\Requests\addBlogRequest;
 use App\Http\Requests\addProductRequest;
 use Illuminate\Support\Facades\DB;
@@ -125,6 +126,7 @@ class adminController extends Controller
         $product = new Products;
         $product->deleteProduct($id);
         return redirect('admin/getListProducts')->with(['flash_level'=>'success','flash_message'=>'Xóa sản phẩm thành công']);
+
     }
     public function editProduct($id, $categorie_id){
         $countBlogs = Blogs::select()->count();
@@ -133,6 +135,11 @@ class adminController extends Controller
         $categories =Categories::select()->get();
         $product_images = Products_Images::where('product_id',$id)->get();
         return View('frontEndAdmin.page-content.editProduct',['categorie'=>$categorie,'categories'=>$categories,'product'=>$product,'countBlogs'=>$countBlogs,'product_images'=>$product_images]);
+    }
+    public function postEditProduct(editProductRequest $request, $id){
+        $product = new Products;
+        $product->editProduct($request,$id);
+        // return redirect('admin/getListProducts')->with(['flash_level'=>'success','flash_message'=>'Sửa sản phẩm thành công']);
     }
 
 }

@@ -62,15 +62,15 @@
 							
 							<div class="form-group">
 								<label for="exampleInputEmail1">Seo keywords</label>
-								<input type="text" class="form-control" name="seo_keyword" placeholder="Keywords Seo" value="{{old('seo_keyword')}}">
+								<input type="text" class="form-control" name="seo_keyword" placeholder="Keywords Seo" value="{{$pr->seo_keyword}}">
 							</div>
 							<div class="form-group">
 								<label for="exampleInputEmail1">Seo description</label>
-								<input type="text" class="form-control" name="seo_description" placeholder="Description Seo" value="{{old('seo_description')}}">
+								<input type="text" class="form-control" name="seo_description" placeholder="Description Seo" value="{{$pr->seo_description}}">
 							</div>
 							<div class="form-group">
 								<label for="exampleTextarea">Thông tin khuyến mãi</label>
-								<textarea class="form-control" name="sale" rows="3">{{old('sale')}}</textarea>
+								<textarea class="form-control" name="sale" rows="3">{!!$pr->sale!!}</textarea>
 								<script type="text/javascript">
 							      var editor = CKEDITOR.replace('sale',{
 							       language:'vi',
@@ -83,7 +83,7 @@
 							</div>
 							<div class="form-group">
 								<label for="exampleTextarea">Thông số kỹ thuật</label>
-								<textarea class="form-control" name="tskt" rows="3">{{old('tskt')}}</textarea>
+								<textarea class="form-control" name="tskt" rows="3">{!!$pr->tskt!!}</textarea>
 								<script type="text/javascript">
 							      var editor = CKEDITOR.replace('tskt',{
 							       language:'vi',
@@ -96,7 +96,7 @@
 							</div>
 							<div class="form-group">
 								<label for="exampleTextarea">Mô tả</label>
-								<textarea class="form-control" name="content" rows="3">{{old('content')}}</textarea>
+								<textarea class="form-control" name="content" rows="3">{!!$pr->description!!}</textarea>
 								<script type="text/javascript">
 							      var editor = CKEDITOR.replace('content',{
 							       language:'vi',
@@ -117,40 +117,48 @@
 								</select>
 							</div>
 							<div class="checkbox">
-								<label>
-									<input type="radio" name="display" value="1" checked>Hiển thị
-								</label>
-								<label>
-									<input type="radio" name="display" value="0">Tắt hiển thị
-								</label>
+								@if($pr->display ==0)
+									<label>
+										<input type="radio"  name="display" value="1" >Hiển thị
+									</label>
+									<label>
+										<input type="radio"  name="display" value="0" checked>Tắt hiển thị
+									</label>
+								@else 
+									<label>
+										<input type="radio"  name="display" value="1" checked >Hiển thị
+									</label>
+									<label>
+										<input type="radio"  name="display" value="0" >Tắt hiển thị
+									</label>
+								@endif
 							</div>
 							
 							<div class="all-image-product">
 								<div class="row">
 									<div class="col-md-12">
-										<!-- <?php 
+										<?php 
 											$i=0;
+											$product_image = App\Products_Images::where('product_id',$pr->id)->get();
 										?>
-										@foreach($product_images as $prim)
-											<div class="image-product{{$i}}" style="width: 50%; float: left;" >
-												<img class="img-thumbnail" width="100%" src="{{url('/uploads/images/products/'.$prim["image"])}}">
-											</div>
-
-										@endforeach -->
-										<div class="image-product" style="width: 50%; float: left;" >
-											<img class="img-thumbnail" width="100%" src="{{url('/uploads/images/products/'.$pr["image"])}}">
-										</div>										
-										@for($i=1;$i<4;$i++)
-											@if($i==2)
+										
+										@foreach($product_image as $prim)									
+											@if($i==0 || $i ==2)
 												<div class="image-product{{$i}}" style="width: 50%; float: left;" >
-													<img class="img-thumbnail" width="100%" src="{{url('/uploads/images/products/'.$pr["image"])}}">
+													<img class="img-thumbnail" width="100%" src="{{url('/uploads/images/products/'.$prim["url_image"])}}">
 												</div>
+												<?php
+													$i++;
+												?>
 											@else
-											<div class="image-product{{$i}}" style="width: 50%;float: right;" >
-												<img class="img-thumbnail" width="100%" src="{{url('/uploads/images/products/'.$pr["image"])}}">
-											</div>
+												<div class="image-product{{$i}}" style="width: 50%;float: right;" >
+													<img class="img-thumbnail" width="100%" src="{{url('/uploads/images/products/'.$prim["url_image"])}}">
+												</div>
+												<?php
+													$i++;
+												?>
 											@endif
-										@endfor
+										@endforeach
 									</div>
 								</div>
 							</div>

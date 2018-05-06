@@ -83,6 +83,15 @@ class DatabaseSeeder extends Seeder
             ]
             
         ]);
-        
+        DB::table('images')->insert([
+            [
+                'url'=>'null.png',
+                'name'=>'null.png',
+                'alt'=>'null.png'
+                
+            ]
+           
+            
+        ]);
     }
 }
