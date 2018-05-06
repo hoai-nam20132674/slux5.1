@@ -32,7 +32,7 @@ class Products extends Model
 		$product->view=0;
 		$request->file('image')->move('uploads/images/products/',$file_name);
 		$product->save();
-		$image= new Images;
+		$image = new Images;
 		$image->name =$file_name;
 		$image->url =$file_name;
 		$image->alt =$file_name;
@@ -44,6 +44,7 @@ class Products extends Model
 		$product_image->save();
 		
 		if(Input::hasFile('fimage')){
+			$i=0;
 			foreach(Input::file('fimage') as $file){
 				if(isset($file)){
 					$file_name = $file->getClientOriginalName();
@@ -58,15 +59,17 @@ class Products extends Model
 					$product_image->product_id =$product->id;
 					$product_image->url_image =$file_name;
 					$product_image->save();
-				}
-				else{
-					$product_image =new Products_Images;
-					$product_image->image_id = 1;
-					$product_image->product_id =$product->id;
-					$product_image->url_image =$file_name;
-					$product_image->save();
+					$i++;
 				}
 			}
+			for($i;$i<3;$i++){
+				$product_image =new Products_Images;
+				$product_image->image_id = 1;
+				$product_image->product_id =$product->id;
+				$product_image->url_image ="null.png";
+				$product_image->save();
+			}
+
 		}
 		else{
 			for($i=0;$i<3;$i++){
@@ -109,6 +112,7 @@ class Products extends Model
 	}
 	public function editProduct($request,$id){
 		$product = Products::where('id',$id)->get()->first();
+		$product_image =Products_Images::where('product_id',$id)->get()->first();
 		$product->url = $request->url;
 		$product->name =$request->name;
 		$product->price=$request->price;
@@ -121,7 +125,6 @@ class Products extends Model
 		$product->categorie_id =$request->categorie_id;
 		$product->display=$request->display;
 		if($request->hasFile('image')){
-			$product_image =Products_Images::where('product_id',$id)->get()->first();
 			$file_name = $request->file('image')->getClientOriginalName();
 			$image= new Images;
 			$image->name =$file_name;
@@ -136,23 +139,36 @@ class Products extends Model
 		}
 		$product->save();
 
+		$i=0;
+		$product_images+$i = Products_Images::where('product_id',$id)->get();
+		dd($product_images0);
+
 		if(Input::hasFile('fimage')){
-			foreach(Input::file('fimage') as $file){
-				if(isset($file)){
-					$file_name = $file->getClientOriginalName();
-					$file->move('uploads/images/products/',$file_name);
-					$image= new Images;
-					$image->name =$file_name;
-					$image->url =$file_name;
-					$image->alt =$file_name;
-					$image->save();
-					$product_image =new Products_Images;
-					$product_image->image_id = $image->id;
-					$product_image->product_id =$product->id;
-					$product_image->url_image =$file_name;
-					$product_image->save();
-				}
-			}
+
+			$i=0;
+			$product_images0 = Products_Images::where('product_id',$id)->get();
+			dd($product_images0);
+
+			// foreach($product_images as $prim){
+			// 	$product_image.$i
+			// 	$i++;
+			// }
+			// foreach(Input::file('fimage') as $file){
+			// 	if(isset($file)){
+			// 		$file_name = $file->getClientOriginalName();
+			// 		$file->move('uploads/images/products/',$file_name);
+			// 		$image= new Images;
+			// 		$image->name =$file_name;
+			// 		$image->url =$file_name;
+			// 		$image->alt =$file_name;
+			// 		$image->save();
+			// 		$product_image =new Products_Images;
+			// 		$product_image->image_id = $image->id;
+			// 		$product_image->product_id =$product->id;
+			// 		$product_image->url_image =$file_name;
+			// 		$product_image->save();
+			// 	}
+			// }
 		}
 
 
