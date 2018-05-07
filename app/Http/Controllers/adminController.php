@@ -139,7 +139,7 @@ class adminController extends Controller
     public function postEditProduct(editProductRequest $request, $id){
         $product = new Products;
         $product->editProduct($request,$id);
-        // return redirect('admin/getListProducts')->with(['flash_level'=>'success','flash_message'=>'Sửa sản phẩm thành công']);
+        return redirect('admin/getListProducts')->with(['flash_level'=>'success','flash_message'=>'Sửa sản phẩm thành công']);
     }
 
 }

@@ -181,7 +181,7 @@
 							@for($i=1;$i<4;$i++)
 							<div class="file-upload edit-image{{$i}}">	
 							  	<div class="image-upload-wrap image-upload-wrap{{$i}}">
-								    <input class="file-upload-input file-upload-input{{$i}}" type='file' name="fimage[]" onchange="readURL{{$i}}(this);" accept="image/*" />
+								    <input class="file-upload-input file-upload-input{{$i}}" type='file' name="fimage{{$i}}" onchange="readURL{{$i}}(this);" accept="image/*" />
 								    <div class="drag-text">
 								      <h3>Ảnh detail {{$i}}</h3>
 								    </div>
