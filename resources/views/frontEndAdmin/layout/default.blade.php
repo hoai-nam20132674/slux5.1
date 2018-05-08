@@ -44,11 +44,11 @@
 								<span class="s-caret"><i class="fa fa-angle-down"></i></span>
 								<span class="tag tag-purple">3</span>
 								<span class="s-icon"><i class="ti-anchor"></i></span>
-								<span class="s-text">Dashboard</span>
+								<span class="s-text">HỆ THỐNG</span>
 							</a>
 							<ul>
-								<li><a href="index.html">Dashboard 1</a></li>
-								<li><a href="index2.html">Dashboard 2</a></li>
+								<li><a href="{{URL::route('editMenu')}}">Menu</a></li>
+								<li><a href="index2.html">Media</a></li>
 								<li><a href="index3.html">Dashboard 3</a></li>
 							</ul>
 						</li>
@@ -66,15 +66,11 @@
 						</li>
 						<li class="menu-title">Components</li>
 						<li class="with-sub">
-							<a href="#" class="waves-effect  waves-light">
+							<a href="{{URL::route('getListCategories')}}" class="waves-effect  waves-light">
 								<span class="s-caret"><i class="fa fa-angle-down"></i></span>
 								<span class="s-icon"><i class="ti-gallery"></i></span>
-								<span class="s-text">Page</span>
+								<span class="s-text">Danh mục</span>
 							</a>
-							<ul>
-								<li><a href="{{URL::route('getListCategories')}}">Danh mục</a></li>
-								<li><a href="{{URL::route('getListBlogs')}}" >Tin tức  <span class="tag tag-danger">{{$countBlogs}}</span></a></li>
-							</ul>
 						</li>
 						<li class="with-sub">
 							<a href="{{URL::route('getListProducts')}}" class="waves-effect  waves-light">
@@ -85,24 +81,12 @@
 							</a>
 						</li>
 						<li class="with-sub">
-							<a href="#" class="waves-effect  waves-light">
+							<a href="{{URL::route('getListBlogs')}}" class="waves-effect  waves-light">
 								<span class="s-caret"><i class="fa fa-angle-down"></i></span>
 								<span class="s-icon"><i class="ti-pencil-alt"></i></span>
-								<span class="s-text">Forms</span>
+								<span class="tag tag-danger">{{$countBlogs}}</span>
+								<span class="s-text">Tin tức</span>
 							</a>
-							<ul>
-								<li><a href="forms-basic.html">Basic Elements</a></li>
-								<li><a href="forms-editors.html">Editors</a></li>
-								<li><a href="forms-masks.html">Form Masks</a></li>
-								<li><a href="forms-material.html">Material Form</a></li>
-								<li><a href="forms-pickers.html">Form Pickers</a></li>
-								<li><a href="forms-upload.html">File Upload</a></li>
-								<li><a href="forms-wizard.html">Form Wizard</a></li>
-								<li><a href="forms-plugins.html">Plugins</a></li>
-								<li><a href="forms-range-slider.html">Range Slider</a></li>
-								<li><a href="forms-typeahead.html">Typeahead</a></li>
-								<li><a href="forms-xeditable.html">X-editable</a></li>
-							</ul>
 						</li>
 						<li class="with-sub">
 							<a href="#" class="waves-effect  waves-light">

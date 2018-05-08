@@ -25,6 +25,7 @@ class Products extends Model
 		$product->seo_description=$request->seo_description;
 		$product->sale=$request->sale;
 		$product->tskt=$request->tskt;
+		$product->ttsp=$request->ttsp;
 		$product->description=$request->content;
 		$product->categorie_id =$request->categorie_id;
 		$product->display=$request->display;
@@ -94,6 +95,7 @@ class Products extends Model
 		$product_delete->seo_description=$product->seo_description;
 		$product_delete->sale=$product->sale;
 		$product_delete->tskt=$product->tskt;
+		$product_delete->ttsp=$product->ttsp;
 		$product_delete->description=$product->description;
 		$product_delete->categorie_id =$product->categorie_id;
 		$product_delete->display=$product->display;
@@ -121,6 +123,7 @@ class Products extends Model
 		$product->seo_description=$request->seo_description;
 		$product->sale=$request->sale;
 		$product->tskt=$request->tskt;
+		$product->ttsp=$request->ttsp;
 		$product->description=$request->content;
 		$product->categorie_id =$request->categorie_id;
 		$product->display=$request->display;

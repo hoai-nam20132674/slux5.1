@@ -25,6 +25,7 @@ class Products extends Migration
             $table->string('seo_description');
             $table->string('seo_keyword');
             $table->longText('tskt');
+            $table->longText('ttsp');
             $table->longText('sale');
             $table->string('image');
             $table->string('url');

@@ -11,6 +11,9 @@ use App\Categories;
 use App\Blogs;
 use App\Products;
 use App\Products_Images;
+use App\Menu_Header;
+use App\Menu_Footer;
+use App\Menu_Sidebar;
 use App\Http\Requests\addCategorieRequest;
 use App\Http\Requests\editCategorieRequest;
 use App\Http\Requests\editBlogRequest;
@@ -19,12 +22,14 @@ use App\Http\Requests\addBlogRequest;
 use App\Http\Requests\addProductRequest;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Auth;
+use Input;
 
 class adminController extends Controller
 {
     
     public function index(){
         $countBlogs = Blogs::select()->count();
+        $categories = Categories::select()->get();
         return View('frontEndAdmin.page-content.index',['countBlogs'=>$countBlogs]);
     }
 
@@ -141,5 +146,32 @@ class adminController extends Controller
         $product->editProduct($request,$id);
         return redirect('admin/getListProducts')->with(['flash_level'=>'success','flash_message'=>'Sửa sản phẩm thành công']);
     }
-
+    public function editMenu(){
+        $countBlogs = Blogs::select()->count();
+        $categories = Categories::select()->get();
+        return View('frontEndAdmin.page-content.menu',['countBlogs'=>$countBlogs,'categories'=>$categories]);
+    }
+    public function postEditMenuHeader(Request $request){
+        $menu_header = new Menu_Header;
+        $menu_header->editMenu($request);
+        return redirect('admin/editMenu')->with(['flash_level'=>'success','flash_message'=>'Sửa menu thành công']);
+        // if(Input::has('categorie_header')){
+        //     $selects = $request->categorie_header;
+        //     $count = count($selects);
+        //     for($i=0;$i<$count;$i++){
+        //         $test = $request->categorie_header[$i];
+        //         echo "$test";
+        //     }
+        // }
+    }
+    public function postEditMenuFooter(Request $request){
+        $menu_footer =new Menu_Footer;
+        $menu_footer->editMenu($request);
+        return redirect('admin/editMenu')->with(['flash_level'=>'success','flash_message'=>'Sửa menu thành công']);
+    }
+    public function postEditMenuSidebar(Request $request){
+        $menu_sidebar =new Menu_Sidebar;
+        $menu_sidebar->editMenu($request);
+        return redirect('admin/editMenu')->with(['flash_level'=>'success','flash_message'=>'Sửa menu thành công']);
+    }
 }

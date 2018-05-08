@@ -36,7 +36,11 @@
 							<div class="row">
 
 								<div class="col-md-3">
-									<a href="http://slux.vn/" target="_blank"><button class="btn btn-primary" style="width: 100%;">http://slux.vn/</button></a>
+									<a href="http://slux.vn/" target="_blank">
+										<div style="background: #0275d8;" class="text-center">
+											<span style="color: #fff; font-size:20px; ">http://slux.vn/</span>
+										</div>
+									</a>
 								</div>
 								<div class="col-md-9">
 									<div class="form-group">	

@@ -98,7 +98,7 @@ figure {
   -o-transition: 0.5s;
   transition: 0.5s;
   /*background-color: #ccb669;*/
-  /*background-image: url(../images/background-button.jpg);*/
+  background-image: url(../images/background-button.jpg);
 }
 .btn.btn-md {
   padding: 10px 20px !important;
@@ -1679,7 +1679,7 @@ figure {
   width: 100%;
 }
 #footer #form-subscribe input[type="submit"] {
-  background: #3c4146;
+  background-image: url(../images/background-button.jpg);
   border: none;
   color: #fff;
   height: 45px;
@@ -2176,7 +2176,7 @@ figure {
     border-radius: 0px;
 }
 #fh5co-services-section .item .services:hover {
-    background-color: #ccb669;
+    background-image: url(../images/background-button.jpg);
 }
 #fh5co-services-section .well {
     padding: 20px 20px 0px 20px;

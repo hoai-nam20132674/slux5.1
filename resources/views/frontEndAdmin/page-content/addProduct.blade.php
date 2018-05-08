@@ -14,9 +14,9 @@
 		<div class="container-fluid">
 			<h4>Basic Form Elements</h4>
 			<ol class="breadcrumb no-bg mb-1">
-				<li class="breadcrumb-item"><a href="forms-basic.html#">Home</a></li>
-				<li class="breadcrumb-item"><a href="forms-basic.html#">Forms</a></li>
-				<li class="breadcrumb-item active">Basic Form Elements</li>
+				<li class="breadcrumb-item"><a href="{{URL::route('index')}}">Trang chủ</a></li>
+				<li class="breadcrumb-item"><a href="{{URL::route('getListProducts')}}">Danh sách sản phẩm</a></li>
+				<li class="breadcrumb-item active">Thêm sản phẩm</li>
 			</ol>
 			<div class="box box-block bg-white">
 				@if( count($errors) > 0)
@@ -37,7 +37,11 @@
 							<div class="row">
 
 								<div class="col-md-3">
-									<a href="http://slux.vn/" target="_blank"><button class="btn btn-primary" style="width: 100%;">http://slux.vn/</button></a>
+									<a href="http://slux.vn/" target="_blank">
+										<div style="background: #0275d8;" class="text-center">
+											<span style="color: #fff; font-size:20px; ">http://slux.vn/</span>
+										</div>
+									</a>
 								</div>
 								<div class="col-md-9">
 									<div class="form-group">	
@@ -81,6 +85,19 @@
 							     </script>﻿
 							</div>
 							<div class="form-group">
+								<label for="exampleTextarea">Thông tin sản phẩm</label>
+								<textarea class="form-control" name="ttsp" rows="3">{{old('ttsp')}}</textarea>
+								<script type="text/javascript">
+							      var editor = CKEDITOR.replace('ttsp',{
+							       language:'vi',
+							       filebrowserImageBrowseUrl : '../admin/ckfinder/ckfinder.html?type=Images',
+							       filebrowserFlashBrowseUrl : '../admin/ckfinder/ckfinder.html?type=Flash',
+							       filebrowserImageUploadUrl : '../admin/ckfinder/core/connector/php/connector.php?command=QuickUpload&type=Images',
+							       filebrowserFlashUploadUrl : '../admin/ckfinder/core/connector/php/connector.php?command=QuickUpload&type=Flash',
+							       });
+							     </script>﻿
+							</div>
+							<div class="form-group">
 								<label for="exampleTextarea">Thông số kỹ thuật</label>
 								<textarea class="form-control" name="tskt" rows="3">{{old('tskt')}}</textarea>
 								<script type="text/javascript">
@@ -94,7 +111,7 @@
 							     </script>﻿
 							</div>
 							<div class="form-group">
-								<label for="exampleTextarea">Mô tả</label>
+								<label for="exampleTextarea">Giới thiệu sản phẩm</label>
 								<textarea class="form-control" name="content" rows="3">{{old('content')}}</textarea>
 								<script type="text/javascript">
 							      var editor = CKEDITOR.replace('content',{

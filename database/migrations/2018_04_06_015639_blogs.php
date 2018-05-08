@@ -25,6 +25,7 @@ class Blogs extends Migration
             $table->string('url');
             $table->boolean('display');
             $table->string('image');
+            $table->integer('view');
             $table->timestamps();
         });
     }

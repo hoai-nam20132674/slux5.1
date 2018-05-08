@@ -67,7 +67,7 @@
 	<!--[if lt IE 9]>
 	<script src="js/respond.min.js"></script>
 	<![endif]-->
-
+	@yield('css')
 	<!-- css view-product-item -->
 	<link rel="canonical" href="https://codepen.io/AttilaBre/pen/RKjaeB?depth=everything&order=popularity&page=15&q=product&show_forks=false" />
 	<script src="https://use.fontawesome.com/f12e4a6b3c.js"></script>
@@ -88,6 +88,7 @@
 				
 				
 				<div class="page-content">
+					@yield('content')
 					@yield('services')
 				
 					@yield('counter')
@@ -123,6 +124,7 @@
 		<!-- jQuery -->
 
 		<!-- SwiperEffect Js-->
+		@yield('js')
 		<script>(function(d, s, id) {
 		  var js, fjs = d.getElementsByTagName(s)[0];
 		  if (d.getElementById(id)) return;

@@ -12,15 +12,13 @@
 	<link rel="stylesheet" href="{{asset('admin/vendor/DataTables/Buttons/css/buttons.dataTables.min.css')}}">
 	<link rel="stylesheet" href="{{asset('admin/vendor/DataTables/Buttons/css/buttons.bootstrap4.min.css')}}">
 	<link rel="stylesheet" href="{{asset('admin/vendor/ionicons/css/ionicons.min.css')}}">
-@endsection()
+@endsection
 @section('content')
-	
 	<div class="content-area py-1">
 		<div class="container-fluid">
 			<h4>Data Tables</h4>
 			<ol class="breadcrumb no-bg mb-1">
-				<li class="breadcrumb-item"><a href="tables-datatable.html#">Home</a></li>
-				<li class="breadcrumb-item"><a href="tables-datatable.html#">Tables</a></li>
+				<li class="breadcrumb-item"><a href="{{URL::route('index')}}">Trang chủ</a></li>
 				<li class="breadcrumb-item active">Data Tables</li>
 			</ol>
 			<div class="box box-block bg-white">
@@ -33,66 +31,36 @@
 		            @endif
 					<thead>
 						<tr>
-							<th>Tiêu đề</th>
-							<th>Link bài tin tức</th>
-							<th class="text-center">Enable</th>
-							<th class="text-center">Disible</th>
+							<th>STT</th>
+							<th>Họ tên</th>
+							<th>SĐT</th>
+							<th>Địa chỉ</th>
+							<th>Tên sản phẩm</th>
+							<th>Lỗi</th>
+							<th>Trạng thái</th>
 							<th class="text-center" style="padding: 0px;">
-								<a href="{{URL::route('addBlog')}}" title="Thêm tin tức" style="color: green;"><i class="ion-android-add" style=" font-size:30px;"></i></a>
+								<a href="{{URL::route('addProductRepair')}}" title="Thêm sản phẩm sửa chữa" style="color: green;"><i class="ion-android-add" style=" font-size:30px;"></i></a>
 							</th>
 
 						</tr>
 					</thead>
 					<tbody>
-						@foreach ($blogs as $blog)
+						<?php 
+							$i=1;
+						?>
+						@foreach ($product_repairs as $pr)
 						<tr>
-							<td>{{$blog -> title}}</td>
-							<td><a href="{{url('/'.$blog["url"])}}" target="_blank">{{$blog -> url}}</a></td>
-							@if($blog->display ==0)
-								<td class="text-center">
-									<div class="checkbox">
-										<label>
-											<input onclick="enable{{$blog->id}}()" id="enable{{$blog->id}}" type="checkbox">
-										</label>
-									</div>
-								</td>
-								<td class="text-center">
-									<div class="checkbox">
-										<label>
-											<input onclick="disable{{$blog->id}}()" id="disable{{$blog->id}}" type="checkbox" checked>
-										</label>
-									</div>
-								</td>
-							@else
-								<td class="text-center">
-									<div class="checkbox">
-										<label>
-											<input onclick="enable{{$blog->id}}()" id="enable{{$blog->id}}" type="checkbox" checked>
-										</label>
-									</div>
-								</td>
-								<td class="text-center">
-									<div class="checkbox">
-										<label>
-											<input onclick="disable{{$blog->id}}()" id="disable{{$blog->id}}" type="checkbox">
-										</label>
-									</div>
-								</td>
-							@endif
-							<script type="text/javascript">
-								function enable{{$blog->id}}() {
-								    document.getElementById("enable{{$blog->id}}").checked = true;
-								    document.getElementById("disable{{$blog->id}}").checked = false;
-								}
-
-								function disable{{$blog->id}}() {
-								    document.getElementById("disable{{$blog->id}}").checked = true;
-								    document.getElementById("enable{{$blog->id}}").checked = false;
-								}
-							</script>
+							<td>{{$i++}}</td>
+							<td>{{$pr -> name}}</td>
+							<td>{{$pr->phone_number}}</td>
+							<td>{{$pr->address}}</td>
+							<td>{{$pr->product_name}}</td>
+							<td>{{$pr->error}}</td>
+							<td>{{$pr->status}}</td>
+							
 							<td class="text-center">
-								<a onclick="return confirmDelete('Bạn có chắc muốn xóa tin tức này không')" href="{{ URL::route('deleteBlog',$blog->id)}}" title="Xóa danh mục"><i class="ion-trash-a" style="width: 100%; font-size: 18px; color: red; margin-right: 5px;"></i></a>
-								<a href="{{ URL::route('editBlog',[$blog->id,$blog->categorie_id])}}" title="Sửa danh mục"><i class="ion-compose" style="width: 100%; font-size: 18px;"></i></a>
+								<a onclick="return confirmDelete('Bạn có chắc muốn xóa khách hàng này không')" href="{{ URL::route('deleteProductRepair',$pr->id)}}" title="Xóa khách hàng"><i class="ion-trash-a" style="width: 100%; font-size: 18px; color: red; margin-right: 5px;"></i></a>
+								<a href="{{ URL::route('editProductRepair',[$pr->id,$blog->categorie_id])}}" title="Sửa danh mục"><i class="ion-compose" style="width: 100%; font-size: 18px;"></i></a>
 							</td>
 						</tr>
 						@endforeach
@@ -101,8 +69,7 @@
 			</div>
 		</div>
 	</div>
-	
-@endsection()
+@endsection
 @section('js')
 	<script type="text/javascript" src="{{asset('admin/vendor/jquery/jquery-1.12.3.min.js')}}"></script>
 	<script type="text/javascript" src="{{asset('admin/vendor/tether/js/tether.min.js')}}"></script>
@@ -131,5 +98,4 @@
 	<script type="text/javascript" src="{{asset('admin/js/app.js')}}"></script>
 	<script type="text/javascript" src="{{asset('admin/js/demo.js')}}"></script>
 	<script type="text/javascript" src="{{asset('admin/js/tables-datatable.js')}}"></script>
-	
-@endsection()
+@endsection

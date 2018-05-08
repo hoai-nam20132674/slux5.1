@@ -14,9 +14,9 @@
 		<div class="container-fluid">
 			<h4>Basic Form Elements</h4>
 			<ol class="breadcrumb no-bg mb-1">
-				<li class="breadcrumb-item"><a href="forms-basic.html#">Home</a></li>
-				<li class="breadcrumb-item"><a href="forms-basic.html#">Forms</a></li>
-				<li class="breadcrumb-item active">Basic Form Elements</li>
+				<li class="breadcrumb-item"><a href="{{URL::route('index')}}">Trang chủ</a></li>
+				<li class="breadcrumb-item"><a href="{{URL::route('getListBlogs')}}">Danh sách tin tức</a></li>
+				<li class="breadcrumb-item active">Thêm tin tức</li>
 			</ol>
 			<div class="box box-block bg-white">
 				@if( count($errors) > 0)
@@ -37,7 +37,11 @@
 							<div class="row">
 
 								<div class="col-md-3">
-									<a href="http://slux.vn/" target="_blank"><button class="btn btn-primary" style="width: 100%;">http://slux.vn/</button></a>
+									<a href="http://slux.vn/" target="_blank">
+										<div style="background: #0275d8;" class="text-center">
+											<span style="color: #fff; font-size:20px; ">http://slux.vn/</span>
+										</div>
+									</a>
 								</div>
 								<div class="col-md-9">
 									<div class="form-group">	

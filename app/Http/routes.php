@@ -32,13 +32,15 @@ Route::get('/view-product-item.html', function(){
 Route::get('test',function(){
 	return view ('welcome');
 });
-
+Route::get('gio-hang',function(){
+	return view ('frontEndUser.cart');
+});
 
 Route::get('/login', 'Auth\AuthController@getLogin');
 Route::post('/postLogin', 'Auth\AuthController@postLogin');
 Route::get('/logout', 'Auth\AuthController@logout');
 Route::group(['prefix'=>'admin', 'middleware'=>'auth'],function(){
-	Route::get('index','adminController@index');
+	Route::get('index',['as'=>'index','uses'=>'adminController@index']);
 	Route::get('getListCategories',['as'=>'getListCategories','uses'=>'adminController@getListCategories']);
 	Route::get('addCategorie',['as'=>'addCategorie','uses'=>'adminController@addCategorie']);
 	Route::post('postAddCategorie',['as'=>'postAddCategorie','uses'=>'adminController@postAddCategorie']);
@@ -59,4 +61,8 @@ Route::group(['prefix'=>'admin', 'middleware'=>'auth'],function(){
 	Route::get('editProduct/{id}/{categorie_id}',['as'=>'editProduct','uses'=>'adminController@editProduct']);
 	Route::post('postEditProduct/{id}',['as'=>'postEditProduct','uses'=>'adminController@postEditProduct']);
 	Route::get('deleteProduct/{id}',['as'=>'deleteProduct','uses'=>'adminController@deleteProduct']);
+	Route::get('editMenu',['as'=>'editMenu','uses'=>'adminController@editMenu']);
+	Route::post('postEditMenuHeader',['as'=>'postEditMenuHeader','uses'=>'adminController@postEditMenuHeader']);
+	Route::post('postEditMenuFooter',['as'=>'postEditMenuFooter','uses'=>'adminController@postEditMenuFooter']);
+	Route::post('postEditMenuSidebar',['as'=>'postEditMenuSidebar','uses'=>'adminController@postEditMenuSidebar']);
 });
