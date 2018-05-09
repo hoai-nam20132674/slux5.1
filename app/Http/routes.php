@@ -61,6 +61,16 @@ Route::group(['prefix'=>'admin', 'middleware'=>'auth'],function(){
 	Route::get('editProduct/{id}/{categorie_id}',['as'=>'editProduct','uses'=>'adminController@editProduct']);
 	Route::post('postEditProduct/{id}',['as'=>'postEditProduct','uses'=>'adminController@postEditProduct']);
 	Route::get('deleteProduct/{id}',['as'=>'deleteProduct','uses'=>'adminController@deleteProduct']);
+
+	Route::get('getListProductsRepair',['as'=>'getListProductsRepair','uses'=>'adminController@getListProductsRepair']);
+	Route::get('addProductRepair',['as'=>'addProductRepair','uses'=>'adminController@addProductRepair']);
+	Route::post('postAddProductRepair',['as'=>'postAddProductRepair','uses'=>'adminController@postAddProductRepair']);
+	Route::get('editProductRepair/{id}',['as'=>'editProductRepair','uses'=>'adminController@editProductRepair']);
+	Route::post('postEditProductRepair/{id}',['as'=>'postEditProductRepair','uses'=>'adminController@postEditProductRepair']);
+	Route::get('deleteProductRepair/{id}',['as'=>'deleteProductRepair','uses'=>'adminController@deleteProductRepair']);
+
+
+
 	Route::get('editMenu',['as'=>'editMenu','uses'=>'adminController@editMenu']);
 	Route::post('postEditMenuHeader',['as'=>'postEditMenuHeader','uses'=>'adminController@postEditMenuHeader']);
 	Route::post('postEditMenuFooter',['as'=>'postEditMenuFooter','uses'=>'adminController@postEditMenuFooter']);

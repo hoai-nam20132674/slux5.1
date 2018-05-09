@@ -92,14 +92,11 @@
 							<a href="#" class="waves-effect  waves-light">
 								<span class="s-caret"><i class="fa fa-angle-down"></i></span>
 								<span class="s-icon"><i class="ti-menu-alt"></i></span>
-								<span class="s-text">Tables</span>
+								<span class="s-text">Khách hàng</span>
 							</a>
 							<ul>
-								<li><a href="tables-basic.html">Basic Tables</a></li>
-								<li><a href="tables-datatable.html">Data Tables</a></li>
-								<li><a href="tables-editable.html">Editable Tables</a></li>
-								<li><a href="tables-jsgrid.html">jsGrid Tables</a></li>
-								<li><a href="tables-responsive.html">Responsive Tables</a></li>
+								<li><a href="{{URL::route('getListProductsRepair')}}">Khách hàng sửa chữa</a></li>
+								<li><a href="tables-datatable.html">Khách hàng đăng ký tư vấn</a></li>
 							</ul>
 						</li>
 						<li class="with-sub">

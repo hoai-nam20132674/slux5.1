@@ -48,7 +48,7 @@
 						<?php 
 							$i=1;
 						?>
-						@foreach ($product_repairs as $pr)
+						@foreach ($products_repair as $pr)
 						<tr>
 							<td>{{$i++}}</td>
 							<td>{{$pr -> name}}</td>
@@ -60,7 +60,7 @@
 							
 							<td class="text-center">
 								<a onclick="return confirmDelete('Bạn có chắc muốn xóa khách hàng này không')" href="{{ URL::route('deleteProductRepair',$pr->id)}}" title="Xóa khách hàng"><i class="ion-trash-a" style="width: 100%; font-size: 18px; color: red; margin-right: 5px;"></i></a>
-								<a href="{{ URL::route('editProductRepair',[$pr->id,$blog->categorie_id])}}" title="Sửa danh mục"><i class="ion-compose" style="width: 100%; font-size: 18px;"></i></a>
+								<a href="{{ URL::route('editProductRepair',$pr->id)}}" title="Sửa khách hàng"><i class="ion-compose" style="width: 100%; font-size: 18px;"></i></a>
 							</td>
 						</tr>
 						@endforeach

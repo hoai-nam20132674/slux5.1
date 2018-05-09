@@ -18,6 +18,7 @@ class ProductsRepairImage extends Migration
             $table->foreign('product_repair_id')->references('id')->on('products_repair')->onDelete('cascade');
             $table->integer('image_id')->unsigned();
             $table->foreign('image_id')->references('id')->on('images')->onDelete('cascade');
+            $table->string('url_image');
             $table->timestamps();
         });
     }

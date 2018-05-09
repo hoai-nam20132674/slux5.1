@@ -14,12 +14,14 @@ use App\Products_Images;
 use App\Menu_Header;
 use App\Menu_Footer;
 use App\Menu_Sidebar;
+use App\Products_Repair;
 use App\Http\Requests\addCategorieRequest;
 use App\Http\Requests\editCategorieRequest;
 use App\Http\Requests\editBlogRequest;
 use App\Http\Requests\editProductRequest;
 use App\Http\Requests\addBlogRequest;
 use App\Http\Requests\addProductRequest;
+use App\Http\Requests\addProductRepairRequest;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Auth;
 use Input;
@@ -146,6 +148,8 @@ class adminController extends Controller
         $product->editProduct($request,$id);
         return redirect('admin/getListProducts')->with(['flash_level'=>'success','flash_message'=>'Sửa sản phẩm thành công']);
     }
+
+    //Edit Menu Controller
     public function editMenu(){
         $countBlogs = Blogs::select()->count();
         $categories = Categories::select()->get();
@@ -155,14 +159,6 @@ class adminController extends Controller
         $menu_header = new Menu_Header;
         $menu_header->editMenu($request);
         return redirect('admin/editMenu')->with(['flash_level'=>'success','flash_message'=>'Sửa menu thành công']);
-        // if(Input::has('categorie_header')){
-        //     $selects = $request->categorie_header;
-        //     $count = count($selects);
-        //     for($i=0;$i<$count;$i++){
-        //         $test = $request->categorie_header[$i];
-        //         echo "$test";
-        //     }
-        // }
     }
     public function postEditMenuFooter(Request $request){
         $menu_footer =new Menu_Footer;
@@ -173,5 +169,22 @@ class adminController extends Controller
         $menu_sidebar =new Menu_Sidebar;
         $menu_sidebar->editMenu($request);
         return redirect('admin/editMenu')->with(['flash_level'=>'success','flash_message'=>'Sửa menu thành công']);
+    }
+
+
+    // Product Repair Controller
+    public function getListProductsRepair(){
+        $countBlogs = Blogs::select()->count();
+        $products_repair = Products_Repair::select()->get();
+        return View('frontEndAdmin.page-content.listProductRepair',['products_repair'=>$products_repair,'countBlogs'=>$countBlogs]);
+    }
+    public function addProductRepair(){
+        $countBlogs = Blogs::select()->count();
+        return View('frontEndAdmin.page-content.addProductRepair',['countBlogs'=>$countBlogs]);
+    }
+    public function postAddProductRepair(addProductRequest $request){
+        $product_repair =new Products_Repair;
+        $product_repair->addProductRepair($request);
+        return redirect('admin/getListProductsRepair')->with(['flash_level'=>'success','flash_message'=>'Thêm khác hàng thành công']);
     }
 }
