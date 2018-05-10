@@ -29,12 +29,13 @@ Route::get('/linh-phu-kien.html', function(){
 Route::get('/view-product-item.html', function(){
 	return view('frontEndUser.view-product-item');
 });
-Route::get('test',function(){
-	return view ('welcome');
-});
+
 Route::get('gio-hang',function(){
 	return view ('frontEndUser.cart');
 });
+// Route::get('/{url}',['as'=>'{url}','uses'=>'viewController@viewCategorie']);
+
+Route::get('/test','viewController@test');
 
 Route::get('/login', 'Auth\AuthController@getLogin');
 Route::post('/postLogin', 'Auth\AuthController@postLogin');

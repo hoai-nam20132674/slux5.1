@@ -49,8 +49,21 @@ class Categories extends Model
 
 	}
 	public function getChildren($id){
+		$array = array();
 		$childrenCategorie = Categories::where('parent_id',$id)->get()->toArray();
 		return $childrenCategorie;
+	}
+	public function getIdChildren($id){
+		$array = array();
+		$count = Categories::where('id',$id)->count();
+		$childrenCategorie = Categories::where('parent_id',$id)->get();
+		$i=0;
+		foreach($childrenCategorie as $childrenCate){
+			$array[$i]=$childrenCate->id;
+			$i++;
+		}
+		return $array;
+
 	}
 	public function getBlogChildren($id){
 		$childrenBlog = Blogs::where('categorie_id',$id)->get()->toArray();

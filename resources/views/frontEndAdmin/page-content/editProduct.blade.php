@@ -111,6 +111,7 @@
 						<div class="col-md-3">
 							<div class="form-group">
 								<select class="form-control" name="categorie_id">
+									<option value="{{$categorie->id}}">{{$categorie->name}}</option>
 									@foreach($categories as $cate)
 									<option value="{{$cate->id}}">{{$cate->name}}</option>
 									@endforeach

@@ -139,7 +139,7 @@ class adminController extends Controller
     public function editProduct($id, $categorie_id){
         $countBlogs = Blogs::select()->count();
         $product = Products::where('id',$id)->get();
-        $categorie = Categories::where('id',$categorie_id)->get();
+        $categorie = Categories::where('id',$categorie_id)->get()->first();
         $categories =Categories::select()->get();
         $product_images = Products_Images::where('product_id',$id)->get();
         return View('frontEndAdmin.page-content.editProduct',['categorie'=>$categorie,'categories'=>$categories,'product'=>$product,'countBlogs'=>$countBlogs,'product_images'=>$product_images]);
