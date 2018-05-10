@@ -38,8 +38,8 @@
 							<th>Tên sản phẩm</th>
 							<th>Lỗi</th>
 							<th>Trạng thái</th>
-							<th class="text-center" style="padding: 0px;">
-								<a href="{{URL::route('addProductRepair')}}" title="Thêm sản phẩm sửa chữa" style="color: green;"><i class="ion-android-add" style=" font-size:30px;"></i></a>
+							<th class="text-center" style="padding: 0px; background: green;">
+								<a href="{{URL::route('addProductRepair')}}" title="Thêm sản phẩm sửa chữa" style="color: green;"><i class="ion-android-add" style=" font-size:30px;color:#fff;"></i></a>
 							</th>
 
 						</tr>
@@ -56,7 +56,17 @@
 							<td>{{$pr->address}}</td>
 							<td>{{$pr->product_name}}</td>
 							<td>{{$pr->error}}</td>
-							<td>{{$pr->status}}</td>
+							<td class="text-center">
+								@if($pr->status < 100)
+								<div class="status" style="background: red;color:#fff; width:100%;">
+									<span >sửa chữa</span>
+								</div>
+								@else 
+								<div class="status" style="background: green;color:#fff;width:100%; ">
+									<span >hoàn thiện</span>
+								</div>
+								@endif
+							</td>
 							
 							<td class="text-center">
 								<a onclick="return confirmDelete('Bạn có chắc muốn xóa khách hàng này không')" href="{{ URL::route('deleteProductRepair',$pr->id)}}" title="Xóa khách hàng"><i class="ion-trash-a" style="width: 100%; font-size: 18px; color: red; margin-right: 5px;"></i></a>

@@ -39,8 +39,8 @@
 							<th>Url</th>
 							<th>Menu header</th>
 							<th>Menu footer</th>
-							<th class="text-center" style="padding: 0px;">
-								<a href="{{URL::route('addCategorie')}}" title="Thêm danh mục" style="color: green;"><i class="ion-android-add" style=" font-size:30px;"></i></a>
+							<th class="text-center" style="padding: 0px; background: green;">
+								<a href="{{URL::route('addCategorie')}}" title="Thêm danh mục" style="color: green;"><i class="ion-android-add" style=" font-size:30px;color:#fff;"></i></a>
 							</th>
 
 						</tr>

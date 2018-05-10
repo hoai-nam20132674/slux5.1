@@ -105,7 +105,7 @@
 			<ol class="breadcrumb no-bg mb-1">
 				<li class="breadcrumb-item"><a href="{{URL::route('index')}}">Trang chủ</a></li>
 				<li class="breadcrumb-item"><a href="{{URL::route('getListProductsRepair')}}">Danh sách khách hàng</a></li>
-				<li class="breadcrumb-item active">Thêm khách hàng</li>
+				<li class="breadcrumb-item active">Sửa khách hàng</li>
 			</ol>
 			<div class="box box-block bg-white">
 				@if( count($errors) > 0)
@@ -119,73 +119,105 @@
 		    	@endif
 				<h5>Form controls</h5>
 				<p class="font-90 text-muted mb-1">Bootstrap provides several form control styles, layout options, and custom components for creating a wide variety of forms.</p>
-				<form action="{{URL::route('postAddProductRepair')}}" method="POST" enctype="multipart/form-data">
-					<input type="hidden" name="_token" value="{{ csrf_token()}}">
-					<div class="row">
-						<div class="col-md-9">
-							
-							<div class="form-group">
-								<label for="exampleInputEmail1">Tên khách hàng</label>
-								<input type="text" class="form-control" name="name" placeholder="VD: Nguyễn Văn A" value="{{old('name')}}">
+				@foreach($product_repair as $pr)
+					<form action="{{URL::route('postEditProductRepair',$pr->id)}}" method="POST" enctype="multipart/form-data">
+						<input type="hidden" name="_token" value="{{ csrf_token()}}">
+						<div class="row">
+							<div class="col-md-9">
+								
+								<div class="form-group">
+									<label for="exampleInputEmail1">Tên khách hàng</label>
+									<input type="text" class="form-control" name="name" placeholder="VD: Nguyễn Văn A" value="{{$pr->name}}">
+								</div>
+								<div class="form-group">
+									<label for="exampleInputEmail1">Số điện thoại</label>
+									<input type="text" class="form-control" name="phone_number" placeholder="VD: 0123456789" value="{{$pr->phone_number}}">
+								</div>
+								<div class="form-group">
+									<label for="exampleInputEmail1">Địa chỉ</label>
+									<input type="text" class="form-control" name="address" placeholder="VD: số 1 Lê Thanh Nghị, Hai Bà Trưng, Hà Nội" value="{{$pr->address}}">
+								</div>
+								<div class="form-group">
+									<label for="exampleInputEmail1">Tên sản phẩm sửa chữa</label>
+									<input type="text" class="form-control" name="product_name" placeholder="VD: Nokia 8800 gold" value="{{$pr->product_name}}">
+								</div>
+								<div class="form-group">
+									<label for="exampleInputEmail1">Lỗi sản phẩm</label>
+									<input type="text" class="form-control" name="error" placeholder="VD: Lỗi tai nghe" value="{{$pr->error}}">
+								</div>
+								<div class="range-slider">
+									<label for="exampleInputEmail1">Mức độ hoàn thiện</label>
+								  	<input class="range-slider__range" name="status" type="range" value="{{$pr->status}}" min="0" max="100">
+								  	<span class="range-slider__value">10</span>
+								</div>
+								
 							</div>
-							<div class="form-group">
-								<label for="exampleInputEmail1">Số điện thoại</label>
-								<input type="text" class="form-control" name="phone_number" placeholder="VD: 0123456789" value="{{old('phone_number')}}">
+							<div class="col-md-3">
+								<div class="all-image-product">
+									<div class="row">
+										<div class="col-md-12">
+											<?php 
+												$i=2;
+												$product_repair_image = App\Products_Repair_Image::where('product_repair_id',$pr->id)->get();
+											?>
+											
+											@foreach($product_repair_image as $prim)									
+												@if($i==2)
+													<div class="image-product{{$i}}" style="width: 50%; float: left;" >
+														<img class="img-thumbnail" width="100%" src="{{url('/uploads/images/products/'.$prim["url_image"])}}">
+													</div>
+													<?php
+														$i++;
+													?>
+												@else
+													<div class="image-product{{$i}}" style="width: 50%;float: right;" >
+														<img class="img-thumbnail" width="100%" src="{{url('/uploads/images/products/'.$prim["url_image"])}}">
+													</div>
+													<?php
+														$i++;
+													?>
+												@endif
+											@endforeach
+										</div>
+									</div>
+								</div>
+								<hr>
+								<div class="file-upload edit-image2">	
+								  	<div class="image-upload-wrap image-upload-wrap2">
+									    <input class="file-upload-input file-upload-input2" type='file' name="image" onchange="readURL2(this);" accept="image/*" />
+									    <div class="drag-text">
+									      <h3>Ảnh sản phẩm trước sửa chữa</h3>
+									    </div>
+								  	</div>
+								  	<div class="file-upload-content file-upload-content2">
+								    	<img class="file-upload-image file-upload-image2" src="#" alt="your image" />
+								    	<div class="image-title-wrap image-title-wrap2">
+								      		<button type="button" onclick="removeUpload2()" class="remove-image">Remove <span class="image-title image-title2 text-center">Uploaded Image</span></button>
+								    	</div>
+								  	</div>
+								  	<hr>
+								</div>
+								
+								<div class="file-upload edit-image3">	
+								  	<div class="image-upload-wrap image-upload-wrap3">
+									    <input class="file-upload-input file-upload-input3" type='file' name="fimage" onchange="readURL3(this);" accept="image/*" />
+									    <div class="drag-text">
+									      <h3>Ảnh sản phẩm sau sửa chữa</h3>
+									    </div>
+								  	</div>
+								  	<div class="file-upload-content file-upload-content3">
+								    	<img class="file-upload-image file-upload-image3" src="#" alt="your image" />
+								    	<div class="image-title-wrap image-title-wrap3">
+								      		<button type="button" onclick="removeUpload3()" class="remove-image">Remove <span class="image-title image-title3 text-center">Uploaded Image</span></button>
+								    	</div>
+								  	</div>
+								</div>
 							</div>
-							<div class="form-group">
-								<label for="exampleInputEmail1">Địa chỉ</label>
-								<input type="text" class="form-control" name="address" placeholder="VD: số 1 Lê Thanh Nghị, Hai Bà Trưng, Hà Nội" value="{{old('title')}}">
-							</div>
-							<div class="form-group">
-								<label for="exampleInputEmail1">Tên sản phẩm sửa chữa</label>
-								<input type="text" class="form-control" name="product_name" placeholder="VD: Nokia 8800 gold" value="{{old('product_name')}}">
-							</div>
-							<div class="form-group">
-								<label for="exampleInputEmail1">Lỗi sản phẩm</label>
-								<input type="text" class="form-control" name="error" placeholder="VD: Lỗi tai nghe" value="{{old('error')}}">
-							</div>
-							<div class="range-slider">
-								<label for="exampleInputEmail1">Mức độ hoàn thiện</label>
-							  	<input class="range-slider__range" name="status" type="range" value="0" min="0" max="100">
-							  	<span class="range-slider__value">10</span>
-							</div>
-							
 						</div>
-						<div class="col-md-3">
-							<div class="file-upload">	
-							  	<div class="image-upload-wrap image-upload-wrap0">
-								    <input class="file-upload-input file-upload-input0" type='file' name="image" onchange="readURL(this);" accept="image/*" />
-								    <div class="drag-text">
-								      <h3>Ảnh sản phẩm trước sửa chữa</h3>
-								    </div>
-							  	</div>
-							  	<div class="file-upload-content file-upload-content0">
-							    	<img class="file-upload-image file-upload-image0" src="#" alt="your image" />
-							    	<div class="image-title-wrap image-title-wrap0">
-							      		<button type="button" onclick="removeUpload()" class="remove-image">Remove <span class="image-title image-title0 text-center">Uploaded Image</span></button>
-							    	</div>
-							  	</div>
-							</div>
-							<hr>
-							<div class="file-upload">	
-							  	<div class="image-upload-wrap image-upload-wrap1">
-								    <input class="file-upload-input file-upload-input1" type='file' name="fimage" onchange="readURL1(this);" accept="image/*" />
-								    <div class="drag-text">
-								      <h3>Ảnh sản phẩm sau sửa chữa</h3>
-								    </div>
-							  	</div>
-							  	<div class="file-upload-content file-upload-content1">
-							    	<img class="file-upload-image file-upload-image1" src="#" alt="your image" />
-							    	<div class="image-title-wrap image-title-wrap1">
-							      		<button type="button" onclick="removeUpload1()" class="remove-image">Remove <span class="image-title image-title1 text-center">Uploaded Image</span></button>
-							    	</div>
-							  	</div>
-							</div>
-						</div>
-					</div>
 
-					<button type="submit" class="btn btn-primary">Submit</button>
-				</form>
+						<button type="submit" class="btn btn-primary">Submit</button>
+					</form>
+				@endforeach
 			</div>
 			
 		</div>

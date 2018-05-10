@@ -22,6 +22,7 @@ use App\Http\Requests\editProductRequest;
 use App\Http\Requests\addBlogRequest;
 use App\Http\Requests\addProductRequest;
 use App\Http\Requests\addProductRepairRequest;
+use App\Http\Requests\editProductRepairRequest;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Auth;
 use Input;
@@ -182,9 +183,26 @@ class adminController extends Controller
         $countBlogs = Blogs::select()->count();
         return View('frontEndAdmin.page-content.addProductRepair',['countBlogs'=>$countBlogs]);
     }
-    public function postAddProductRepair(addProductRequest $request){
+    public function postAddProductRepair(addProductRepairRequest $request){
         $product_repair =new Products_Repair;
         $product_repair->addProductRepair($request);
         return redirect('admin/getListProductsRepair')->with(['flash_level'=>'success','flash_message'=>'Thêm khác hàng thành công']);
     }
+
+    public function deleteProductRepair($id){
+        $product = new Products_Repair;
+        $product->deleteProductRepair($id);
+        return redirect('admin/getListProductsRepair')->with(['flash_level'=>'success','flash_message'=>'Xóa khách hàng thành công']);
+    }
+    public function editProductRepair($id){
+        $product_repair = Products_Repair::where('id',$id)->get();
+        $countBlogs = Blogs::select()->count();
+        return View('frontEndAdmin.page-content.editProductRepair',['product_repair'=>$product_repair,'countBlogs'=>$countBlogs]);
+    }
+    public function postEditProductRepair(editProductRepairRequest $request, $id){
+        $product_repair=new Products_Repair;
+        $product_repair->editProductRepair($request,$id);
+        return redirect('admin/getListProductsRepair')->with(['flash_level'=>'success','flash_message'=>'Sửa thông tin khách hàng thành công']);
+    }
+    
 }

@@ -37,8 +37,8 @@
 							<th>Link bài tin tức</th>
 							<th class="text-center">Enable</th>
 							<th class="text-center">Disible</th>
-							<th class="text-center" style="padding: 0px;">
-								<a href="{{URL::route('addBlog')}}" title="Thêm tin tức" style="color: green;"><i class="ion-android-add" style=" font-size:30px;"></i></a>
+							<th class="text-center" style="padding: 0px; background: green;">
+								<a href="{{URL::route('addBlog')}}" title="Thêm tin tức" style="color: green;"><i class="ion-android-add" style=" font-size:30px; color:#fff;"></i></a>
 							</th>
 
 						</tr>
