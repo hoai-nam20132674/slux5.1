@@ -23,38 +23,70 @@ class viewController extends Controller
             return View('frontEndUser.page-content.newsCategorie');
         }
         else{
-
             return View('frontEndUser.page-content.listProductCategorie',[]);
         }
     }
-    // public function getProductCategorie(){
-    //     $array = array();
-    //     $count = Categories::where('id',$id)->count();
-    //     $categorieChildren = Categories::where('id',$id)->get()
-    //     foreach($childrenCategorie as $childrenCate){
-            
-    //     }
-        
-    // }
-    public function test(){
+
+    public function getIdCategorieChildren($id){
         $cate =new Categories;
-        $idCateChildren = $cate->getIdChildren(3);
-        $count = count($idCateChildren);
-        for($i=0;$i<$count;$i++){
-            $idCateChildren1 = $cate->getIdChildren($idCateChildren[$i]);
+        $array =array();
+        $i=0;
+        $k=0;
+        $n=0;
+        $idCateChildrens = $cate->getIdChildren($id);
+        $count=0;
+        if(count($idCateChildrens)>0){
+            $count = count($idCateChildrens);
+            for($i;$i<$count;$i++){
+                $array[$i]=$idCateChildrens[$i];
+            }
+            foreach($idCateChildrens as $idCateChildren){
+                $cate = new Categories;
+                $idCateChildrens1= $cate->getIdChildren($idCateChildren);
+                if(count($idCateChildrens1)>0){
+                    $count1 = count($idCateChildrens1);
+                    $j=0;
+                    $count=$count1+$count;
+                    for($i;$i<$count;$i++){
+                        $array[$i]=$idCateChildrens1[$j];
+                        $j++;
+                    }
+                    foreach($idCateChildrens1 as $idCateChildren1){
+                        $cate = new Categories;
+                        $idCateChildrens2= $cate->getIdChildren($idCateChildren1);
+                        if(count($idCateChildrens2)>0){
+                            $count2 = count($idCateChildrens2);
+                            $j=0;
+                            $count=$count2+$count;
+                            for($i;$i<$count;$i++){
+                                $array[$i]=$idCateChildrens2[$j];
+                                $j++;
+                            }
+                            foreach($idCateChildrens2 as $idCateChildren2){
+                                $cate = new Categories;
+                                $idCateChildrens3= $cate->getIdChildren($idCateChildren2);
+                                if(count($idCateChildrens3)>0){
+                                    $count3 = count($idCateChildrens3);
+                                    $j=0;
+                                    $count=$count3+$count;
+                                    for($i;$i<$count;$i++){
+                                        $array[$i]=$idCateChildrens3[$j];
+                                        $j++;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
         }
-        dd($idCateChildren1);
-        // $cate = Categories::where('parent_id',2)->count();
-        // if($cate>0){
-        //     echo "true";
-        // }
-        // else{
-        //     echo "false";
-        // }
-        // $array = array();
-        // $array[0]=0;
-        // $array[1]=1;
-        // dd($array);
+        $array[$count]=$id;
+        return $array;
+    }
+    public function getProductCategorie($id){
+        $categories = $this->getIdCategorieChildren($id);
+        $products = Products::whereIn('categorie_id',$categories)->get();
+        dd($products);
     }
     
 }

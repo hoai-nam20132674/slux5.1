@@ -35,7 +35,8 @@ Route::get('gio-hang',function(){
 });
 // Route::get('/{url}',['as'=>'{url}','uses'=>'viewController@viewCategorie']);
 
-Route::get('/test','viewController@test');
+Route::get('/getIdCategorieChildren/{id}','viewController@getIdCategorieChildren');
+Route::get('/getProductCategorie/{id}','viewController@getProductCategorie');
 
 Route::get('/login', 'Auth\AuthController@getLogin');
 Route::post('/postLogin', 'Auth\AuthController@postLogin');

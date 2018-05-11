@@ -55,12 +55,14 @@ class Categories extends Model
 	}
 	public function getIdChildren($id){
 		$array = array();
-		$count = Categories::where('id',$id)->count();
+		$count = Categories::where('parent_id',$id)->count();
 		$childrenCategorie = Categories::where('parent_id',$id)->get();
 		$i=0;
-		foreach($childrenCategorie as $childrenCate){
-			$array[$i]=$childrenCate->id;
-			$i++;
+		if($count>0){
+			foreach($childrenCategorie as $childrenCate){
+				$array[$i]=$childrenCate->id;
+				$i++;
+			}
 		}
 		return $array;
 
