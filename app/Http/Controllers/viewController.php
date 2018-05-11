@@ -16,14 +16,16 @@ class viewController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function viewController($url)
+    public function viewContentPageCategorie($url)
     {
         $categorie = Categories::where('url',$url)->get()->first();
         if($categorie->type ==0){
             return View('frontEndUser.page-content.newsCategorie');
         }
         else{
-            return View('frontEndUser.page-content.listProductCategorie',[]);
+            $id =$categorie->id;
+            $products= $this->getProductCategorie($id);
+            return View('frontEndUser.page-content.listProductCategorie',['products'=>$products]);
         }
     }
 
@@ -86,7 +88,8 @@ class viewController extends Controller
     public function getProductCategorie($id){
         $categories = $this->getIdCategorieChildren($id);
         $products = Products::whereIn('categorie_id',$categories)->get();
-        dd($products);
+        // dd($products);
+        return $products;
     }
     
 }

@@ -33,7 +33,7 @@ Route::get('/view-product-item.html', function(){
 Route::get('gio-hang',function(){
 	return view ('frontEndUser.cart');
 });
-// Route::get('/{url}',['as'=>'{url}','uses'=>'viewController@viewCategorie']);
+Route::get('/{url}',['as'=>'{url}','uses'=>'viewController@viewContentPageCategorie']);
 
 Route::get('/getIdCategorieChildren/{id}','viewController@getIdCategorieChildren');
 Route::get('/getProductCategorie/{id}','viewController@getProductCategorie');
