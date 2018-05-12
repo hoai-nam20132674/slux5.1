@@ -17,7 +17,7 @@
 					<br>
 					<div class="row">
 						<div class="col-md-9">
-							<h1 >{{$pr->name}}</h1>
+							<h1 ></h1>
 						</div>
 						<div class="col-md-3">
 							<div style="float: right;">

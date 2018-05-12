@@ -8,9 +8,11 @@
 				
 					<div class="breadcrumb-slux">
 				        <div class="btn-group btn-breadcrumb breadcrumb-default">
-				            <a href="#" class="btn btn-default"><i class="glyphicon glyphicon-home"></i></a>
-				            <a href="#" class="btn btn-default broder-bottom">LINH PHỤ KIỆN</a>
-				            
+				            <a href="/" class="btn btn-default"><i class="glyphicon glyphicon-home"></i></a>
+				            @foreach($categories as $categorie)
+				            	<a href="{{url('/'.$categorie["url"])}}" class="btn btn-default broder-bottom">{{$categorie->name}}</a>
+				            @endforeach
+				            <a href="{{url('/'.$pr["url"])}}" class="btn btn-default broder-bottom">{{$pr->name}}</a>
 				        </div>
 					</div>
 					<br>

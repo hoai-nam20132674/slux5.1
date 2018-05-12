@@ -40,7 +40,9 @@ class viewController extends Controller
         if(count($product)>0){
             foreach($product as $pr){
                 $product_images = Products_Images::where('product_id',$pr->id)->get();
-                return View('frontEndUser.page-content.view-product-item',['pr'=>$pr,'product_images'=>$product_images]);
+                $idCateParents = $this->getIdCategorieParent($pr->categorie_id);
+                $categories = Categories::whereIn('id',$idCateParents)->get();
+                return View('frontEndUser.page-content.view-product-item',['pr'=>$pr,'product_images'=>$product_images,'categories'=>$categories]);
             }
         }
     }
