@@ -8,6 +8,7 @@ use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use App\Products;
 use App\Categories;
+use App\Products_Images;
 
 class viewController extends Controller
 {
@@ -18,17 +19,50 @@ class viewController extends Controller
      */
     public function viewContentPageCategorie($url)
     {
-        $categorie = Categories::where('url',$url)->get()->first();
-        if($categorie->type ==0){
-            return View('frontEndUser.page-content.newsCategorie');
+        $categorie = Categories::where('url',$url)->get();
+        $product= Products::where('url',$url)->get();
+        if($url == "login"){
+            return redirect('login/admin-master');
         }
-        else{
-            $id =$categorie->id;
-            $products= $this->getProductCategorie($id);
-            return View('frontEndUser.page-content.listProductCategorie',['products'=>$products]);
+        if(count($categorie)>0){
+            foreach($categorie as $cate){
+                if($cate->type ==0){
+                    return View('frontEndUser.page-content.newsCategorie');
+                }
+                else{
+                    $id =$cate->id;
+                    $products= $this->getProductCategorie($id);
+                    $idCateParents = $this->getIdCategorieParent($id);
+                    return View('frontEndUser.page-content.listProductCategorie',['products'=>$products,'idCateParents'=>$idCateParents]);
+                }
+            }
+        }
+        if(count($product)>0){
+            foreach($product as $pr){
+                $product_images = Products_Images::where('product_id',$pr->id)->get();
+                return View('frontEndUser.page-content.view-product-item',['pr'=>$pr,'product_images'=>$product_images]);
+            }
         }
     }
-
+    public $arrayIdCateParent = array();
+    public $tg=0;
+    public function getIdCategorieParent($id){
+        $arrayIdCateParent = array();
+        $tg=0;
+        $categorie = new Categories;
+        $arrayIdCateParent[$tg]=$id;
+        $parentCategorie = $categorie->getIdParent($id);
+        for($x =0;$x<10;$x++){
+            if(count($parentCategorie)>0){
+                $tg++;
+                foreach($parentCategorie as $parentCate){
+                    $arrayIdCateParent[$tg]=$parentCate->id;
+                    $parentCategorie = $categorie->getIdParent($parentCate->id);
+                }
+            }
+        }
+        return $arrayIdCateParent;
+    }
     public function getIdCategorieChildren($id){
         $cate =new Categories;
         $array =array();

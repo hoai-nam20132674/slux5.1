@@ -35,12 +35,14 @@ Route::get('gio-hang',function(){
 });
 Route::get('/{url}',['as'=>'{url}','uses'=>'viewController@viewContentPageCategorie']);
 
+Route::get('getParentCategorie/{id}','viewController@getIdCategorieParent');
 Route::get('/getIdCategorieChildren/{id}','viewController@getIdCategorieChildren');
 Route::get('/getProductCategorie/{id}','viewController@getProductCategorie');
 
-Route::get('/login', 'Auth\AuthController@getLogin');
+
+Route::get('/login/admin-master', ['as'=>'getLogin','uses'=>'Auth\AuthController@getLogin']);
 Route::post('/postLogin', 'Auth\AuthController@postLogin');
-Route::get('/logout', 'Auth\AuthController@logout');
+Route::get('/logout/admin-master', ['as'=>'getLogout','uses'=>'Auth\AuthController@logout']);
 Route::group(['prefix'=>'admin', 'middleware'=>'auth'],function(){
 	Route::get('index',['as'=>'index','uses'=>'adminController@index']);
 	Route::get('getListCategories',['as'=>'getListCategories','uses'=>'adminController@getListCategories']);

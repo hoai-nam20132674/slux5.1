@@ -4,7 +4,6 @@
 
 @section('view-product-item')
 	<div class="container">
-		
 			<div class="content">
 				
 					<div class="breadcrumb-slux">
@@ -16,14 +15,13 @@
 					</div>
 					<br>
 					<div class="row">
-						<div class="col-md-9">
+						<div class="col-md-10">
 							<h1 >{{$pr->name}}</h1>
 						</div>
-						<div class="col-md-3">
-							<div style="float: right;">
-							<button type="button" class="btn btn-primary btn-xs" >Share <span class="badge">7</span></button>
-							<button type="button" class="btn btn-primary btn-xs" >Like <span class="badge">7</span> </button>
-							</div>
+						<div class="col-md-2" style="margin-top: 45px;">
+							<span style="width: 48%; float: left; background: #4267b2; font-size: 12px; color:#fff; border-radius: 3px;" class="text-center">Order 10</span>
+							<span style="width: 48%; float: right; background: #4267b2; font-size: 12px; color:#fff; border-radius:3px; " class="text-center">Like 10</span>
+							<!-- <button type="button" class="btn btn-primary btn-xs" >Like <span class="badge">7</span> </button> -->
 						</div>
 					</div>
 					<hr>
@@ -38,29 +36,29 @@
 									    <li data-target="#carousel-example-generic" data-slide-to="2"></li>
 									    <li data-target="#carousel-example-generic" data-slide-to="3"></li>
 									</ol>
-
+									
 
 									<div class="carousel-inner">
-
-									    <div class="item active srle">
-										    <img src="images/1.jpg" alt="1.jpg" class="img-responsive">
-										    
-									    </div>
-
-									    <div class="item">
-										    <img src="images/2.jpg" alt="2.jpg" class="img-responsive">
-										    
-									    </div>
-
-									    <div class="item">
-										    <img src="images/3.jpg" alt="3.jpg" class="img-responsive">
-										    
-									    </div>
-
-									    <div class="item">
-										    <img src="images/4.jpg" alt="4.jpg" class="img-responsive">
-										    
-									    </div>
+										<?php
+											$i=0;
+										?>
+										@foreach($product_images as $prim)
+											<?php 
+												$image= App\Images::where('id',$prim->image_id)->get()->first();
+											?>
+											@if($i==0)
+											    <div class="item active srle">
+												    <img src="{{url('/uploads/images/products/'.$prim["url_image"])}}" alt="{{$image->alt}}" class="img-responsive">
+											    </div>
+											@else 
+												<div class="item">
+												    <img src="{{url('/uploads/images/products/'.$prim["url_image"])}}" alt="{{$image->alt}}" class="img-responsive">
+											    </div>
+											@endif
+											<?php 
+												$i++;
+											?>
+										@endforeach
 
 									</div>
 
@@ -73,10 +71,9 @@
 									</a>
 
 									<ul class="thumbnails-carousel clearfix">
-									  	<li><img src="images/1_tn.jpg" alt="1_tn.jpg"></li>
-										<li><img src="images/2_tn.jpg" alt="1_tn.jpg"></li>
-										<li><img src="images/3_tn.jpg" alt="1_tn.jpg"></li>
-										<li><img src="images/4_tn.jpg" alt="1_tn.jpg"></li>
+										@foreach($product_images as $prim)
+									  		<li><img src="{{url('/uploads/images/products/'.$prim["url_image"])}}" alt="{{$prim->alt}}"></li>
+									  	@endforeach
 									</ul>
 								</div>
 								
@@ -84,11 +81,11 @@
 							<div class="col-md-4">
 								
 									<div class="panel panel-success">
-										<div class="panel-heading text-center"><span class="fw-700"> Giá: 30.000.000</span></div>
+										<div class="panel-heading text-center"><span class="fw-700"> Giá: {{$pr->price}}</span></div>
 									</div>
 									<div class="panel panel-default">
 										<div class="panel-heading text-center">Thông tin ưu đãi</div>
-										<div class="panel-body text-center "><span>Phiếu mua hàng Apple Watch S3 GPS trị giá 1 triệu (không cộng nhiều phiếu trên 1 sản phẩm)</span></div>
+										<div class="panel-body text-center ">{!!$pr->sale!!}</div>
 									</div>
 									
 									<button type="button" class="btn btn-danger width-100 fw-700">MUA NGAY</button>
@@ -105,11 +102,7 @@
 										
 									</div>
 									<div class="panel-body text-center ">
-										<span style="font-style: 10px;">Trong hộp có</span>
-										<hr style="margin-bottom: 5px;margin-top: 5px;">
-										<span>Trong hộp có</span>
-										<hr style="margin-bottom: 5px;margin-top: 5px;">
-										<span>Trong hộp có</span>
+										{!!$pr->ttsp!!}
 
 									</div>
 								</div>
@@ -129,11 +122,11 @@
 								<div class="tab-content">
 								    <div id="gt" class="tab-pane fade in active">
 								    	<h3>Giới thiệu sản phẩm</h3>
-								    	<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+								    	{!!$pr->description!!}
 								    </div>
 								    <div id="tskt" class="tab-pane fade">
 								    	<h3>Menu 1</h3>
-								    	<p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+								    	{!!$pr->tskt!!}
 								    </div>
 								    
 								</div>

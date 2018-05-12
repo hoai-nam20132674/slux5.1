@@ -381,7 +381,7 @@
 									</a>
 									<div class="dropdown-divider"></div>
 									<a class="dropdown-item" href="index.html#"><i class="ti-help mr-0-5"></i> Help</a>
-									<a class="dropdown-item" href="{{url('/logout')}}"><i class="ti-power-off mr-0-5"></i> Sign out</a>
+									<a class="dropdown-item" href="{{url('/logout/admin-master')}}"><i class="ti-power-off mr-0-5"></i> Sign out</a>
 								</div>
 							</li>
 						</ul>

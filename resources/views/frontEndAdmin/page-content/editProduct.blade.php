@@ -74,10 +74,23 @@
 								<script type="text/javascript">
 							      var editor = CKEDITOR.replace('sale',{
 							       language:'vi',
-							       filebrowserImageBrowseUrl : '../admin/ckfinder/ckfinder.html?type=Images',
-							       filebrowserFlashBrowseUrl : '../admin/ckfinder/ckfinder.html?type=Flash',
-							       filebrowserImageUploadUrl : '../admin/ckfinder/core/connector/php/connector.php?command=QuickUpload&type=Images',
-							       filebrowserFlashUploadUrl : '../admin/ckfinder/core/connector/php/connector.php?command=QuickUpload&type=Flash',
+							       filebrowserImageBrowseUrl : '../../../admin/ckfinder/ckfinder.html?type=Images',
+							       filebrowserFlashBrowseUrl : '../../../admin/ckfinder/ckfinder.html?type=Flash',
+							       filebrowserImageUploadUrl : '../../../admin/ckfinder/core/connector/php/connector.php?command=QuickUpload&type=Images',
+							       filebrowserFlashUploadUrl : '../../../admin/ckfinder/core/connector/php/connector.php?command=QuickUpload&type=Flash',
+							       });
+							     </script>﻿
+							</div>
+							<div class="form-group">
+								<label for="exampleTextarea">Thông tin sản phẩm</label>
+								<textarea class="form-control" name="ttsp" rows="3">{!!$pr->ttsp!!}</textarea>
+								<script type="text/javascript">
+							      var editor = CKEDITOR.replace('ttsp',{
+							       language:'vi',
+							       filebrowserImageBrowseUrl : '../../../admin/ckfinder/ckfinder.html?type=Images',
+							       filebrowserFlashBrowseUrl : '../../../admin/ckfinder/ckfinder.html?type=Flash',
+							       filebrowserImageUploadUrl : '../../../admin/ckfinder/core/connector/php/connector.php?command=QuickUpload&type=Images',
+							       filebrowserFlashUploadUrl : '../../../admin/ckfinder/core/connector/php/connector.php?command=QuickUpload&type=Flash',
 							       });
 							     </script>﻿
 							</div>

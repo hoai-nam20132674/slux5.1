@@ -67,6 +67,18 @@ class Categories extends Model
 		return $array;
 
 	}
+	public function getIdParent($id){
+		$cate = Categories::where('id',$id)->get();
+		if(count($cate)>0){
+			foreach($cate as $cat){
+				$parentCategorie = Categories::where('id',$cat->parent_id)->get();
+				return $parentCategorie;
+			}
+		}
+		else{
+			return array();
+		}
+	}
 	public function getBlogChildren($id){
 		$childrenBlog = Blogs::where('categorie_id',$id)->get()->toArray();
 		return $childrenCategorie;
