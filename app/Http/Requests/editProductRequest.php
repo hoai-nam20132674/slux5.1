@@ -26,6 +26,8 @@ class editProductRequest extends Request
         return [
             
             'url' => 'required|unique:products,url,'.$this->id,
+            'url' => 'required|unique:blogs,url',
+            'url' => 'required|unique:categories,url',
             'name' => 'required',
             'price'=> 'required',
             'title' =>'required',

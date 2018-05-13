@@ -26,6 +26,8 @@ class addCategorieRequest extends Request
         return [
             
             'url' => 'required|unique:categories,url',
+            'url' => 'required|unique:blogs,url',
+            'url' => 'required|unique:products,url',
             'name' => 'required|unique:categories,name',
             'title' =>'required',
             'seo_keyword'=>'required',

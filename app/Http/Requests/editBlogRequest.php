@@ -26,6 +26,8 @@ class editBlogRequest extends Request
         return [
             
             'url' => 'required|unique:blogs,url,'.$this->id,
+            'url' => 'required|unique:products,url',
+            'url' => 'required|unique:categories,url',
             'title' =>'required',
             'seo_keyword'=>'required',
             'seo_description'=>'required',

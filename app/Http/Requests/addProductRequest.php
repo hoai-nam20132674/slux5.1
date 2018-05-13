@@ -26,6 +26,8 @@ class addProductRequest extends Request
         return [
             
             'url' => 'required|unique:products,url',
+            'url' => 'required|unique:blogs,url',
+            'url' => 'required|unique:categories,url',
             'name' => 'required',
             'price'=> 'required',
             'title' =>'required',

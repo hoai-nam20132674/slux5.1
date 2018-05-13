@@ -28,6 +28,8 @@ class editCategorieRequest extends Request
         return [
             
             'url' => 'required|unique:categories,url,'.$this->id,
+            'url' => 'required|unique:blogs,url',
+            'url' => 'required|unique:products,url',
             'name' => 'required|unique:categories,name,'.$this->id,
             'title' =>'required',
             'seo_keyword'=>'required',
