@@ -30,15 +30,15 @@
 			                                </div>
 			                                <div class="info">
 			                                    <div class="row">
-			                                        <div class="price col-md-6">
-			                                            <h5>{{$pr->name}}</h5>
+			                                        <div class="price col-md-12" style="text-align: center;">
+			                                            <h5 style="text-transform: uppercase; font-weight: 700;">{{$pr->name}}</h5>
 			                                            <h5 class="price-text-color">{{$pr->price}}</h5>
 			                                        </div>
-			                                        <div class="rating hidden-sm col-md-6">
+			                                        <!-- <div class="rating hidden-sm col-md-12">
 			                                            <i class="price-text-color fa fa-star"></i><i class="price-text-color fa fa-star">
 			                                            </i><i class="price-text-color fa fa-star"></i><i class="price-text-color fa fa-star">
 			                                            </i><i class="fa fa-star"></i>
-			                                        </div>
+			                                        </div> -->
 			                                    </div>
 			                                    <div class="separator clear-left">
 			                                        <p class="btn-add">
@@ -50,6 +50,7 @@
 			                                    </div>
 			                                </div>
 			                            </div>
+
 			                        </div>
 		                        @endif
 		                    @endforeach

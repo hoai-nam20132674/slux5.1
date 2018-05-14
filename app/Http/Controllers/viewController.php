@@ -9,6 +9,7 @@ use App\Http\Controllers\Controller;
 use App\Products;
 use App\Categories;
 use App\Products_Images;
+use App\Blogs;
 
 class viewController extends Controller
 {
@@ -42,7 +43,9 @@ class viewController extends Controller
                 $product_images = Products_Images::where('product_id',$pr->id)->get();
                 $idCateParents = $this->getIdCategorieParent($pr->categorie_id);
                 $categories = Categories::whereIn('id',$idCateParents)->get();
-                return View('frontEndUser.page-content.view-product-item',['pr'=>$pr,'product_images'=>$product_images,'categories'=>$categories]);
+                $blogs = Blogs::where('categorie_id',$pr->categorie_id)->orderBy('created_at','DESC')->take(3)->get();
+                // $products = Products::where([['categorie_id',$pr->categorie_id],['display','=','1'],])->orderBy('created_at','DESC')->take(3)->get();
+                return View('frontEndUser.page-content.view-product-item',['pr'=>$pr,'product_images'=>$product_images,'categories'=>$categories,'blogs'=>$blogs,'products'=>$products]);
             }
         }
     }

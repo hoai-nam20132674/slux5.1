@@ -92,14 +92,16 @@
 							<fieldset class="form-group">
 									
 									<label>
-										<input type="radio" name="type" id="optionsRadios1" value="0" checked>
+										<input type="radio" name="type" value="0" checked>
 										Tin Tức
 									</label>
-								
-								
 									<label>
-										<input type="radio" name="type" id="optionsRadios2" value="1">
+										<input type="radio" name="type" value="1">
 										List Sản phẩm
+									</label>
+									<label>
+										<input type="radio" name="type" value="2">
+										List tin tức
 									</label>
 								
 							</fieldset>

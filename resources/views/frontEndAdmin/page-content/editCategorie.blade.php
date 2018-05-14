@@ -104,14 +104,30 @@
 								<fieldset class="form-group">
 									@if($cate->type ==0)
 										<label>
-											<input type="radio" name="type" id="optionsRadios1" value="0" checked>
+											<input type="radio" name="type" value="0" checked>
+											Tin Tức
+										</label>
+										<label>
+											<input type="radio" name="type" value="1">
+											List Sản phẩm
+										</label>
+										<label>
+										<input type="radio" name="type" value="2">
+											List tin tức
+										</label>
+									@elseif($cate->type ==2)
+										<label>
+											<input type="radio" name="type" id="optionsRadios1" value="0">
 											Tin Tức
 										</label>
 										<label>
 											<input type="radio" name="type" id="optionsRadios2" value="1">
 											List Sản phẩm
 										</label>
-									
+										<input type="radio" name="type" value="2" checked>
+											List tin tức
+										</label>
+
 									@else
 										<label>
 											<input type="radio" name="type" id="optionsRadios1" value="0">
@@ -120,6 +136,9 @@
 										<label>
 											<input type="radio" name="type" id="optionsRadios2" value="1" checked>
 											List Sản phẩm
+										</label>
+										<input type="radio" name="type" value="2">
+											List tin tức
 										</label>
 									
 									@endif

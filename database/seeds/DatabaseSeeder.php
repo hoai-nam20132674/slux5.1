@@ -90,8 +90,6 @@ class DatabaseSeeder extends Seeder
                 'alt'=>'null.png'
                 
             ]
-           
-            
         ]);
     }
 }
